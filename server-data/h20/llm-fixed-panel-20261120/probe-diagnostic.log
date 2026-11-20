@@ -1,0 +1,25 @@
+Fatal Python error: Floating point exception
+
+Current thread 0x00007f3052c73b80 (most recent call first):
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 116 in forward
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520 in _call_impl
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511 in _wrapped_call_impl
+  File "/oft-venv/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 180 in forward
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520 in _call_impl
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511 in _wrapped_call_impl
+  File "/oft-venv/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 781 in forward
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520 in _call_impl
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511 in _wrapped_call_impl
+  File "/oft-venv/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1054 in forward
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520 in _call_impl
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511 in _wrapped_call_impl
+  File "/oft-venv/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1169 in forward
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520 in _call_impl
+  File "/oft-venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511 in _wrapped_call_impl
+  File "/study/bench/hardware/scripts/measure.py", line 82 in run_batch
+  File "/oft-venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115 in decorate_context
+  File "/study/bench/hardware/scripts/measure.py", line 139 in main
+  File "/study/bench/hardware/scripts/measure.py", line 150 in <module>
+
+Extension modules: psutil._psutil_linux, numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, torch._C, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, charset_normalizer.md, charset_normalizer.cd, requests.packages.charset_normalizer.md, requests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd, yaml._yaml, sentencepiece._sentencepiece, PIL._imaging (total: 30)
+Floating point exception (core dumped)

@@ -1,0 +1,158 @@
+[
+  {
+    "context": 512,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 512,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.999818081945197,
+    "min_block_r": 0.9972819181038635,
+    "max_block_r": 1.0034441965837444,
+    "block_bootstrap_percentile_interval": [
+      0.9987778136039852,
+      1.000768814663768
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 512,
+    "width": 3,
+    "n_blocks": 8,
+    "median_block_r": 0.964227848726634,
+    "min_block_r": 0.9605031752067507,
+    "max_block_r": 0.9688808640157585,
+    "block_bootstrap_percentile_interval": [
+      0.9621683301285318,
+      0.9650501990180076
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 512,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9456802852710411,
+    "min_block_r": 0.9412429936107216,
+    "max_block_r": 0.9485590786021264,
+    "block_bootstrap_percentile_interval": [
+      0.9444743439313222,
+      0.9472803505215153
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.9805603610254382,
+    "min_block_r": 0.9788081299714032,
+    "max_block_r": 0.9831659844574555,
+    "block_bootstrap_percentile_interval": [
+      0.9794823874515518,
+      0.9823214513764041
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 3,
+    "n_blocks": 8,
+    "median_block_r": 0.9555101746684997,
+    "min_block_r": 0.9545603413159733,
+    "max_block_r": 0.9560273361967974,
+    "block_bootstrap_percentile_interval": [
+      0.9545952279368372,
+      0.9557968234247088
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9327747937090078,
+    "min_block_r": 0.931725560566506,
+    "max_block_r": 0.9338864174103786,
+    "block_bootstrap_percentile_interval": [
+      0.9318282293654214,
+      0.9336300874167349
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.973907623712317,
+    "min_block_r": 0.9717370608152349,
+    "max_block_r": 0.9757912844351777,
+    "block_bootstrap_percentile_interval": [
+      0.9725528842380409,
+      0.9757893802617165
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 3,
+    "n_blocks": 8,
+    "median_block_r": 0.9304296628602916,
+    "min_block_r": 0.9273880048675819,
+    "max_block_r": 0.9319575629866614,
+    "block_bootstrap_percentile_interval": [
+      0.9298563592338448,
+      0.9316378734945827
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9074255962806995,
+    "min_block_r": 0.9061828669222984,
+    "max_block_r": 0.9101178690320679,
+    "block_bootstrap_percentile_interval": [
+      0.9066900624853349,
+      0.9089075093007932
+    ],
+    "first_request_token_hash_disagreements": 0
+  }
+]

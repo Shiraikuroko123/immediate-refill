@@ -1,0 +1,28 @@
+{
+  "start": 1795137508.654531,
+  "argv": [
+    "/home/ubuntu/llm-research-20261117/pilot-round5/runtime/vllm_env/bin/python",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "/home/ubuntu/llm-fixed-panel-20261120/model",
+    "--served-model-name",
+    "qwen-study",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18274",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "1024",
+    "--max-num-seqs",
+    "8",
+    "--gpu-memory-utilization",
+    "0.35",
+    "--enforce-eager",
+    "--disable-log-requests"
+  ],
+  "versions": "torch 2.6.0, vllm 0.8.5, transformers 4.51.3",
+  "cache": "v0 default off"
+}

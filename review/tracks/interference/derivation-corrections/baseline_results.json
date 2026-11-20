@@ -1,0 +1,46 @@
+{
+  "context_tokens": 3968,
+  "questions": 200,
+  "input_sha256": {
+    "holdout/results/questions.csv": "b097d2eebe2c4c9021fcd008b35a929e23301154b8c52a12cf3fa2a9b6cc152c",
+    "information-baseline/results/questions.csv": "6f21abfe8f252dc1d4b6018683b23da2d6d9140ada4780b291ab4de064f48170"
+  },
+  "contrasts": {
+    "buffer": {
+      "question_mean_saving_pct": 8.708598400697063,
+      "reported_seed": 19431,
+      "reported_resamples": 10000,
+      "reported_95pct_percentile_interval_pct": [
+        6.611885985736506,
+        11.019954047012265
+      ]
+    },
+    "bag": {
+      "question_mean_saving_pct": 0.6690335221923198,
+      "reported_seed": 651,
+      "reported_resamples": 20000,
+      "reported_95pct_percentile_interval_pct": [
+        0.2513496727371088,
+        1.2214297925927833
+      ]
+    },
+    "prefix_bag": {
+      "question_mean_saving_pct": 0.3025194188556082,
+      "reported_seed": 651,
+      "reported_resamples": 20000,
+      "reported_95pct_percentile_interval_pct": [
+        0.06558357513293396,
+        0.6141684618668953
+      ]
+    }
+  },
+  "unordered_ci_pct_if_using_primary_protocol": [
+    0.23694123295404887,
+    1.2311217038140714
+  ],
+  "mean_contributions_relative_to_question_prefix_time_pp": {
+    "prefix_to_prefix_plus_multiset": 8.40993633902381,
+    "prefix_plus_multiset_to_indexed": 0.2986620616732538,
+    "total": 8.708598400697063
+  }
+}

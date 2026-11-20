@@ -1,0 +1,48 @@
+{
+  "fixed_quota_three_and_three_slots": {
+    "3": {
+      "panels": 216,
+      "max_width": 2,
+      "worst_ratio": "1"
+    },
+    "4": {
+      "panels": 1296,
+      "max_width": 3,
+      "worst_ratio": "23/22"
+    }
+  },
+  "wall_timer_prices": [
+    "22",
+    "23",
+    "63/2"
+  ],
+  "return_before_comparator_starts_third": [
+    2,
+    3
+  ],
+  "compressed_end_and_greedy_decision": [
+    9,
+    10
+  ],
+  "earliest_serial_free_and_correlated_votes": [
+    2,
+    3
+  ],
+  "nine_vote_predecessor_example": {
+    "earliest": [
+      6,
+      6,
+      5
+    ],
+    "sixth_start_at_B0": [
+      true,
+      true,
+      false
+    ],
+    "sixth_start_at_B1": [
+      true,
+      true,
+      true
+    ]
+  }
+}

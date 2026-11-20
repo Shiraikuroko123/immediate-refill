@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-20T10:57:21.552038+00:00",
+  "tree": "https://huggingface.co/api/datasets/reasoning-cues/rollouts-qwen4b/tree/b8c33b85a1a6cdfb23b06a5f9d696f52950780e4/boxed/gsm8k/run",
+  "candidates": 53,
+  "selected": [
+    {
+      "type": "file",
+      "oid": "ba4fdd5c554d8096ce62500e5d9292ee702a62cc",
+      "size": 390871,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00500.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "befcf56854ac127759e9a0f4e1e604ee6068648f",
+      "size": 573553,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p01125.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "368ba69d535c467cb2c661690d79967b086f7bb1",
+      "size": 454651,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00800.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "a3bf07ece9f1a32a749a6f3d90094b16f246252f",
+      "size": 562257,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00900.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "959dbd94cf9edbc7d6aadd7958f4fff15d5adf08",
+      "size": 513673,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00350.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "c8fc19f46ec4cc1750f4770bdf04ea46d23c7ffe",
+      "size": 759671,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p01225.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "8bd8399f4452af5f7ed2d9db87ac72f10064073a",
+      "size": 503582,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00475.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "1845eb081c7550862c33fd83979fc7bdf3326a37",
+      "size": 600500,
+      "path": "boxed/gsm8k/run/rollouts_base_none_p00675.jsonl"
+    }
+  ],
+  "protocol": "9a8358b4283dfcf8fada5f8b2fa6e0c1bb3b4ff0c42fe0ac3d43812a97e4dd38",
+  "code": "5b3f1e6a89797ed771afc6b945a49aaa01de42127f02a7a19c1fb2aecbf6c247"
+}

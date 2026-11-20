@@ -1,0 +1,29 @@
+{
+  "api": "https://huggingface.co/api/datasets/reasoning-cues/rollouts-qwen4b/tree/b8c33b85a1a6cdfb23b06a5f9d696f52950780e4/boxed/amc23/run",
+  "files": [
+    {
+      "type": "file",
+      "oid": "8e946dc123545ac2964bae439ae8282403e25686",
+      "size": 4886608,
+      "path": "boxed/amc23/run/rollouts_base_none_p00000.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "ff0486e4b802904ef2fcc8b1e42699e9891a17ab",
+      "size": 4809855,
+      "path": "boxed/amc23/run/rollouts_base_none_p00000_b2.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "8aa33a6cb40f9c940b5fbaf00e8258ce08cdc48e",
+      "size": 870145,
+      "path": "boxed/amc23/run/rollouts_base_none_p00025.jsonl"
+    },
+    {
+      "type": "file",
+      "oid": "ce0fc0010f64ca309a885465e4e739a499771490",
+      "size": 1046510,
+      "path": "boxed/amc23/run/rollouts_base_none_p00025_b2.jsonl"
+    }
+  ]
+}

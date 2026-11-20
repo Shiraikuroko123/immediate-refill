@@ -1,0 +1,63 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+2026-11-20 01:02:01.873765: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-20 01:02:02.483323: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-20 01:02:02.483448: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-20 01:02:02.593814: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-20 01:02:02.807146: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-20 01:02:06.097600: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2 0 rolling 20.752067796999995 1033 224
+2 0 refill 9.937884721999922 1033 224
+2 0 full 6.845246255999996 1193 224
+0 0 refill 5.938106327000014 737 77
+0 0 full 6.2244526959999575 969 77
+0 0 rolling 7.098750843999937 730 77
+1 0 full 6.764993897000068 1209 None
+1 0 rolling 11.843440451999982 1209 None
+1 0 refill 9.375866251000048 1209 None
+5 0 full 6.691978458999984 1280 None
+5 0 refill 9.994762960000003 1280 None
+5 0 rolling 13.351105383999993 1280 None
+4 0 refill 9.947746456999994 1280 None
+4 0 rolling 13.251923707999936 1280 None
+4 0 full 6.678976501999955 1280 None
+3 0 rolling 11.908980932000077 1209 614
+3 0 full 6.805146112999978 1209 614
+3 0 refill 12.092660394000063 1209 614
+2 1 rolling 12.064096362999976 1230 224
+2 1 refill 11.981394917999978 1230 224
+2 1 full 6.592229309999993 1230 224
+0 1 refill 6.792148752999992 1012 77
+0 1 full 6.549822081000002 1012 77
+0 1 rolling 8.181331879000027 996 77
+1 1 full 6.615496724999957 1190 334
+1 1 rolling 12.485181033999993 1260 None
+1 1 refill 9.726873546999968 1196 334
+5 1 full 6.457107820999909 1280 None
+5 1 refill 9.660669054999971 1280 None
+5 1 rolling 13.00524791700002 1280 None
+4 1 refill 9.114334829999962 1012 346
+4 1 rolling 9.249867110999958 1081 346
+4 1 full 6.844569366000087 1172 346
+3 1 rolling 12.851470215999939 1280 None
+3 1 full 6.4419036950000645 1280 None
+3 1 refill 9.63123177 1280 None
+2 2 rolling 8.893595813000047 1023 224
+2 2 refill 9.00022460199989 1023 224
+2 2 full 6.67276511700004 1226 224
+0 2 refill 5.041721444000018 594 77
+0 2 full 5.838200348999976 986 77
+0 2 rolling 5.026731677999919 594 77
+1 2 full 6.628809781999962 1264 334
+1 2 rolling 12.74784157099998 1272 334
+1 2 refill 12.85041842399994 1266 334
+5 2 full 6.6147125700000515 1275 None
+5 2 refill 9.91174885199996 1275 None
+5 2 rolling 12.861063145999992 1275 None
+4 2 refill 9.73024374399995 1254 346
+4 2 rolling 12.936893134000002 1254 346
+4 2 full 6.47747308199996 1254 346
+3 2 rolling 9.623071872000082 1089 614
+3 2 full 6.668733016000033 1249 614
+3 2 refill 9.314415368000027 1089 614
+{"paired_macro_latency_reduction": 0.15469389140188133, "trial_pairs": 18, "hashed_path_mismatches": 43}

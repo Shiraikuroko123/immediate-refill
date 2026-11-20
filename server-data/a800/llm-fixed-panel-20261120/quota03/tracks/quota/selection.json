@@ -1,0 +1,224 @@
+{
+  "source": "https://huggingface.co/datasets/Hothan/OlympiadBench/resolve/91184b52131e7fc9455fef848035173aea8cc01a/OlympiadBench/OE_TO_maths_en_COMP/OE_TO_maths_en_COMP.parquet",
+  "revision": "91184b52131e7fc9455fef848035173aea8cc01a",
+  "sha256": "7c17ca2662b3ea77cddcb66a64b04ad9b53d3d32fa372d444a4884739eb1638d",
+  "license_in_dataset_card": "Apache-2.0",
+  "questions": [
+    {
+      "qid": 0,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/3083",
+      "problem": "The taxicab distance between points $A=\\left(x_{A}, y_{A}\\right)$ and $B=\\left(x_{B}, y_{B}\\right)$ is defined as $d(A, B)=$ $\\left|x_{A}-x_{B}\\right|+\\left|y_{A}-y_{B}\\right|$. Given some $s>0$ and points $A=\\left(x_{A}, y_{A}\\right)$ and $B=\\left(x_{B}, y_{B}\\right)$, define the taxicab ellipse with foci $A=\\left(x_{A}, y_{A}\\right)$ and $B=\\left(x_{B}, y_{B}\\right)$ to be the set of points $\\{Q \\mid d(A, Q)+d(B, Q)=s\\}$. Compute the area enclosed by the taxicab ellipse with foci $(0,5)$ and $(12,0)$, passing through $(1,-1)$.",
+      "answer": "96",
+      "subject": "Geometry",
+      "source_id": 3083,
+      "priority_sha256": "005fb1745b34dbfb0a133a4d1fc7abc0c11b3c6c674c1b1ea9f60095e265d705"
+    },
+    {
+      "qid": 1,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/3028",
+      "problem": "Let $T=362$ and let $K=\\sqrt{T-1}$. Compute $\\left|(K-20)(K+1)+19 K-K^{2}\\right|$.",
+      "answer": "20",
+      "subject": "Algebra",
+      "source_id": 3028,
+      "priority_sha256": "00c8b39d574b9aa652c7c7719ca635edc16330865628c6e6cc83bc31f0021d08"
+    },
+    {
+      "qid": 2,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2992",
+      "problem": "Elizabeth is in an \"escape room\" puzzle. She is in a room with one door which is locked at the start of the puzzle. The room contains $n$ light switches, each of which is initially off. Each minute, she must flip exactly $k$ different light switches (to \"flip\" a switch means to turn it on if it is currently off, and off if it is currently on). At the end of each minute, if all of the switches are on, then the door unlocks and Elizabeth escapes from the room.\n\nLet $E(n, k)$ be the minimum number of minutes required for Elizabeth to escape, for positive integers $n, k$ with $k \\leq n$. For example, $E(2,1)=2$ because Elizabeth cannot escape in one minute (there are two switches and one must be flipped every minute) but she can escape in two minutes (by flipping Switch 1 in the first minute and Switch 2 in the second minute). Define $E(n, k)=\\infty$ if the puzzle is impossible to solve (that is, if it is impossible to have all switches on at the end of any minute).\n\nFor convenience, assume the $n$ light switches are numbered 1 through $n$.\nCompute the $E(6,2)$",
+      "answer": "3",
+      "subject": "Combinatorics",
+      "source_id": 2992,
+      "priority_sha256": "00d82b09b85ff0b5d4f598baf1f31d96aec32c0c8b82226b2a3eb3b85243393a"
+    },
+    {
+      "qid": 3,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/1874",
+      "problem": "Suppose that $a, b, c, d$ are positive real numbers satisfying $(a+c)(b+d)=a c+b d$. Find the smallest possible value of\n\n$$\nS=\\frac{a}{b}+\\frac{b}{c}+\\frac{c}{d}+\\frac{d}{a}\n$$",
+      "answer": "8",
+      "subject": "Algebra",
+      "source_id": 1874,
+      "priority_sha256": "01d6b2c85e0d9c44f3ec15155e21a2c2f4d19b3bf63bd846288cac3180f8ad1a"
+    },
+    {
+      "qid": 4,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2773",
+      "problem": "Let $T$ = 2069, and let $K$ be the sum of the digits of $T$. Let $r$ and $s$ be the two roots of the polynomial $x^{2}-18 x+K$. Compute $|r-s|$.",
+      "answer": "16",
+      "subject": "Algebra",
+      "source_id": 2773,
+      "priority_sha256": "01e21c729a43e11556a6bb926498144f3762b02c1b807701963ec4d62da410bc"
+    },
+    {
+      "qid": 5,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2793",
+      "problem": "If $n$ is a positive integer, then $n$ !! is defined to be $n(n-2)(n-4) \\cdots 2$ if $n$ is even and $n(n-2)(n-4) \\cdots 1$ if $n$ is odd. For example, $8 ! !=8 \\cdot 6 \\cdot 4 \\cdot 2=384$ and $9 ! !=9 \\cdot 7 \\cdot 5 \\cdot 3 \\cdot 1=945$. Compute the number of positive integers $n$ such that $n !$ ! divides 2012!!.",
+      "answer": "1510",
+      "subject": "Number Theory",
+      "source_id": 2793,
+      "priority_sha256": "022437154ead56c4864be745fb76fc8ae5069a7f3dac3925d3223ad64c632577"
+    },
+    {
+      "qid": 6,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2827",
+      "problem": "Let $N=\\left\\lfloor(3+\\sqrt{5})^{34}\\right\\rfloor$. Compute the remainder when $N$ is divided by 100 .",
+      "answer": "47",
+      "subject": "Algebra",
+      "source_id": 2827,
+      "priority_sha256": "029bfae93c99467693a3125307e3abb681e44efbf2a5f97a33e9f0d10a9cd26f"
+    },
+    {
+      "qid": 7,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/1847",
+      "problem": "Find all positive integers $n$ for which all positive divisors of $n$ can be put into the cells of a rectangular table under the following constraints:\n\n- each cell contains a distinct divisor;\n- the sums of all rows are equal; and\n- the sums of all columns are equal.",
+      "answer": "1",
+      "subject": "Combinatorics",
+      "source_id": 1847,
+      "priority_sha256": "02bb6c9fec86b76c486d147266b12e948331c95c8d0fc6b8ceb0c6825406b571"
+    },
+    {
+      "qid": 8,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2280",
+      "problem": "The parabola with equation $y=-2 x^{2}+4 x+c$ has vertex $V(1,18)$. The parabola intersects the $y$-axis at $D$ and the $x$-axis at $E$ and $F$. Determine the area of $\\triangle D E F$.",
+      "answer": "48",
+      "subject": "Geometry",
+      "source_id": 2280,
+      "priority_sha256": "0366cefd68873051482256fb1ab36d0a74bcf41e9fd04646226d6f7a28ef5785"
+    },
+    {
+      "qid": 9,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2588",
+      "problem": "In an infinite array with two rows, the numbers in the top row are denoted $\\ldots, A_{-2}, A_{-1}, A_{0}, A_{1}, A_{2}, \\ldots$ and the numbers in the bottom row are denoted $\\ldots, B_{-2}, B_{-1}, B_{0}, B_{1}, B_{2}, \\ldots$ For each integer $k$, the entry $A_{k}$ is directly above the entry $B_{k}$ in the array, as shown:\n\n| $\\ldots$ | $A_{-2}$ | $A_{-1}$ | $A_{0}$ | $A_{1}$ | $A_{2}$ | $\\ldots$ |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| $\\ldots$ | $B_{-2}$ | $B_{-1}$ | $B_{0}$ | $B_{1}$ | $B_{2}$ | $\\ldots$ |\n\nFor each integer $k, A_{k}$ is the average of the entry to its left, the entry to its right, and the entry below it; similarly, each entry $B_{k}$ is the average of the entry to its left, the entry to its right, and the entry above it.\nIn one such array, $A_{0}=A_{1}=A_{2}=0$ and $A_{3}=1$.\n\nDetermine the value of $A_{4}$.",
+      "answer": "6",
+      "subject": "Algebra",
+      "source_id": 2588,
+      "priority_sha256": "03b6b626265d92015ae7e068b90f659fb6e9c5fc16a9f763153def391404743e"
+    },
+    {
+      "qid": 10,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2234",
+      "problem": "In an increasing sequence of numbers with an odd number of terms, the difference between any two consecutive terms is a constant $d$, and the middle term is 302 . When the last 4 terms are removed from the sequence, the middle term of the resulting sequence is 296. What is the value of $d$ ?",
+      "answer": "3",
+      "subject": "Algebra",
+      "source_id": 2234,
+      "priority_sha256": "03ef5fd65552a312b0041fbc111ef45ca247c336091f8f23a6ff07d8b35b6272"
+    },
+    {
+      "qid": 11,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/3092",
+      "problem": "Let $T=5$. Compute the number of positive divisors of the number $20^{4} \\cdot 11^{T}$ that are perfect cubes.",
+      "answer": "12",
+      "subject": "Combinatorics",
+      "source_id": 3092,
+      "priority_sha256": "042e6e0a74791453194a1c40472372be863b65672a84e05ee2cb7b6c5a448d42"
+    },
+    {
+      "qid": 12,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2738",
+      "problem": "Let $10^{y}$ be the product of all real numbers $x$ such that $\\log x=\\frac{3+\\left\\lfloor(\\log x)^{2}\\right\\rfloor}{4}$. Compute $y$.",
+      "answer": "8",
+      "subject": "Algebra",
+      "source_id": 2738,
+      "priority_sha256": "047eef2ac94f4345c999ce3cb38a5c6f401b49d54d00f9930fafb1ccd03cbc9f"
+    },
+    {
+      "qid": 13,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2525",
+      "problem": "The string $A A A B B B A A B B$ is a string of ten letters, each of which is $A$ or $B$, that does not include the consecutive letters $A B B A$.\n\nThe string $A A A B B A A A B B$ is a string of ten letters, each of which is $A$ or $B$, that does include the consecutive letters $A B B A$.\n\nDetermine, with justification, the total number of strings of ten letters, each of which is $A$ or $B$, that do not include the consecutive letters $A B B A$.",
+      "answer": "631",
+      "subject": "Combinatorics",
+      "source_id": 2525,
+      "priority_sha256": "04814aead12bf3264c247ce0d20d3a6af5aa1b62fe43af160404623d8d5c01ec"
+    },
+    {
+      "qid": 14,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2842",
+      "problem": "Let T be a rational number, and let $K=T-2$. If $K$ workers can produce 9 widgets in 1 hour, compute the number of workers needed to produce $\\frac{720}{K}$ widgets in 4 hours.",
+      "answer": "20",
+      "subject": "Algebra",
+      "source_id": 2842,
+      "priority_sha256": "0571ac39867fa5f21e73c933f7e575be5bd1e7d4cd5fc54ba75ddf83639f9e42"
+    },
+    {
+      "qid": 15,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/3091",
+      "problem": "Let $T=2$. Compute the product of $-T-i$ and $i-T$, where $i=\\sqrt{-1}$.",
+      "answer": "5",
+      "subject": "Algebra",
+      "source_id": 3091,
+      "priority_sha256": "060ead92f13cda3d025161998821b492d51576ddcef7e0c659df20ec93f39ba8"
+    },
+    {
+      "qid": 16,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2613",
+      "problem": "Let $T=7$. Given the sequence $u_{n}$ such that $u_{3}=5, u_{6}=89$, and $u_{n+2}=3 u_{n+1}-u_{n}$ for integers $n \\geq 1$, compute $u_{T}$.",
+      "answer": "233",
+      "subject": "Algebra",
+      "source_id": 2613,
+      "priority_sha256": "0630b14e47914188d6d3e155725148eca17400f8a8fa54956051dcba4a5d87bf"
+    },
+    {
+      "qid": 17,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2969",
+      "problem": "Let $T=8$. A cube has volume $T-2$. The cube's surface area equals one-eighth the surface area of a $2 \\times 2 \\times n$ rectangular prism. Compute $n$.",
+      "answer": "23",
+      "subject": "Geometry",
+      "source_id": 2969,
+      "priority_sha256": "06d7609e3609d9101ede53c48f1209b0c2438a45159ccf566753295c9549961a"
+    },
+    {
+      "qid": 18,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2798",
+      "problem": "Let $T=95$. Triangle $A B C$ has $A B=A C$. Points $M$ and $N$ lie on $\\overline{B C}$ such that $\\overline{A M}$ and $\\overline{A N}$ trisect $\\angle B A C$, with $M$ closer to $C$. If $\\mathrm{m} \\angle A M C=T^{\\circ}$, then $\\mathrm{m} \\angle A C B=U^{\\circ}$. Compute $U$.",
+      "answer": "75",
+      "subject": "Geometry",
+      "source_id": 2798,
+      "priority_sha256": "06e7d285d533866b04e14a8a6f9effc5ddb8fa68a7c4d57ababfd0a58fcd2883"
+    },
+    {
+      "qid": 19,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2728",
+      "problem": "Let $T=19$. The first two terms of a sequence are $a_{1}=3 / 5$ and $a_{2}=4 / 5$. For $n>2$, if $n$ is odd, then $a_{n}=a_{n-1}^{2}-a_{n-2}^{2}$, while if $n$ is even, then $a_{n}=2 a_{n-2} a_{n-3}$. Compute the sum of the squares of the first $T-3$ terms of the sequence.",
+      "answer": "8",
+      "subject": "Algebra",
+      "source_id": 2728,
+      "priority_sha256": "0757e380fee3da0316d13b2fa6048793562b8ba63df382effcc446d685f76498"
+    },
+    {
+      "qid": 20,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/3076",
+      "problem": "Let $f(x)=x^{1}+x^{2}+x^{4}+x^{8}+x^{16}+x^{32}+\\cdots$. Compute the coefficient of $x^{10}$ in $f(f(x))$.",
+      "answer": "40",
+      "subject": "Algebra",
+      "source_id": 3076,
+      "priority_sha256": "08260014ba98c89d5e28ef8095ab1d1cfb3da1f7abad6cc3f9c0be973524fafe"
+    },
+    {
+      "qid": 21,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2860",
+      "problem": "Let $T=12$. In triangle $A B C, B C=T$ and $\\mathrm{m} \\angle B=30^{\\circ}$. Compute the number of integer values of $A C$ for which there are two possible values for side length $A B$.",
+      "answer": "5",
+      "subject": "Geometry",
+      "source_id": 2860,
+      "priority_sha256": "0918f9b6d02ca2d2112aa1dc3f434cd9d7301dec9c08334aeaf3f629bec50730"
+    },
+    {
+      "qid": 22,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/2783",
+      "problem": "Let $T=$ 16. Compute the value of $x$ that satisfies $\\log _{4} T=\\log _{2} x$.",
+      "answer": "4",
+      "subject": "Algebra",
+      "source_id": 2783,
+      "priority_sha256": "09a3518c23266f73395873ba048e05105941a59d4c7d6da1dbaea1646afae7b8"
+    },
+    {
+      "qid": 23,
+      "unique_id": "OlympiadBench/OE_TO_maths_en_COMP/1697",
+      "problem": "On a square table of 2011 by 2011 cells we place a finite number of napkins that each cover a square of 52 by 52 cells. In each cell we write the number of napkins covering it, and we record the maximal number $k$ of cells that all contain the same nonzero number. Considering all possible napkin configurations, what is the largest value of $k$ ?",
+      "answer": "3986729",
+      "subject": "Combinatorics",
+      "source_id": 1697,
+      "priority_sha256": "0a3a75f4b60a4d37c6a886e48b6ff1c0ffdb8e5691c9a078cfba58430d926bbc"
+    }
+  ]
+}

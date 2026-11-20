@@ -1,0 +1,181 @@
+{
+  "paired": [
+    {
+      "qid": 2,
+      "repeat": 0,
+      "refill_s": 6.955388459000005,
+      "rolling_s": 9.135707498000102,
+      "refill_tokens": 1263,
+      "rolling_tokens": 1263
+    },
+    {
+      "qid": 0,
+      "repeat": 0,
+      "refill_s": 8.57523171999992,
+      "rolling_s": 8.503936897999893,
+      "refill_tokens": 1255,
+      "rolling_tokens": 1255
+    },
+    {
+      "qid": 1,
+      "repeat": 0,
+      "refill_s": 6.888532033000047,
+      "rolling_s": 7.931923534999896,
+      "refill_tokens": 1198,
+      "rolling_tokens": 1198
+    },
+    {
+      "qid": 5,
+      "repeat": 0,
+      "refill_s": 6.823012195999809,
+      "rolling_s": 8.950720233000084,
+      "refill_tokens": 1280,
+      "rolling_tokens": 1280
+    },
+    {
+      "qid": 4,
+      "repeat": 0,
+      "refill_s": 6.952649367000049,
+      "rolling_s": 8.82503775300006,
+      "refill_tokens": 1265,
+      "rolling_tokens": 1273
+    },
+    {
+      "qid": 3,
+      "repeat": 0,
+      "refill_s": 6.4250587620001625,
+      "rolling_s": 7.428701607999983,
+      "refill_tokens": 1166,
+      "rolling_tokens": 1166
+    },
+    {
+      "qid": 2,
+      "repeat": 1,
+      "refill_s": 6.797465021999869,
+      "rolling_s": 8.779393390999985,
+      "refill_tokens": 1222,
+      "rolling_tokens": 1222
+    },
+    {
+      "qid": 0,
+      "repeat": 1,
+      "refill_s": 6.820621685000106,
+      "rolling_s": 6.7108695160000025,
+      "refill_tokens": 1126,
+      "rolling_tokens": 1126
+    },
+    {
+      "qid": 1,
+      "repeat": 1,
+      "refill_s": 6.676498324000022,
+      "rolling_s": 8.772001523999961,
+      "refill_tokens": 1280,
+      "rolling_tokens": 1260
+    },
+    {
+      "qid": 5,
+      "repeat": 1,
+      "refill_s": 6.769662028000084,
+      "rolling_s": 8.829696299000034,
+      "refill_tokens": 1280,
+      "rolling_tokens": 1280
+    },
+    {
+      "qid": 4,
+      "repeat": 1,
+      "refill_s": 6.490637551999953,
+      "rolling_s": 8.23705570900006,
+      "refill_tokens": 1220,
+      "rolling_tokens": 1231
+    },
+    {
+      "qid": 3,
+      "repeat": 1,
+      "refill_s": 6.740672973000073,
+      "rolling_s": 8.865354305999972,
+      "refill_tokens": 1280,
+      "rolling_tokens": 1280
+    },
+    {
+      "qid": 2,
+      "repeat": 2,
+      "refill_s": 6.707106127000088,
+      "rolling_s": 8.203502244999981,
+      "refill_tokens": 1231,
+      "rolling_tokens": 1231
+    },
+    {
+      "qid": 0,
+      "repeat": 2,
+      "refill_s": 6.232949925999947,
+      "rolling_s": 7.929248577999942,
+      "refill_tokens": 1141,
+      "rolling_tokens": 1138
+    },
+    {
+      "qid": 1,
+      "repeat": 2,
+      "refill_s": 6.143117436000011,
+      "rolling_s": 8.268859554000073,
+      "refill_tokens": 1190,
+      "rolling_tokens": 1179
+    },
+    {
+      "qid": 5,
+      "repeat": 2,
+      "refill_s": 6.91431772299984,
+      "rolling_s": 9.186119150999957,
+      "refill_tokens": 1280,
+      "rolling_tokens": 1280
+    },
+    {
+      "qid": 4,
+      "repeat": 2,
+      "refill_s": 6.815499885999998,
+      "rolling_s": 8.923008134999918,
+      "refill_tokens": 1272,
+      "rolling_tokens": 1274
+    },
+    {
+      "qid": 3,
+      "repeat": 2,
+      "refill_s": 6.758672856999965,
+      "rolling_s": 8.890105358000028,
+      "refill_tokens": 1263,
+      "rolling_tokens": 1263
+    }
+  ],
+  "per_question": [
+    {
+      "qid": 2,
+      "time_savings": 0.21665184378233182,
+      "token_savings": 0.0
+    },
+    {
+      "qid": 0,
+      "time_savings": 0.06547044852441108,
+      "token_savings": -0.0008525149190110604
+    },
+    {
+      "qid": 1,
+      "time_savings": 0.21081496923892384,
+      "token_savings": -0.008523508386032441
+    },
+    {
+      "qid": 5,
+      "time_savings": 0.23953925012594368,
+      "token_savings": 0.0
+    },
+    {
+      "qid": 4,
+      "time_savings": 0.22036915155494863,
+      "token_savings": 0.0055584965590259605
+    },
+    {
+      "qid": 3,
+      "time_savings": 0.20885177088854,
+      "token_savings": 0.0
+    }
+  ],
+  "question_macro_time_savings": 0.19361623901918318
+}

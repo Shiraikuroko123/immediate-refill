@@ -1,0 +1,20 @@
+{
+  "checked_utc_date": "2026-11-20",
+  "repository": "docker.io/vllm/vllm-openai",
+  "tag": "v0.8.5",
+  "manifest_sha256": "6cf9808ca8810fc6c3fd0451c2e7784fb224590d81f7db338e7eaf3c02a33d33",
+  "image_config_sha256": "d1a544bfefdcd51fb42a9cc64d29df092127a7f1706f7a284aac26e5c48c468d",
+  "platform": "linux/amd64",
+  "compressed_layers_decimal_gb_rounded": 9.04,
+  "container_build_python_minor": "3.12",
+  "container_build_cuda": "12.4.0",
+  "public_tag_metadata": "https://hub.docker.com/v2/repositories/vllm/vllm-openai/tags/v0.8.5",
+  "registry_manifest": "https://registry-1.docker.io/v2/vllm/vllm-openai/manifests/v0.8.5",
+  "official_gpu_install_guide": "https://docs.vllm.ai/en/v0.8.5/getting_started/installation/gpu.html",
+  "research_driver_recorded": "550.144.03",
+  "research_python_recorded": "3.10.12",
+  "research_torch_recorded": "2.6.0+cu124",
+  "research_cuda_recorded": "12.4",
+  "research_engine_recorded": "vLLM 0.8.5, V0",
+  "gpu_rerun_on_replacement_instance": false
+}

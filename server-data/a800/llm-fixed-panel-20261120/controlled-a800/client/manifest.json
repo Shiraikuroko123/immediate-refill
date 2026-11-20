@@ -1,0 +1,30 @@
+{
+  "profile_sha256": "2e51e076fd09a39bd728a484611baf4841053fe84534cf775725d6da347af56c",
+  "client_sha256": "74a8c31eeb5030cd717dffd735af33d4e3548b11cbd0bfbd23ea4d20b5947827",
+  "qids": [
+    2,
+    0,
+    1,
+    5,
+    4,
+    3
+  ],
+  "repeats": [
+    0,
+    1,
+    2
+  ],
+  "args": {
+    "profile": "reference-h20.jsonl",
+    "model": "qwen-study",
+    "out": "controlled-a800/client",
+    "base_url": "http://127.0.0.1:18274/v1",
+    "api_mode": "chat",
+    "capacity": 4,
+    "repeats": 3,
+    "questions": null,
+    "temperature": 0.7,
+    "timeout": 180
+  },
+  "workload": "real model decoding to frozen per-path lengths, followed by release of the archived vote"
+}

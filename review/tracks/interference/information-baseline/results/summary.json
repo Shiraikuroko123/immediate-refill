@@ -1,0 +1,177 @@
+{
+  "retrospective": true,
+  "clock_context": 3968,
+  "boot_seed": 651,
+  "resamples": 20000,
+  "clock_sha256": "465d7fb64a044dfcb18244fffe446afdb34f1aecc734617cb426f284af0d7f6b",
+  "source_sha256": {
+    "rollouts_base_none_p00500.jsonl": "f2c7193a4f008a87de514110f4b6577e15449a642ec0965fa62fa8e0dece78b0",
+    "rollouts_base_none_p01125.jsonl": "7238305dfbd952f624da88a377ed89cb55dc265328f3ce537e241c289a8d8db0",
+    "rollouts_base_none_p00800.jsonl": "3293e055416ae74408e0edb6393ae1b0941d889a18c8ecf89433d5a5cddc694e",
+    "rollouts_base_none_p00900.jsonl": "ef9f072e62b51d8d12d09f6c115f12803b4cdad2a6b32096871a0b10143c0970",
+    "rollouts_base_none_p00350.jsonl": "48636a1cbd1516eb13ec42849deec5f5d98b7e1f65cd4c83ba50a04f45253c41",
+    "rollouts_base_none_p01225.jsonl": "24803e1cf702cde5eba8d5013fd1f62aa399f935c64991d24c490f42a0fe302d",
+    "rollouts_base_none_p00475.jsonl": "7d84b44858a42def15b6e38e54102bcae6256ea89a67db48c6be76159d4294ee",
+    "rollouts_base_none_p00675.jsonl": "f8095903f438386a095f361326e33f8541fbe5f341541d88baf0982312346c91",
+    "q00-natural-full.json": "5ba9679dee14ed5f8d53f2de81947d988025390ec89042e0ffc6045a93d30896",
+    "q01-natural-full.json": "dc6ba8ed0e35816fd1403861568d2bb57b77fae78be6a9057caff16aba63b002",
+    "q02-natural-full.json": "9a40e0538277601ec2e0286e8aff07ad9ca9b6a8d20092515cd84eb9b2da9e34",
+    "q03-natural-full.json": "acb6dac62f28685d0a265be71d067ff3273fd06353ad6ee6c29072de1f6d8f45",
+    "q04-natural-full.json": "81a6c94dc35278ebe32a0193825b7db4d4aa89018b8db094281bc68f324a66b1",
+    "q05-natural-full.json": "74255a9186593af7bf52e062db14373b3cf4157b4be4bf32e5bee14e63e2e121",
+    "q06-natural-full.json": "6ceb3c616d9ba0881157aa9591a3a0f8b3906eadf7528f422c839b502cd805e0",
+    "q07-natural-full.json": "e4614c7496f542e3384ca785b36f6e6354ee603f522c9cb8b4ed1d0ef34e32c7",
+    "q08-natural-full.json": "cc708712b4c938a8afe894ff2e3b6d0cb706968d20ddb44aa7573264cccf872f",
+    "q09-natural-full.json": "61199d2311c36d2529a4aed86f485d0f46b094af00a8644e761e8d5e8134152a",
+    "q10-natural-full.json": "2482f3bc14ef7c94a83d00c464e31776da5bbec15f0c2b9d83e8120b159b0349",
+    "q11-natural-full.json": "153c74b8189f92e693e951ef7323adec91fe0e573bfe3f11a09e0f267757f670",
+    "q12-natural-full.json": "31b1883851a8ec84b0a364b34c520f51786019c7901110f7ae53a7aa7456a3b4",
+    "q13-natural-full.json": "3f3bfd1f007fa7fe7940936b5b6091c9cce7ec6567233723cd46a8832e2e87d7",
+    "q14-natural-full.json": "6c9ce444bf0b3661b0f9805e4fd8c487a55546c75de8f5281516160caeba1d7d",
+    "q15-natural-full.json": "d4bb4724c0c90d598eb2d8b05a9d7134eb8ce0ea8f93380a7126558d0db60187",
+    "q16-natural-full.json": "ebf61f0be5d9019b46c811a16ae2ac89579c95b654c6b8a562cfe152a160bde7",
+    "q17-natural-full.json": "10dbdf30041a276d2c960332710603cd8cdce81fcbc48fde1a0194484b4fae67",
+    "q18-natural-full.json": "5925aeb417577c7b987bf4e4c3eb3280e6dd74f45abd235c76812139b8f03266",
+    "q19-natural-full.json": "f53592ccbc52a57d3870b05e55fc35175da04aaf04104d1f8fb5bd7e30d44527",
+    "q20-natural-full.json": "e33ccf57bbdeac076445bb014f6fa45d33d12cf59d16641d89f8a82f35ee7cf3",
+    "q21-natural-full.json": "127ff67748ce786b544c32f4ebda024f4b695d20cdc8556cbdae1ac99d8c181f",
+    "q22-natural-full.json": "e39fbd9b834f94a2f4275a334bb01b1d53d3292a280dd924851da57ecd016c53",
+    "q23-natural-full.json": "d087874a4e9936efea76a8dd1c53f71f553c981b8b10612d54970df14882bb83",
+    "q24-natural-full.json": "56fc3873483d3e82bc26d31157911bdb09101f3f1573eb829c54427e5786939c",
+    "q25-natural-full.json": "f46756e40cf3d18f51f66babe4cc670203f40da14c75ddd5b72244d9e883e2cc",
+    "q26-natural-full.json": "bf65a6afdc89d8985779406a44d65580d4584646d4b6a4472ae9568a478df6ff",
+    "q27-natural-full.json": "1d05c9760d3f9aa5d3790f89366be65fe6e3753cb0fd493a07aa3eb65f3cd8af",
+    "q28-natural-full.json": "f5370f0253885730cdf0c50a18382bba28f5dedb458f2ae5be5ab12fd94314f4",
+    "q29-natural-full.json": "ab65ec9c3f8696e1006781c22bb44fb4c2187263e27cc292fd375ddc02cbc1c4",
+    "q30-natural-full.json": "b21287958d5c86f748936c79505bae91b5429a40751467db63f4273e85141fa4",
+    "q31-natural-full.json": "44c4c8847dd6b03b840179e13187add19251de0ff7364fa2937a8d1c41c10d1d"
+  },
+  "summary": [
+    {
+      "cohort": "archive",
+      "comparator": "buffer",
+      "questions": 200,
+      "mean_saving": 0.08708598400697064,
+      "median_saving": 0.001442827311727112,
+      "paired_question_ci": [
+        0.06559931925953097,
+        0.11074895931831698
+      ],
+      "changed": 138,
+      "wins": 109,
+      "losses": 28
+    },
+    {
+      "cohort": "archive",
+      "comparator": "bag",
+      "questions": 200,
+      "mean_saving": 0.0066903352219231495,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.002513496727371034,
+        0.01221429792592778
+      ],
+      "changed": 33,
+      "wins": 20,
+      "losses": 11
+    },
+    {
+      "cohort": "archive",
+      "comparator": "prefix_bag",
+      "questions": 200,
+      "mean_saving": 0.0030251941885560333,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.0006558357513292902,
+        0.0061416846186689075
+      ],
+      "changed": 22,
+      "wins": 12,
+      "losses": 8
+    },
+    {
+      "cohort": "device-paths-384",
+      "comparator": "buffer",
+      "questions": 32,
+      "mean_saving": 0.008666019277174015,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        -6.738146623254249e-05,
+        0.021493054606041007
+      ],
+      "changed": 5,
+      "wins": 4,
+      "losses": 1
+    },
+    {
+      "cohort": "device-paths-384",
+      "comparator": "bag",
+      "questions": 32,
+      "mean_saving": 0.0,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.0,
+        0.0
+      ],
+      "changed": 0,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "cohort": "device-paths-384",
+      "comparator": "prefix_bag",
+      "questions": 32,
+      "mean_saving": 0.0,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.0,
+        0.0
+      ],
+      "changed": 0,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "cohort": "device-paths-1024",
+      "comparator": "buffer",
+      "questions": 32,
+      "mean_saving": 0.005488238108909734,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        -0.0002580560470438045,
+        0.01277739764892755
+      ],
+      "changed": 7,
+      "wins": 4,
+      "losses": 3
+    },
+    {
+      "cohort": "device-paths-1024",
+      "comparator": "bag",
+      "questions": 32,
+      "mean_saving": 0.0,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.0,
+        0.0
+      ],
+      "changed": 0,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "cohort": "device-paths-1024",
+      "comparator": "prefix_bag",
+      "questions": 32,
+      "mean_saving": 0.0,
+      "median_saving": 0.0,
+      "paired_question_ci": [
+        0.0,
+        0.0
+      ],
+      "changed": 0,
+      "wins": 0,
+      "losses": 0
+    }
+  ]
+}

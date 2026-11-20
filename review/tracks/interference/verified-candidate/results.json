@@ -1,0 +1,37 @@
+{
+  "exhaustive": {
+    "panel_configurations": 4740,
+    "per_configuration_reachable_states_summed": 31210,
+    "nontrivial_threshold_checks": 6752,
+    "integer_histories_summed": 26204,
+    "distinct_partial_assignment_target_pairs": 238,
+    "size": "1..4",
+    "work": "1 or 2",
+    "outcomes": "all binary vectors",
+    "targets": "1..N",
+    "slots": "1..N"
+  },
+  "exact_integer_witnesses": 210,
+  "witness_slots": "2..8",
+  "example": {
+    "work": [
+      2,
+      1,
+      1
+    ],
+    "target": 3,
+    "outcomes": [
+      0,
+      0,
+      0
+    ],
+    "costs": [
+      0,
+      10,
+      11,
+      13
+    ],
+    "immediate": 23,
+    "staged": 22
+  }
+}

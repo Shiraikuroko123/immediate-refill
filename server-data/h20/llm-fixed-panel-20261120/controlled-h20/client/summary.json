@@ -1,0 +1,17 @@
+{
+  "questions": 6,
+  "pairs": 18,
+  "per_question": {
+    "2": 0.08187805764337057,
+    "0": 0.051364516131160144,
+    "1": 0.10668865788079766,
+    "5": 0.2376976984158803,
+    "4": 0.07730226833662128,
+    "3": 0.09192922650409918
+  },
+  "macro_paired_wall_reduction": 0.10781007081865486,
+  "pooled_wall_reduction": 0.11630747899603333,
+  "equal_generated_tokens_per_policy": 20661,
+  "matched_paths": 136,
+  "generated_text_hash_mismatches": 8
+}

@@ -1,0 +1,65 @@
+{
+  "checks": [
+    "sealed-panel-estimates",
+    "independent-device-audit",
+    "natural-opportunity",
+    "full-panel-contract",
+    "theory-examples",
+    "verified-candidates",
+    "strong-baseline",
+    "cap-wall-times",
+    "clock-cover",
+    "sharpness",
+    "occupancy",
+    "one-extra-bounds",
+    "scope-and-boundary-examples",
+    "baseline-attribution-and-intervals"
+  ],
+  "cached_network_policy": "Python DNS lookup and socket connect blocked in every analysis process",
+  "current_claims": {
+    "prospective_validation": {
+      "witness": {
+        "median_pct": 2.460861716517609,
+        "predicted_pct": 3.1331112175675297
+      },
+      "control": {
+        "median_pct": -102.62713062180599,
+        "predicted_pct": -104.30326178838531
+      }
+    },
+    "oracle_mean_saving_pct": 0.36391834564902686,
+    "complete_panel_contract": {
+      "count_and_prefix1": {
+        "mean_paired_time_saving": 0.006161200324194641,
+        "mean_paired_starts_saved": -0.065
+      },
+      "absolute_only": {
+        "mean_paired_time_saving": -0.35363415249020674,
+        "mean_paired_starts_saved": 1.56
+      }
+    },
+    "verified_candidate_configurations": 4740
+  },
+  "inherited_claims_rebuilt": {
+    "archive_mean_saving_pct_by_comparator": {
+      "buffer": 8.708598400697063,
+      "bag": 0.6690335221923149,
+      "prefix_bag": 0.30251941885560335
+    },
+    "cap_study_questions": 32,
+    "cap_study_panels": 160,
+    "cap_mean_savings_pct": {
+      "384": 0.8616673593560178,
+      "1024": 1.3033984227425028
+    },
+    "cap_interaction_pp": 0.44173106338648505,
+    "max_greedy_time_savable_pct_by_context": {
+      "512": 1.8231199482723792,
+      "2048": 0.4522997792895808,
+      "3968": 1.0150037543333557
+    },
+    "matching_hull_constructions": 210,
+    "occupancy_configurations": 1416,
+    "uncertainty_panels": 324
+  }
+}

@@ -1,0 +1,159 @@
+[transformers] Disabling PyTorch because PyTorch >= 2.6 is required but found 2.5.1
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+INFO 11-20 01:04:41 __init__.py:207] Automatically detected platform cuda.
+INFO 11-20 01:04:41 api_server.py:912] vLLM API server version 0.7.3
+INFO 11-20 01:04:41 api_server.py:913] args: Namespace(host='127.0.0.1', port=18274, uvicorn_log_level='info', allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, enable_reasoning=False, reasoning_parser=None, tool_call_parser=None, tool_parser_plugin='', model='/study/model', task='auto', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='bfloat16', kv_cache_dtype='auto', max_model_len=1024, guided_decoding_backend='xgrammar', logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=None, enable_prefix_caching=None, disable_sliding_window=False, use_v2_block_manager=True, num_lookahead_slots=0, seed=0, swap_space=4, cpu_offload_gb=0, gpu_memory_utilization=0.35, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, max_num_seqs=8, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_overrides=None, enforce_eager=True, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, scheduler_delay_factor=0.0, enable_chunked_prefill=None, speculative_model=None, speculative_model_quantization=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, disable_logprobs_during_spec_decoding=None, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, served_model_name=['qwen-study'], qlora_adapter_name_or_path=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', scheduler_cls='vllm.core.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', generation_config=None, override_generation_config=None, enable_sleep_mode=False, calculate_kv_scales=False, additional_config=None, disable_log_requests=True, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False)
+INFO 11-20 01:04:41 api_server.py:209] Started engine process with PID 87
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 11-20 01:04:41 config.py:2448] Casting bfloat16 to torch.bfloat16.
+[transformers] Disabling PyTorch because PyTorch >= 2.6 is required but found 2.5.1
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+INFO 11-20 01:04:47 __init__.py:207] Automatically detected platform cuda.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 11-20 01:04:47 config.py:2448] Casting bfloat16 to torch.bfloat16.
+INFO 11-20 01:04:51 config.py:549] This model supports multiple tasks: {'score', 'reward', 'generate', 'embed', 'classify'}. Defaulting to 'generate'.
+WARNING 11-20 01:04:51 cuda.py:95] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+WARNING 11-20 01:04:51 config.py:685] Async output processing is not supported on the current platform type cuda.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/study/serving/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 991, in <module>
+    uvloop.run(run_server(args))
+  File "/study/serving/lib/python3.11/site-packages/uvloop/__init__.py", line 92, in run
+    return runner.run(wrapper())
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1515, in uvloop.loop.Loop.run_until_complete
+  File "/study/serving/lib/python3.11/site-packages/uvloop/__init__.py", line 48, in wrapper
+    return await main
+           ^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 947, in run_server
+    async with build_async_engine_client(args) as engine_client:
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 139, in build_async_engine_client
+    async with build_async_engine_client_from_engine_args(
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 223, in build_async_engine_client_from_engine_args
+    mq_engine_client = await asyncio.get_running_loop().run_in_executor(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/client.py", line 99, in __init__
+    self.tokenizer = init_tokenizer_from_configs(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 32, in init_tokenizer_from_configs
+    return get_tokenizer_group(parallel_config.tokenizer_pool_config,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 53, in get_tokenizer_group
+    return tokenizer_cls.from_config(tokenizer_pool_config, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 33, in from_config
+    return cls(**init_kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 25, in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 234, in get_tokenizer
+    tokenizer = get_cached_tokenizer(tokenizer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 72, in get_cached_tokenizer
+    tokenizer.all_special_tokens_extended)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1334, in __getattr__
+    raise AttributeError(f"{self.__class__.__name__} has no attribute {key}")
+AttributeError: Qwen2Tokenizer has no attribute all_special_tokens_extended. Did you mean: 'num_special_tokens_to_add'?
+INFO 11-20 01:04:57 config.py:549] This model supports multiple tasks: {'classify', 'generate', 'embed', 'reward', 'score'}. Defaulting to 'generate'.
+WARNING 11-20 01:04:57 cuda.py:95] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+WARNING 11-20 01:04:57 config.py:685] Async output processing is not supported on the current platform type cuda.
+INFO 11-20 01:04:57 llm_engine.py:234] Initializing a V0 LLM engine (v0.7.3) with config: model='/study/model', speculative_config=None, tokenizer='/study/model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=1024, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=qwen-study, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=False, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[],"max_capture_size":0}, use_cached_outputs=True, 
+ERROR 11-20 01:04:58 engine.py:400] Qwen2Tokenizer has no attribute all_special_tokens_extended
+ERROR 11-20 01:04:58 engine.py:400] Traceback (most recent call last):
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 391, in run_mp_engine
+ERROR 11-20 01:04:58 engine.py:400]     engine = MQLLMEngine.from_engine_args(engine_args=engine_args,
+ERROR 11-20 01:04:58 engine.py:400]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 124, in from_engine_args
+ERROR 11-20 01:04:58 engine.py:400]     return cls(ipc_path=ipc_path,
+ERROR 11-20 01:04:58 engine.py:400]            ^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 76, in __init__
+ERROR 11-20 01:04:58 engine.py:400]     self.engine = LLMEngine(*args, **kwargs)
+ERROR 11-20 01:04:58 engine.py:400]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 246, in __init__
+ERROR 11-20 01:04:58 engine.py:400]     self.tokenizer = self._init_tokenizer()
+ERROR 11-20 01:04:58 engine.py:400]                      ^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 533, in _init_tokenizer
+ERROR 11-20 01:04:58 engine.py:400]     return init_tokenizer_from_configs(
+ERROR 11-20 01:04:58 engine.py:400]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 32, in init_tokenizer_from_configs
+ERROR 11-20 01:04:58 engine.py:400]     return get_tokenizer_group(parallel_config.tokenizer_pool_config,
+ERROR 11-20 01:04:58 engine.py:400]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 53, in get_tokenizer_group
+ERROR 11-20 01:04:58 engine.py:400]     return tokenizer_cls.from_config(tokenizer_pool_config, **init_kwargs)
+ERROR 11-20 01:04:58 engine.py:400]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 33, in from_config
+ERROR 11-20 01:04:58 engine.py:400]     return cls(**init_kwargs)
+ERROR 11-20 01:04:58 engine.py:400]            ^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 25, in __init__
+ERROR 11-20 01:04:58 engine.py:400]     self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+ERROR 11-20 01:04:58 engine.py:400]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 234, in get_tokenizer
+ERROR 11-20 01:04:58 engine.py:400]     tokenizer = get_cached_tokenizer(tokenizer)
+ERROR 11-20 01:04:58 engine.py:400]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 72, in get_cached_tokenizer
+ERROR 11-20 01:04:58 engine.py:400]     tokenizer.all_special_tokens_extended)
+ERROR 11-20 01:04:58 engine.py:400]     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 11-20 01:04:58 engine.py:400]   File "/study/serving/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1334, in __getattr__
+ERROR 11-20 01:04:58 engine.py:400]     raise AttributeError(f"{self.__class__.__name__} has no attribute {key}")
+ERROR 11-20 01:04:58 engine.py:400] AttributeError: Qwen2Tokenizer has no attribute all_special_tokens_extended
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/oft/python/cpython-3.11.9-linux-x86_64-gnu/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 402, in run_mp_engine
+    raise e
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 391, in run_mp_engine
+    engine = MQLLMEngine.from_engine_args(engine_args=engine_args,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 124, in from_engine_args
+    return cls(ipc_path=ipc_path,
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/multiprocessing/engine.py", line 76, in __init__
+    self.engine = LLMEngine(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 246, in __init__
+    self.tokenizer = self._init_tokenizer()
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 533, in _init_tokenizer
+    return init_tokenizer_from_configs(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 32, in init_tokenizer_from_configs
+    return get_tokenizer_group(parallel_config.tokenizer_pool_config,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/__init__.py", line 53, in get_tokenizer_group
+    return tokenizer_cls.from_config(tokenizer_pool_config, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 33, in from_config
+    return cls(**init_kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer_group/tokenizer_group.py", line 25, in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 234, in get_tokenizer
+    tokenizer = get_cached_tokenizer(tokenizer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/vllm/transformers_utils/tokenizer.py", line 72, in get_cached_tokenizer
+    tokenizer.all_special_tokens_extended)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/study/serving/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1334, in __getattr__
+    raise AttributeError(f"{self.__class__.__name__} has no attribute {key}")
+AttributeError: Qwen2Tokenizer has no attribute all_special_tokens_extended

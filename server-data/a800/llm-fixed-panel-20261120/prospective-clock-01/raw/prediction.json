@@ -1,0 +1,29 @@
+{
+  "clock_ms": [
+    4.7105953437500006,
+    4.6113755625,
+    4.810461067708333
+  ],
+  "panels": {
+    "witness": {
+      "immediate_ms": 1218.6952206666667,
+      "staged_ms": 1180.512144,
+      "effect_pct": 3.1331112175675297,
+      "decision": "staged"
+    },
+    "control": {
+      "immediate_ms": 590.256072,
+      "staged_ms": 1205.9124080000001,
+      "effect_pct": -104.30326178838531,
+      "decision": "immediate"
+    }
+  },
+  "calibration_sha256": "25403f5950d3b85a43f06cf110534f4775186f135722a734363b35a8c1ac7094",
+  "frozen_sources": {
+    "tracks/interference/prospective-device/PROTOCOL.md": "0ed64dba4fd43c6dbbffa6f3651cf44a9061a4f6eff1957a1f53d94b21c3446a",
+    "tracks/interference/prospective-device/experiment.py": "8d1560946c8bc9ab9ac188deb6ab07e47ac70be4f6e3e6fba4e14f4f2c3e5ea1",
+    "tracks/interference/prospective-device/run.sh": "aab54e30464ebb593919cfbc9b9a56ac5feec37d4e9ed2143281fdc6862298d5",
+    "tracks/sharing/hardware/calibrate_vllm.py": "6dfbaae7b5f13ee5673627a95867c3c48f5db99ff25fd2f0ac7ceb2329e8bda9"
+  },
+  "sealed_utc": "2026-11-20T13:54:14.753756+00:00"
+}

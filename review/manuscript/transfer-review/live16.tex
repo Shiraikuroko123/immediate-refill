@@ -1,0 +1,15 @@
+\paragraph{Do the replay results transfer to new device panels?}
+We independently generated sixteen GSM8K panels with Qwen2.5-1.5B-Instruct in BF16 on the A800, selecting questions by hash before generation. Matching the exact question texts to the rollout publisher's benchmark file showed that two pilot questions also appeared among the 200 archived panels (\texttt{gsm8k\_497} and \texttt{gsm8k\_695}). All sixteen sets of device trajectories were freshly generated. We obtained a sixteen-path reference per question, a pair of runs with the reference lengths and votes fixed, and a pair with natural sampling and matched per-path seeds. We counterbalanced the condition order. All arms used temperature 0.7, top-$p$ 0.95 and a 384-token cap. We used a balanced final boxed integer as the vote and treated invalid or truncated generations as abstentions. Each timed panel starts after a separate warmup and ends after cancellation and device synchronization. The primary measure was the question-mean fixed-work wall-time saving. We required a point estimate of at least 2\%, a positive lower limit in 20,000 paired question bootstrap draws, and at least one different dispatch.
+
+\begin{table}[tb]\centering
+\caption{Paired A800 measurements on 16 GSM8K questions. Changed counts questions with any difference in indexed launch steps. Correct gives the number of correct final outputs per arm. Intervals resample questions from one device session.}\label{tab:a800pilot}
+\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrc}\toprule
+Generation & Changed & Saved (\%) & 95\% interval & Correct\\\midrule
+Fixed & 4 & 0.55 & [$-0.03$, 1.29] & 10/16\\
+Natural & 5 & 0.48 & [$-0.04$, 1.30] & 9/16\\\bottomrule
+\end{tabular}
+\end{table}
+The fixed-work pilot missed the prespecified practical threshold (Table~\ref{tab:a800pilot}). In that condition the indexed engine took fewer steps on three questions and tied on thirteen. Its 15,560 total steps generated 55,429 tokens, compared with 15,670 steps and 55,490 tokens under buffered admission. Under natural sampling both policies returned the same answers on every question, while the indexed policy emitted 176 more tokens overall. Including the separate reference, all eighty recordings used 289,877 generated tokens.
+
+After the pilot, we ran the 3,968-token replay clock on those same sixteen fixed panels. It predicted a 0.60\% question-mean saving and correctly identified the four dispatch differences and twelve unchanged schedules. The archive-derived 8.71\% estimate had come from a different model and generation protocol. The matched-panel comparison shows that a change in the trajectory population can reduce the opportunities for earlier launches. One pilot with one timed pair per question leaves the session-to-session variance unmeasured.

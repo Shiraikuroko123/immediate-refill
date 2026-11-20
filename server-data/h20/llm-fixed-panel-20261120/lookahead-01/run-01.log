@@ -1,0 +1,104 @@
+INFO 11-20 02:10:40 __init__.py:207] Automatically detected platform cuda.
+INFO 11-20 02:10:51 config.py:549] This model supports multiple tasks: {'generate', 'score', 'classify', 'embed', 'reward'}. Defaulting to 'generate'.
+INFO 11-20 02:10:51 llm_engine.py:234] Initializing a V0 LLM engine (v0.7.3) with config: model='/study/model', speculative_config=None, tokenizer='/study/model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=/study/model, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=False, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[4,2,1],"max_capture_size":4}, use_cached_outputs=False, 
+INFO 11-20 02:10:53 cuda.py:229] Using Flash Attention backend.
+INFO 11-20 02:10:53 model_runner.py:1110] Starting to load model /study/model...
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:14<00:00, 14.28s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:14<00:00, 14.28s/it]
+
+INFO 11-20 02:11:08 model_runner.py:1115] Loading model weights took 2.8875 GB
+INFO 11-20 02:11:09 worker.py:267] Memory profiling takes 0.68 seconds
+INFO 11-20 02:11:09 worker.py:267] the current vLLM instance can use total_gpu_memory (95.08GiB) x gpu_memory_utilization (0.75) = 71.31GiB
+INFO 11-20 02:11:09 worker.py:267] model weights take 2.89GiB; non_torch_memory takes 0.12GiB; PyTorch activation peak memory takes 0.28GiB; the rest of the memory reserved for KV Cache is 68.02GiB.
+INFO 11-20 02:11:09 executor_base.py:111] # cuda blocks: 159209, # CPU blocks: 9362
+INFO 11-20 02:11:09 executor_base.py:116] Maximum concurrency for 4096 tokens per request: 621.91x
+INFO 11-20 02:11:12 model_runner.py:1434] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+Capturing CUDA graph shapes:   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graph shapes:  33%|███▎      | 1/3 [00:00<00:00,  2.13it/s]Capturing CUDA graph shapes:  67%|██████▋   | 2/3 [00:00<00:00,  2.40it/s]Capturing CUDA graph shapes: 100%|██████████| 3/3 [00:01<00:00,  2.45it/s]Capturing CUDA graph shapes: 100%|██████████| 3/3 [00:01<00:00,  2.41it/s]
+INFO 11-20 02:11:13 model_runner.py:1562] Graph capturing finished in 1 secs, took 0.12 GiB
+INFO 11-20 02:11:13 llm_engine.py:436] init engine (profile, create kv cache, warmup model) took 4.68 seconds
+0 natural full 7.713627149999979 8523
+0 natural B0 9.970640309000032 8535
+0 natural B1 8.80835291599999 8535
+0 natural eager 7.6672930409999935 8523
+0 fixed eager 7.90285340600002 8523
+0 fixed B1 9.048401672000011 8523
+0 fixed B0 9.462520259999962 8523
+1 natural full 8.965888160999953 9395
+1 natural B1 6.920546947999924 7300
+1 natural eager 6.266455485999927 7443
+1 natural B0 8.298143608000032 6989
+1 fixed B0 8.5077907000001 6973
+1 fixed eager 6.449313060999998 7443
+1 fixed B1 7.1109872619999805 7300
+2 natural full 3.404044914999986 3882
+2 natural eager 2.367027066999981 2900
+2 natural B0 2.3202005050000025 2161
+2 natural B1 2.3542441039999176 2465
+2 fixed B1 2.4348535060000813 2465
+2 fixed B0 2.3945018509999727 2161
+2 fixed eager 2.449499418000073 2900
+3 natural full 4.056058627000084 4717
+3 natural B0 2.8983420600000045 2737
+3 natural B1 2.923306577999938 3000
+3 natural eager 2.9734402099999215 3629
+3 fixed eager 3.0689490820000174 3629
+3 fixed B1 3.0226976819999436 3000
+3 fixed B0 2.985549108999976 2737
+4 natural full 8.716470167000011 10154
+4 natural B1 6.058398371999942 6399
+4 natural eager 6.1584786399999984 7396
+4 natural B0 5.966013453000073 5816
+4 fixed B0 6.131703237000011 5816
+4 fixed eager 6.323624650000056 7396
+4 fixed B1 6.246795163999991 6399
+5 natural full 8.101552870999967 8679
+5 natural eager 6.887526165000054 8140
+5 natural B0 9.069080980999956 7207
+5 natural B1 7.031966108000006 7247
+5 fixed B1 7.197343310000065 7247
+5 fixed B0 9.285959461000061 7207
+5 fixed eager 7.037176029999955 8140
+6 natural full 11.357683516999941 12052
+6 natural B0 15.034068654999942 11515
+6 natural B1 12.26617370300005 11263
+6 natural eager 11.352207035999982 12052
+6 fixed eager 11.709670380000034 12052
+6 fixed B1 12.602949465000052 11429
+6 fixed B0 15.260364017000029 11429
+7 natural full 17.13306029299997 19043
+7 natural B1 17.14396388 19043
+7 natural eager 17.12333477900006 19043
+7 natural B0 19.55538301799993 19200
+7 fixed B0 19.699529471999995 19043
+7 fixed eager 17.57662308900001 19043
+7 fixed B1 17.72096271199996 19043
+8 natural full 4.660421388000032 5336
+8 natural eager 4.4978969879999795 5281
+8 natural B0 4.810782261999975 5017
+8 natural B1 4.497578277999992 5281
+8 fixed B1 4.6448362539999835 5281
+8 fixed B0 4.966610253999988 5017
+8 fixed eager 4.625901451999994 5281
+9 natural full 8.393025206999937 9261
+9 natural B0 8.336191807999967 6824
+9 natural B1 6.129491892000033 6681
+9 natural eager 6.199623505999966 7422
+9 fixed eager 6.364086643000064 7422
+9 fixed B1 6.297687764000102 6681
+9 fixed B0 9.163914908000038 7022
+10 natural full 15.537189193000017 15606
+10 natural B1 14.529865280999957 14849
+10 natural eager 12.848030825000023 14673
+10 natural B0 21.261218584000062 15830
+10 fixed B0 19.90521987200009 15176
+10 fixed eager 13.284869381999897 14673
+10 fixed B1 14.915785503000052 14849
+11 natural full 13.69309731899989 14299
+11 natural eager 13.671199238999861 14299
+11 natural B0 15.397308034000162 14422
+11 natural B1 13.737105417000066 14299
+11 fixed B1 14.116904736999913 14299
+11 fixed B0 15.451267916999996 14299
+11 fixed eager 14.08224435000011 14299
+[rank0]:[W1120 02:24:02.131694701 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

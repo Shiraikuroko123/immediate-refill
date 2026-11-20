@@ -1,0 +1,119 @@
+[
+  {
+    "context": 512,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 512,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.9992453991329067,
+    "min_block_r": 0.9944724243737202,
+    "max_block_r": 1.0281304645963374,
+    "block_bootstrap_percentile_interval": [
+      0.9956975362700812,
+      1.001413649325855
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 512,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9472087670055707,
+    "min_block_r": 0.9444450524658955,
+    "max_block_r": 0.9697909089564842,
+    "block_bootstrap_percentile_interval": [
+      0.9456733755227463,
+      0.9492679592997894
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.9802236013842649,
+    "min_block_r": 0.9743373172809527,
+    "max_block_r": 0.986832285037422,
+    "block_bootstrap_percentile_interval": [
+      0.9744781125407778,
+      0.9826712532275927
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 2048,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9355518020774365,
+    "min_block_r": 0.9326624426100486,
+    "max_block_r": 0.9386818570054232,
+    "block_bootstrap_percentile_interval": [
+      0.9337312706927552,
+      0.9375977776039544
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 1,
+    "n_blocks": 8,
+    "median_block_r": 1.0,
+    "min_block_r": 1.0,
+    "max_block_r": 1.0,
+    "block_bootstrap_percentile_interval": [
+      1.0,
+      1.0
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 2,
+    "n_blocks": 8,
+    "median_block_r": 0.9757273923335789,
+    "min_block_r": 0.9718282709272001,
+    "max_block_r": 0.990905023433499,
+    "block_bootstrap_percentile_interval": [
+      0.9741947237943664,
+      0.9776308520168286
+    ],
+    "first_request_token_hash_disagreements": 0
+  },
+  {
+    "context": 3968,
+    "width": 4,
+    "n_blocks": 8,
+    "median_block_r": 0.9089279281123053,
+    "min_block_r": 0.8972912146396539,
+    "max_block_r": 0.9245449824927688,
+    "block_bootstrap_percentile_interval": [
+      0.9031719909521583,
+      0.9105450971236696
+    ],
+    "first_request_token_hash_disagreements": 0
+  }
+]

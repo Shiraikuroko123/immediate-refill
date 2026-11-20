@@ -1,0 +1,47 @@
+{
+  "seed": 11027,
+  "groups": {
+    "exhaustive_n6_p4_q4": {
+      "configurations": 1296,
+      "trajectories": 22032,
+      "states": 12960,
+      "nontrivial_thresholds": 3888
+    },
+    "seeded_p4": {
+      "configurations": 24,
+      "trajectories": 4103,
+      "states": 535,
+      "nontrivial_thresholds": 72
+    },
+    "seeded_p5": {
+      "configurations": 24,
+      "trajectories": 33979,
+      "states": 778,
+      "nontrivial_thresholds": 96
+    },
+    "seeded_p6": {
+      "configurations": 24,
+      "trajectories": 81038,
+      "states": 991,
+      "nontrivial_thresholds": 120
+    },
+    "seeded_p7": {
+      "configurations": 24,
+      "trajectories": 433578,
+      "states": 1320,
+      "nontrivial_thresholds": 144
+    },
+    "seeded_p8": {
+      "configurations": 24,
+      "trajectories": 1077110,
+      "states": 1483,
+      "nontrivial_thresholds": 168
+    }
+  },
+  "totals": {
+    "configurations": 1416,
+    "trajectories": 1651840,
+    "states": 18067,
+    "nontrivial_thresholds": 4488
+  }
+}

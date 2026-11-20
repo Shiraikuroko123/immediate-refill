@@ -1,0 +1,26 @@
+{
+  "arguments": {
+    "base_url": "http://127.0.0.1:18274/v1",
+    "model": "qwen-study",
+    "out": "http-a800/client",
+    "api_mode": "chat",
+    "questions": 6,
+    "repeats": 3,
+    "n": 8,
+    "capacity": 4,
+    "max_tokens": 160,
+    "temperature": 0.7,
+    "timeout": 300,
+    "fixed": true,
+    "no_thinking": false,
+    "server_config": "torch 2.6.0, vllm 0.8.5, transformers 4.51.3, V0/eager/BF16, no prefix caching"
+  },
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-43-generic-x86_64-with-glibc2.35",
+  "started_unix": 1795137045.872545,
+  "code": {
+    "run.py": "7c071a2049713acffa8692d2b505f99d474f4969cc7bf40123ea590d39355277",
+    "workload.py": "4041844ebdc60bdd47a16fff2751c6ed9bff074af223a1ad18ed40ef64223db5",
+    "PROTOCOL.md": "c80444c3a433e589a105d2dceebb1eeed517942f9c5f9ed3807e3110c2a6d273"
+  }
+}

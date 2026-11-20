@@ -1,0 +1,11 @@
+Using Python 3.11.9 environment at serving
+Resolved 18 packages in 663ms
+Prepared 3 packages in 965ms
+Uninstalled 3 packages in 44ms
+Installed 3 packages in 23ms
+ - huggingface-hub==2.4.0
+ + huggingface-hub==0.36.2
+ - tokenizers==0.23.3
+ + tokenizers==0.21.4
+ - transformers==5.23.0
+ + transformers==4.51.3

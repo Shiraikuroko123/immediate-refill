@@ -1,0 +1,9 @@
+Using Python 3.11.9 environment at serving
+error: Failed to download `torch==2.4.1`
+  Caused by: Failed to unzip wheel: torch-2.4.1-cp311-cp311-manylinux1_x86_64.whl
+  Caused by: an upstream reader returned an error: an error occurred during transport: error decoding response body
+  Caused by: an error occurred during transport: error decoding response body
+  Caused by: error decoding response body
+  Caused by: request or response body error
+  Caused by: error reading a body from connection
+  Caused by: stream error received: unexpected internal error encountered

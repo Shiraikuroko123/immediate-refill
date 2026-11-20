@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/study/serve_measure.py", line 71, in <module>
+    main()
+  File "/study/serve_measure.py", line 42, in main
+    raise RuntimeError(f"Server exited with {server.returncode}")
+RuntimeError: Server exited with 1

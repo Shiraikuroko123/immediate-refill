@@ -1,0 +1,527 @@
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 0.0016616289999547007, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.3533673130000352, "event": "release", "index": 3, "answer": "224"}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.3534289650001483, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.4040524320002987, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.4040629169999193, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.6522867540002153, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.6522895250000147, "event": "release", "index": 0, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 1.6523229980002725, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 2.9043642520000503, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 2.9044381720000274, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 4.516140670999903, "event": "release", "index": 5, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 4.516177410000182, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 4.516710661000161, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 4.516756315000293, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 2, "repeat": 0, "policy": "rolling", "t_s": 6.081920395999987, "event": "release", "index": 7, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 7.421700001941645e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.3051590649997706, "event": "release", "index": 3, "answer": "224"}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.3052220829999897, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.3543041499997344, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.3543240419999165, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.6000711329998012, "event": "release", "index": 0, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.6001128339999013, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.600643280999975, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 1.6006544629999553, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 2.879298763999941, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 2.8793588619996626, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 3.1701009749999685, "event": "release", "index": 5, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 3.1701319449998664, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 4.416863209999974, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 4.416930997999771, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 2, "repeat": 0, "policy": "refill", "t_s": 5.887204427999677, "event": "release", "index": 7, "answer": null}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 0.00014521799994327012, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 0.8067183389998718, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 0.8067791779999425, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 0.991785610000079, "event": "release", "index": 2, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 0.991812217000188, "event": "decision", "completed": 2, "gap": 2, "width": 3, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 1.2952371780002068, "event": "release", "index": 3, "answer": null}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 1.2952598050001143, "event": "decision", "completed": 3, "gap": 2, "width": 2, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 1.4694069430001946, "event": "release", "index": 1, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 1.4694286409999222, "event": "decision", "completed": 4, "gap": 3, "width": 1, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 2.29202485299993, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 2.2921023660001083, "event": "decision", "completed": 5, "gap": 3, "width": 1, "committed": null, "admitted": [5]}
+{"qid": 0, "repeat": 0, "policy": "refill", "t_s": 3.6128336770002534, "event": "release", "index": 5, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 6.229100017662859e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 0.8569046480001816, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 0.8569692710002528, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.0565386520001994, "event": "release", "index": 2, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.056569336999928, "event": "decision", "completed": 2, "gap": 2, "width": 3, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.3839764690001175, "event": "release", "index": 3, "answer": null}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.3839891840002565, "event": "decision", "completed": 3, "gap": 2, "width": 2, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.5720663430001878, "event": "release", "index": 1, "answer": "77"}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 1.5720763590002207, "event": "decision", "completed": 4, "gap": 3, "width": 1, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 2.435426082000049, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 2.4354895659998874, "event": "decision", "completed": 5, "gap": 3, "width": 1, "committed": 6, "admitted": [5]}
+{"qid": 0, "repeat": 0, "policy": "rolling", "t_s": 3.7485128900002564, "event": "release", "index": 5, "answer": "77"}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 7.077399959598552e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.3476311339995846, "event": "release", "index": 0, "answer": "334"}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.3476753879999706, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6105558269996436, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6105786619996252, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6109902679995685, "event": "release", "index": 2, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6109985680000136, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6113156879996495, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 1.6113239209998937, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 2.8978399089996856, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 2.8978879100000086, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 4.4523846299998695, "event": "release", "index": 5, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 4.452413826999873, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 4.452943911999682, "event": "release", "index": 6, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 4.452985447999708, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 1, "repeat": 0, "policy": "rolling", "t_s": 5.758304385999963, "event": "release", "index": 7, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 6.631099995502154e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.365384302000166, "event": "release", "index": 0, "answer": "334"}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.365429449000203, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.628931341000225, "event": "release", "index": 2, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.6289646069999435, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.6292866839999078, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.6293143679999957, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.6298269539997818, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 1.6298389309999948, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 2.9550868189999164, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 2.9551338020000912, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 3.209996503000184, "event": "release", "index": 5, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 3.2100155019998056, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 4.548422437000227, "event": "release", "index": 6, "answer": null}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 4.5484779530002015, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 1, "repeat": 0, "policy": "refill", "t_s": 5.804255649999959, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 5.323200002749218e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.6130954479999673, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.613150997000048, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.6137173600000096, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.6137347929998214, "event": "decision", "completed": 2, "gap": 0, "width": 4, "committed": null, "admitted": [5]}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.6142142180001429, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.614216198000122, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 1.6142421929998818, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [6]}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.231009141999948, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.2310401059999094, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.2315971339999123, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.2316254299998945, "event": "decision", "completed": 6, "gap": 0, "width": 2, "committed": null, "admitted": [7]}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.2322390879999148, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 3.232247968000138, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 0, "policy": "refill", "t_s": 4.830846316000134, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 4.822200025955681e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.648320034000335, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6483792130002257, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6490032200003952, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6490054810001311, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6490232539999852, "event": "decision", "completed": 3, "gap": 0, "width": 2, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6492215000002943, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 1.6492287440000837, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 3.17142259000002, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 3.171483967000313, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 4.714985640000123, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 4.715014356000211, "event": "decision", "completed": 6, "gap": 0, "width": 1, "committed": 7, "admitted": []}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 4.715369963000285, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 4.715398200999971, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 5, "repeat": 0, "policy": "rolling", "t_s": 6.240373580000323, "event": "release", "index": 7, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 6.482599974333425e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.2571246009997594, "event": "release", "index": 1, "answer": "346"}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.2571685679999973, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.5908222140001271, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.590845471999728, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.591332672000135, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.5913423520000833, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.5916648039997199, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 1.5916726599998583, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 2.7966836440000407, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 2.796732456999962, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 4.338438102000055, "event": "release", "index": 5, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 4.338469863999762, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 4.338802709999982, "event": "release", "index": 6, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 4.33883201899971, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 4, "repeat": 0, "policy": "rolling", "t_s": 5.863040317000014, "event": "release", "index": 7, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 4.8522000270168064e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.2849959310001395, "event": "release", "index": 1, "answer": "346"}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.2850388500000918, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.6295637080002052, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.629592754999976, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.6299966890001087, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.630024503000186, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.6305301229999714, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 1.6305388069999935, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 2.8929256540000097, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 2.892983577999985, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 3.226947764000215, "event": "release", "index": 5, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 3.226966975000323, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 4.449015566000071, "event": "release", "index": 6, "answer": null}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 4.4490767219999725, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 4, "repeat": 0, "policy": "refill", "t_s": 5.9731288610000774, "event": "release", "index": 7, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 6.281400010266225e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 0.9098516439999003, "event": "release", "index": 1, "answer": "614"}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 0.9099057970001923, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.6256153449999147, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.6256453890000557, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.6262956069999746, "event": "release", "index": 2, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.626338940000096, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.6269400220003263, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 1.6269608100001278, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 2.5063973540000006, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 2.5064615539999977, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 3.2123927630000253, "event": "release", "index": 5, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 3.2124257660002513, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 4.072854928000197, "event": "release", "index": 6, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 4.072914455000046, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 3, "repeat": 0, "policy": "refill", "t_s": 5.618120001000079, "event": "release", "index": 7, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 6.241199980649981e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 0.893813191999925, "event": "release", "index": 1, "answer": "614"}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 0.8938711000000694, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.6045623750001141, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.6045872899999267, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.6049293689998194, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.604936835999979, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.6052434729999732, "event": "release", "index": 2, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 1.6052499200000057, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 2.4644137559998853, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 2.4644774089997554, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 4.028513116999875, "event": "release", "index": 5, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 4.0285445949998575, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 4.0288984869998785, "event": "release", "index": 6, "answer": null}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 4.028930645999935, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 3, "repeat": 0, "policy": "rolling", "t_s": 5.559459399999923, "event": "release", "index": 7, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 6.801500012443285e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.1329475960001218, "event": "release", "index": 0, "answer": "224"}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.1330067389999385, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.6090676200001326, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.6090919580001355, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.609662501999992, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.6096872870002699, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.6101045410000552, "event": "release", "index": 3, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 1.6101198440001099, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 2.722630952000145, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 2.722689759000332, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 3.1881707970001116, "event": "release", "index": 5, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 3.1881961310000406, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 4.273496315000102, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 4.273557495000205, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 2, "repeat": 1, "policy": "refill", "t_s": 5.810995018000085, "event": "release", "index": 7, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 7.168499996623723e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.134985117999804, "event": "release", "index": 0, "answer": "224"}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.1350290440000208, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.6100642950000292, "event": "release", "index": 3, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.610087460000159, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.6105360390001806, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.6105444629997692, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.6108509380001124, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 1.610867694999797, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 2.6979450409999117, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 2.6980014430000665, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 4.258181374999822, "event": "release", "index": 5, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 4.258212990000175, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 4.258924760999889, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 4.258960943000147, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 2, "repeat": 1, "policy": "rolling", "t_s": 5.825221968999813, "event": "release", "index": 7, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 6.25769998805481e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 0.9645903209998323, "event": "release", "index": 1, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 0.9646318009999959, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.574833385999682, "event": "release", "index": 3, "answer": "77"}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.574863712000024, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.6244538099999772, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.624470151999958, "event": "decision", "completed": 3, "gap": 2, "width": 2, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.634742628999902, "event": "release", "index": 2, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 1.6347522889996071, "event": "decision", "completed": 4, "gap": 2, "width": 1, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 2.035484534999796, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 2.035551884999677, "event": "decision", "completed": 5, "gap": 2, "width": 1, "committed": 6, "admitted": [5]}
+{"qid": 0, "repeat": 1, "policy": "rolling", "t_s": 3.489889323999705, "event": "release", "index": 5, "answer": "77"}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 7.042199968054774e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 0.946171325999785, "event": "release", "index": 1, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 0.9462237069997173, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.5501459489996705, "event": "release", "index": 3, "answer": "77"}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.5501767799996742, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.5997929529999055, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.5998064949999389, "event": "decision", "completed": 3, "gap": 2, "width": 2, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.6098617939996984, "event": "release", "index": 2, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 1.6098957229996813, "event": "decision", "completed": 4, "gap": 2, "width": 2, "committed": null, "admitted": [5]}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 2.0241958309998154, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 2.0242338159996507, "event": "decision", "completed": 5, "gap": 2, "width": 1, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 1, "policy": "refill", "t_s": 3.079403825999634, "event": "release", "index": 5, "answer": "77"}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 7.802300024195574e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.5330122560003474, "event": "release", "index": 2, "answer": "342"}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.5330715879999843, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.6130613190002805, "event": "release", "index": 0, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.613070276000144, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.6134134760000052, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.6134360139999444, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.61384037300013, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 1.6138472679999722, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 3.119958400000087, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 3.120029550000254, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 3.1985487060001105, "event": "release", "index": 5, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 3.1985705410002083, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 4.06198531300015, "event": "release", "index": 6, "answer": "334"}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 4.062055024000074, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 1, "repeat": 1, "policy": "refill", "t_s": 5.616054644000087, "event": "release", "index": 7, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 5.690399984814576e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.5275062470000194, "event": "release", "index": 2, "answer": "342"}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.5275616469998567, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.6067656949999218, "event": "release", "index": 0, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.606779435000135, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.6074357210000016, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.6074370460000864, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 1.6074456219998865, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 3.06804751799973, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 3.0681153040000027, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 4.007736420000128, "event": "release", "index": 6, "answer": "334"}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 4.007766363999963, "event": "decision", "completed": 6, "gap": 0, "width": 1, "committed": 7, "admitted": []}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 4.619479665999734, "event": "release", "index": 5, "answer": null}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 4.619537447999846, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 1, "repeat": 1, "policy": "rolling", "t_s": 6.151354877999893, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 6.579599994438468e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4849951470000633, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4850603340000816, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4856101499999568, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.485626456999853, "event": "decision", "completed": 2, "gap": 0, "width": 3, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4859566899999663, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4859634419999566, "event": "decision", "completed": 3, "gap": 0, "width": 2, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4862943289999748, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 1.4863083650002409, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 2.9153953489999367, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 2.915460284999881, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 4.495812349000062, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 4.495845120000013, "event": "decision", "completed": 6, "gap": 0, "width": 1, "committed": 7, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 4.496216170000025, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 4.4962513850000505, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 5, "repeat": 1, "policy": "rolling", "t_s": 6.036872563000088, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 7.431699987137108e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5974931809996633, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5975618689999465, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5985561709999274, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5985579519997373, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5985590919999595, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 1.5985853269999097, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [5, 6]}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.1350646869996126, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.135093157999563, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.1354350169999634, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.135466441999597, "event": "decision", "completed": 6, "gap": 0, "width": 2, "committed": null, "admitted": [7]}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.136083483999755, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 3.136090999999851, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 1, "policy": "refill", "t_s": 4.572274558999652, "event": "release", "index": 7, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 7.247099983942462e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.1752094690000376, "event": "release", "index": 1, "answer": "346"}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.1752723969998442, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.543906373000027, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.5439348439999776, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.5442624479996994, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.544295375999809, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.5447991179999008, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 1.5448088029997962, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 2.7210354119997646, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 2.7210942500000783, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 2.9959533239998564, "event": "release", "index": 5, "answer": "346"}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 2.9959730370001125, "event": "decision", "completed": 6, "gap": 2, "width": 1, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "refill", "t_s": 4.179802654000014, "event": "release", "index": 6, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 5.8599000112735666e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.2016006740000194, "event": "release", "index": 1, "answer": "346"}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.2016676579996783, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.5723100999998678, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.5723383659997126, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.5727800269996806, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.57278736499984, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.5731516319997354, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 1.573158524000064, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 2.722679085999971, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 2.7227489590000005, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 4.160219951999807, "event": "release", "index": 5, "answer": "346"}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 4.160254123999948, "event": "decision", "completed": 6, "gap": 2, "width": 1, "committed": 7, "admitted": []}
+{"qid": 4, "repeat": 1, "policy": "rolling", "t_s": 4.1880526729996745, "event": "release", "index": 6, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 6.071899997550645e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.5608788899999126, "event": "release", "index": 2, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.56093718000011, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.5619311190002918, "event": "release", "index": 1, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.5619451739999022, "event": "decision", "completed": 2, "gap": 0, "width": 3, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.5624050540000098, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.562414907999937, "event": "decision", "completed": 3, "gap": 0, "width": 2, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.562855220000074, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 1.562865514999885, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 3.0717094340002404, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 3.0717737859999943, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 4.594326931000069, "event": "release", "index": 5, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 4.594359407999946, "event": "decision", "completed": 6, "gap": 0, "width": 1, "committed": 7, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 4.594680877999963, "event": "release", "index": 6, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 4.594711560000178, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 3, "repeat": 1, "policy": "rolling", "t_s": 6.09652396499996, "event": "release", "index": 7, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 5.836499985889532e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5636995800000477, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5637538089999907, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5644871419999618, "event": "release", "index": 1, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5645074590001968, "event": "decision", "completed": 2, "gap": 0, "width": 4, "committed": null, "admitted": [5]}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5650358550001329, "event": "release", "index": 2, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.565044921000208, "event": "decision", "completed": 3, "gap": 0, "width": 3, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.565365724000003, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 1.5653820699999415, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [6]}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.1141710880001483, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.114199032000215, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.1145243519999894, "event": "release", "index": 5, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.11455449999994, "event": "decision", "completed": 6, "gap": 0, "width": 2, "committed": null, "admitted": [7]}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.1152881200000593, "event": "release", "index": 6, "answer": null}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 3.1152967349999017, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 1, "policy": "refill", "t_s": 4.615066169999864, "event": "release", "index": 7, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 7.888599975558463e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.1996625629999471, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.1997451990000627, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.5790230919997157, "event": "release", "index": 0, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.5790517820000787, "event": "decision", "completed": 2, "gap": 0, "width": 3, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.579526646999966, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.5795292119996702, "event": "release", "index": 3, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 1.579542625999693, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 2.7124436629997035, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 2.7125028709997423, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 3.815755269999954, "event": "release", "index": 5, "answer": "224"}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 3.815779521999957, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 4.2117683090000355, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 4.211812231999829, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 2, "repeat": 2, "policy": "rolling", "t_s": 5.683065232999979, "event": "release", "index": 7, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 9.715000032883836e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.1610421920004228, "event": "release", "index": 2, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.1610882090003543, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.528737774000092, "event": "release", "index": 1, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.5287732420001703, "event": "decision", "completed": 2, "gap": 0, "width": 4, "committed": null, "admitted": [5]}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.5294753660000424, "event": "release", "index": 3, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.5294861400002446, "event": "decision", "completed": 3, "gap": 0, "width": 3, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.5298086300003888, "event": "release", "index": 0, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 1.5298399600001176, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [6]}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 2.6303304190000745, "event": "release", "index": 5, "answer": "224"}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 2.630354009000257, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 2.6763146510002116, "event": "release", "index": 4, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 2.676326872000118, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 3.0231288250001853, "event": "release", "index": 6, "answer": null}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 3.023158567000337, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 2, "repeat": 2, "policy": "refill", "t_s": 4.48294614400038, "event": "release", "index": 7, "answer": null}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 6.570599998667603e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 0.8282393539998338, "event": "release", "index": 1, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 0.8282943250001154, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 0.9793404780002675, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 0.9793643480002174, "event": "decision", "completed": 2, "gap": 2, "width": 3, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 1.3535617570000795, "event": "release", "index": 2, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 1.3535869070001354, "event": "decision", "completed": 3, "gap": 3, "width": 2, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 1.4467781650000688, "event": "release", "index": 3, "answer": null}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 1.4467961059999652, "event": "decision", "completed": 4, "gap": 3, "width": 1, "committed": null, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 2.315414647000125, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 2.3154778260000057, "event": "decision", "completed": 5, "gap": 3, "width": 1, "committed": null, "admitted": [5]}
+{"qid": 0, "repeat": 2, "policy": "refill", "t_s": 3.261947206000059, "event": "release", "index": 5, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 6.323299976429553e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 0.8317737570000645, "event": "release", "index": 1, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 0.8318338579997544, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 0.9834610709999652, "event": "release", "index": 0, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 0.9834777659998508, "event": "decision", "completed": 2, "gap": 2, "width": 3, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 1.3593023319999702, "event": "release", "index": 2, "answer": "77"}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 1.359334127999773, "event": "decision", "completed": 3, "gap": 3, "width": 2, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 1.4519948480001403, "event": "release", "index": 3, "answer": null}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 1.452018878999752, "event": "decision", "completed": 4, "gap": 3, "width": 1, "committed": 5, "admitted": []}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 2.3149048870000115, "event": "release", "index": 4, "answer": null}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 2.314950261999911, "event": "decision", "completed": 5, "gap": 3, "width": 1, "committed": 6, "admitted": [5]}
+{"qid": 0, "repeat": 2, "policy": "rolling", "t_s": 3.2628586860000723, "event": "release", "index": 5, "answer": "77"}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 6.373099995471421e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.5181030740000097, "event": "release", "index": 2, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.5181486409996978, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.518841607000013, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.5188431329997911, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.5188448369999605, "event": "release", "index": 0, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 1.5188533619998452, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 2.9808056580000084, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 2.9808693919999314, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 4.100200263999795, "event": "release", "index": 5, "answer": "334"}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 4.100234302999979, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 4.466304768999635, "event": "release", "index": 6, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 4.466341646999808, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 1, "repeat": 2, "policy": "rolling", "t_s": 5.92884155899992, "event": "release", "index": 7, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 6.204200008141925e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5292461560002266, "event": "release", "index": 0, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5293019549999372, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5300738509999974, "event": "release", "index": 2, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5300978020000002, "event": "decision", "completed": 2, "gap": 0, "width": 4, "committed": null, "admitted": [5]}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.530481459999919, "event": "release", "index": 3, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5304918589999943, "event": "decision", "completed": 3, "gap": 0, "width": 3, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.53064812599996, "event": "release", "index": 1, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 1.5306626860001415, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [6]}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 2.6595192590002625, "event": "release", "index": 5, "answer": "334"}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 2.6595445790003396, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 3.0326231240001107, "event": "release", "index": 4, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 3.032643953999923, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 3.0330367310002657, "event": "release", "index": 6, "answer": null}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 3.0330624220000573, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 1, "repeat": 2, "policy": "refill", "t_s": 4.499838866000118, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 6.384900007105898e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.5261717280000084, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.5262302529999943, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.5270723599996927, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.527073825000116, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.527075386999968, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 1.5271028140000453, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [5, 6]}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.0302016040000126, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.030231877999995, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.030553725000118, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.030581606999931, "event": "decision", "completed": 6, "gap": 0, "width": 2, "committed": null, "admitted": [7]}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.031110740999793, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 3.031118933000016, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": null, "admitted": []}
+{"qid": 5, "repeat": 2, "policy": "refill", "t_s": 4.499529123999764, "event": "release", "index": 7, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 5.1093999900331255e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.5899780639997516, "event": "release", "index": 1, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.5900378450000971, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.5908912189997864, "event": "release", "index": 2, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.5908932849997655, "event": "release", "index": 0, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.5908948400001464, "event": "release", "index": 3, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 1.590906077999989, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 3.0521622259998367, "event": "release", "index": 4, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 3.0522325409997393, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 4.511704439999903, "event": "release", "index": 5, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 4.511736112000108, "event": "decision", "completed": 6, "gap": 0, "width": 1, "committed": 7, "admitted": []}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 4.512069155000063, "event": "release", "index": 6, "answer": null}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 4.512098610000066, "event": "decision", "completed": 7, "gap": 0, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 5, "repeat": 2, "policy": "rolling", "t_s": 5.956614358000024, "event": "release", "index": 7, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 4.81579995721404e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.5326302559997202, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.5326874109996425, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.533474355999715, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.5334759409997787, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.5334779029999481, "event": "release", "index": 1, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 1.5334886499999811, "event": "decision", "completed": 4, "gap": 0, "width": 1, "committed": 5, "admitted": []}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 2.977243360999637, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 2.9773055769996972, "event": "decision", "completed": 5, "gap": 0, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 4.199416233999727, "event": "release", "index": 5, "answer": "346"}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 4.199450972999784, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": 7, "admitted": []}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 4.436106323999866, "event": "release", "index": 6, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 4.436153732999628, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": 8, "admitted": [7]}
+{"qid": 4, "repeat": 2, "policy": "rolling", "t_s": 5.8714551019998, "event": "release", "index": 7, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 6.299200003923033e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.4939824190000763, "event": "release", "index": 1, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.494027038999775, "event": "decision", "completed": 1, "gap": 0, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.494873310999992, "event": "release", "index": 0, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.494875385999876, "event": "release", "index": 2, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.4948768780000137, "event": "release", "index": 3, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 1.4949131570001555, "event": "decision", "completed": 4, "gap": 0, "width": 3, "committed": null, "admitted": [5, 6]}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.733860365000055, "event": "release", "index": 5, "answer": "346"}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.7338939900000696, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.9714302259999386, "event": "release", "index": 4, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.971455848000005, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.9718196929998157, "event": "release", "index": 6, "answer": null}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 2.971855083999799, "event": "decision", "completed": 7, "gap": 1, "width": 1, "committed": null, "admitted": [7]}
+{"qid": 4, "repeat": 2, "policy": "refill", "t_s": 4.411141841999779, "event": "release", "index": 7, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 5.075699982626247e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": null, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.4307072809997408, "event": "release", "index": 2, "answer": "614"}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.4307515039999998, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": null, "admitted": [4]}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.5054039899996496, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.5054171329998098, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.5058152319998044, "event": "release", "index": 1, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.5058356219997222, "event": "decision", "completed": 3, "gap": 1, "width": 3, "committed": null, "admitted": [5]}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.50631601699979, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 1.506324738999865, "event": "decision", "completed": 4, "gap": 1, "width": 2, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 2.911698946999877, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 2.9117435339999247, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": null, "admitted": [6]}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 2.9847007260000282, "event": "release", "index": 5, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 2.984716114999628, "event": "decision", "completed": 6, "gap": 1, "width": 1, "committed": null, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "refill", "t_s": 4.151011193999693, "event": "release", "index": 6, "answer": "614"}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 4.7820999952818966e-05, "event": "decision", "completed": 0, "gap": 0, "width": 4, "committed": 5, "admitted": [0, 1, 2, 3]}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.4318314540000756, "event": "release", "index": 2, "answer": "614"}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.4318760099999963, "event": "decision", "completed": 1, "gap": 1, "width": 4, "committed": 5, "admitted": [4]}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.50653487999989, "event": "release", "index": 0, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.5065509010000824, "event": "decision", "completed": 2, "gap": 1, "width": 3, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.5069323249999798, "event": "release", "index": 1, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.50694078000015, "event": "decision", "completed": 3, "gap": 1, "width": 2, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.5072430879999956, "event": "release", "index": 3, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 1.5072511170001235, "event": "decision", "completed": 4, "gap": 1, "width": 1, "committed": 5, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 2.883329331999903, "event": "release", "index": 4, "answer": null}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 2.8833909810000478, "event": "decision", "completed": 5, "gap": 1, "width": 2, "committed": 7, "admitted": [5, 6]}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 4.124545533999935, "event": "release", "index": 6, "answer": "614"}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 4.124571296999875, "event": "decision", "completed": 6, "gap": 2, "width": 1, "committed": 7, "admitted": []}
+{"qid": 3, "repeat": 2, "policy": "rolling", "t_s": 4.339062279000245, "event": "release", "index": 5, "answer": null}

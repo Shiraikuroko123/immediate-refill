@@ -1,0 +1,9 @@
+{
+  "tracks/interference/cap-diagnostic/live.py": "2333b2d30594802350e582dc0f7afaee993e6c700e9154c2e3d6912ad4b86add",
+  "tracks/quota/live.py": "3feae416da1647fc4b856dbd4d3c37a47e109165e3be10b1d117f401d369cf16",
+  "tracks/lookahead/live/run_gpu.py": "fef5a1c14a8d8f7a1171b89751976dfba1ec44af6d936c7b94716facc9b20fbe",
+  "tracks/lookahead/theory/frontier.py": "2aab56ff8792dd3adb297071ed6aa97a85d1d76bf122babe017f85fdbb9db193",
+  "tracks/interference/cap-diagnostic/PROTOCOL.md": "4dcf288a5f22117d5b1272cc92e47d0fc0551ebd56e9aacef591ca3120f2657b",
+  "tracks/interference/cap-diagnostic/selection.json": "ef9a608b703e4e60b9c97f9d5f2f90d60514188923ff40ad0a547aba62cbec63",
+  "tracks/interference/cap-diagnostic/selection.py": "092ab67ad22494a5b40dd4bd493a45b51fcce11e0d7ef137748650a51f4407e0"
+}

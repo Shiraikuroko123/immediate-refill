@@ -1,0 +1,146 @@
+{
+  "summary": [
+    {
+      "cohort": "A",
+      "context": 512,
+      "scenario": "measured",
+      "questions": 30,
+      "tightened_panels": 60,
+      "simple_mean_ceiling": 0.02910768000765085,
+      "mean_ceiling": 0.004125234242855409,
+      "question_max": 0.012628700974191616
+    },
+    {
+      "cohort": "A",
+      "context": 2048,
+      "scenario": "measured",
+      "questions": 30,
+      "tightened_panels": 60,
+      "simple_mean_ceiling": 0.03967448468420525,
+      "mean_ceiling": 0.001172024123090779,
+      "question_max": 0.005255465759861856
+    },
+    {
+      "cohort": "A",
+      "context": 3968,
+      "scenario": "measured",
+      "questions": 30,
+      "tightened_panels": 60,
+      "simple_mean_ceiling": 0.05570844338257106,
+      "mean_ceiling": 0.0021629891817467593,
+      "question_max": 0.008389222972535637
+    },
+    {
+      "cohort": "M",
+      "context": 512,
+      "scenario": "measured",
+      "questions": 40,
+      "tightened_panels": 40,
+      "simple_mean_ceiling": 0.02942317761492682,
+      "mean_ceiling": 0.005276530326379466,
+      "question_max": 0.01717825968423559
+    },
+    {
+      "cohort": "M",
+      "context": 2048,
+      "scenario": "measured",
+      "questions": 40,
+      "tightened_panels": 40,
+      "simple_mean_ceiling": 0.03984984939433849,
+      "mean_ceiling": 0.0026811487553531103,
+      "question_max": 0.014644724935019594
+    },
+    {
+      "cohort": "M",
+      "context": 3968,
+      "scenario": "measured",
+      "questions": 40,
+      "tightened_panels": 40,
+      "simple_mean_ceiling": 0.055784646275516644,
+      "mean_ceiling": 0.004244994205452492,
+      "question_max": 0.021706092620144914
+    },
+    {
+      "cohort": "O",
+      "context": 512,
+      "scenario": "measured",
+      "questions": 24,
+      "tightened_panels": 24,
+      "simple_mean_ceiling": 0.04330855823617181,
+      "mean_ceiling": 0.001813099932187745,
+      "question_max": 0.009535691372009743
+    },
+    {
+      "cohort": "O",
+      "context": 2048,
+      "scenario": "measured",
+      "questions": 24,
+      "tightened_panels": 24,
+      "simple_mean_ceiling": 0.056802985346375665,
+      "mean_ceiling": 0.0013919770551714889,
+      "question_max": 0.008469111282701005
+    },
+    {
+      "cohort": "O",
+      "context": 3968,
+      "scenario": "measured",
+      "questions": 24,
+      "tightened_panels": 24,
+      "simple_mean_ceiling": 0.07903116819595464,
+      "mean_ceiling": 0.0021476086003522354,
+      "question_max": 0.012142170768462019
+    }
+  ],
+  "width3_interval_envelopes": [],
+  "panels": 124,
+  "source_sha256": {
+    "AIME25/traces.csv": "d346b05ef9a6c426fdd9fb0d9324f7ff9e491922df7a839b63c7d79436c9de0b",
+    "OlympiadBench/q00-natural-full.json": "f6627cde559dbece4a710b7e6d273d4292c18338a3687973f170a96459b9a623",
+    "OlympiadBench/q01-natural-full.json": "2ba480db787e4b4717eae23264a08a05f664f6dd47d37d0b85a11d1dd9ceba61",
+    "OlympiadBench/q02-natural-full.json": "8156635dfbffd85e11f1af4dd19cbc36c6ff91d64e91fb6f1740234b8d43cf6b",
+    "OlympiadBench/q03-natural-full.json": "ce92d69bdd09b743a4a2bcd905b68c71c414307f64f60803a601bb411a7de076",
+    "OlympiadBench/q04-natural-full.json": "1be5b1ce137f04e4e754a288f452f8b87452cf3a5552d179626567396f15041f",
+    "OlympiadBench/q05-natural-full.json": "02621003f3cb078bb45a13a69d581fab0c979d6272087205de7a34fea83473cf",
+    "OlympiadBench/q06-natural-full.json": "ccc07853e09afb5fdffae0d79002e7ee2fb70b4bf15ca8105e4cf777294c756e",
+    "OlympiadBench/q07-natural-full.json": "ddfddc57cc084e3a1c4215110887509fc1fb2a266928356868b481d79991f573",
+    "OlympiadBench/q08-natural-full.json": "d55fae99b6caa6ff2f73c0eeb84e9b09ceff5587f5d1881cd842f48ef592d63b",
+    "OlympiadBench/q09-natural-full.json": "04d83f8de63294f7f14079797f23807130fb491d863e83060ad719c5bb8cd41d",
+    "OlympiadBench/q10-natural-full.json": "9c56cf8e4d2d312ea0a9216c91364c80935860333b19f449ae8120e3883511ed",
+    "OlympiadBench/q11-natural-full.json": "a6929bbeac233c3feb9ed60420da7b301e2144d527f082395158824867834d9d",
+    "OlympiadBench/q12-natural-full.json": "895e9367efef24a3582a6a08ffc9edc798a1b47071e0b0a3dfd6a3a589f3df8a",
+    "OlympiadBench/q13-natural-full.json": "6219d2c6cf0163cd246b7b35a8a758cb89b2a66ac393602ec1b39263a03256ec",
+    "OlympiadBench/q14-natural-full.json": "3f272a65af189916ab4531a44e7b734b3fdba774e8f7eb8ac0977e65a1c4873c",
+    "OlympiadBench/q15-natural-full.json": "a3ebc27ea05d9357ef8c95f57732ee7c7731601cc4196c58d659748ca86c3747",
+    "OlympiadBench/q16-natural-full.json": "65875f018e993eb4fb330d1a928e73ff103d88fee838e0d6f0a1019c651482a3",
+    "OlympiadBench/q17-natural-full.json": "4eb7a228f0c533e2e66f86550204a5cff29b229254e38246d317f1e734bc931f",
+    "OlympiadBench/q18-natural-full.json": "eb27e53fc71d18de29806ef9565d3965878569090b7fe54c15240178259e1a6e",
+    "OlympiadBench/q19-natural-full.json": "78f9d971c2141c282e51b0f5869d8fd7e94b1dcead3d765ee127dff9a194646a",
+    "OlympiadBench/q20-natural-full.json": "e73d5572d85fa6fc61ff405d84a20bb0957ecdad1ed8f68dec6e606bf646420c",
+    "OlympiadBench/q21-natural-full.json": "670120e3d52abcd47fbe8121a2683fe89217b636ddadd05bb1462febd617b639",
+    "OlympiadBench/q22-natural-full.json": "5ca070e0548f415bc4855364c6432fd1aaf18ea2754e5036b76bb5a1be7a6952",
+    "OlympiadBench/q23-natural-full.json": "38c71a046fdc9a78577fc845cc0cb3efa4a92d6f923fb9146765b4d742bf00e9",
+    "AMC23/rollouts_base_none_p00000_b2.jsonl": "b34cd8c3a0c0acf9f7db0a32c04e3d49bdddaaf61e4f51bb7345c5535a029487",
+    "AMC23/rollouts_base_none_p00025_b2.jsonl": "815ff9dbe4dd8be55361a62f2a503ac199dccd7c199dccdcea09a4bd0ef1c6df"
+  },
+  "clock_sha256": "465d7fb64a044dfcb18244fffe446afdb34f1aecc734617cb426f284af0d7f6b",
+  "prices_ms": {
+    "512/measured": [
+      5.283029619791667,
+      5.285619484375,
+      5.479312359375,
+      5.5852570833333335
+    ],
+    "2048/measured": [
+      5.297288510416666,
+      5.39901475,
+      5.544998692708333,
+      5.67605928125
+    ],
+    "3968/measured": [
+      5.320511614583333,
+      5.462581197916666,
+      5.716678677083333,
+      5.862215
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "raw_sha256": {
+    "calibrate.jsonl": "25403f5950d3b85a43f06cf110534f4775186f135722a734363b35a8c1ac7094",
+    "validate.jsonl": "c27bee10dead2426f6fd889911511bbf4131c27bfd14b314f628888a7121e0ae",
+    "prediction.json": "2d73b027a22ef83f413cd709480f6dc298f12f412ca4180f41aeca00c407dcc8"
+  },
+  "panels": {
+    "witness": {
+      "wall_median_pct": 2.460861716517609,
+      "median_interval_pct": [
+        2.377039013694519,
+        2.6143165997700986
+      ],
+      "mean_wall_pct": 2.5082079483080046,
+      "arm_median_wall_ms": {
+        "immediate": 1234.0910715,
+        "staged": 1202.971733
+      },
+      "paired_token_hash_disagreements": 0,
+      "additive_mean_contributions_pp": {
+        "first": -0.6439052227978129,
+        "cached": 3.165105724289637,
+        "empty": 0.0,
+        "host_outside_engine_step": -0.01299255318381963
+      },
+      "timed_block_step_counts": {
+        "immediate": {
+          "first_width3": 12,
+          "cached_width3": 1524,
+          "cached_width1": 1536
+        },
+        "staged": {
+          "first_width2": 12,
+          "cached_width2": 3048,
+          "first_width1": 12,
+          "cached_width1": 12
+        }
+      },
+      "passed": true
+    },
+    "control": {
+      "wall_median_pct": -102.627130621806,
+      "median_interval_pct": [
+        -102.89188010146644,
+        -102.55157055826525
+      ],
+      "mean_wall_pct": -102.70615671728443,
+      "arm_median_wall_ms": {
+        "immediate": 602.219216,
+        "staged": 1220.582592
+      },
+      "paired_token_hash_disagreements": 0,
+      "additive_mean_contributions_pp": {
+        "first": -1.4552696349485654,
+        "cached": -101.15767481070587,
+        "empty": 0.0,
+        "host_outside_engine_step": -0.09321227162999067
+      },
+      "timed_block_step_counts": {
+        "immediate": {
+          "first_width2": 12,
+          "cached_width2": 1524
+        },
+        "staged": {
+          "first_width1": 24,
+          "cached_width1": 3048
+        }
+      },
+      "passed": true
+    }
+  },
+  "budget": {
+    "device": "NVIDIA A800-SXM4-80GB",
+    "vllm": "0.8.5",
+    "calibration_windows": 27,
+    "validation_panels_including_warmup": 52,
+    "validation_generated_tokens_including_warmup": 19968,
+    "validation_generated_tokens_measured": 18432,
+    "validation_summed_panel_wall_s": 55.464178263,
+    "first_to_last_log_utc": [
+      "2026-11-20T13:53:35.441645+00:00",
+      "2026-11-20T13:55:35.929297+00:00"
+    ],
+    "first_to_last_log_s": 120.487652
+  },
+  "joint_transfer_passed": true
+}

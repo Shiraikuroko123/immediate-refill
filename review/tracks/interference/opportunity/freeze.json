@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-20T13:59:50.006849+00:00",
+  "sha256": {
+    "opportunity/PROTOCOL.md": "4b0395fa6e35dcc29904249bb9240ca01b418be2f2e033f0380b3bbe07c9541d",
+    "opportunity/replay.py": "c5484266d5e05b34cf2697e0a604e2dee42657c47d79b5bba11dc8d9d63b877e",
+    "holdout/freeze.json": "4bb8ba8594d4b344fb092ea1689a364272c1aa50e0b31f444e63c08f6aa59152",
+    "prospective-device/session01/prediction.json": "2d73b027a22ef83f413cd709480f6dc298f12f412ca4180f41aeca00c407dcc8"
+  }
+}

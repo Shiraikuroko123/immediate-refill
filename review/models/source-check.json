@@ -1,0 +1,126 @@
+{
+  "utc": "2026-11-20T15:01:31.475855+00:00",
+  "models": {
+    "qwen": {
+      "modelscope": {
+        "url": "https://www.modelscope.cn/api/v1/models/Qwen/Qwen2.5-1.5B-Instruct/repo/files",
+        "checked": {
+          "config.json": [
+            "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            660
+          ],
+          "configuration.json": [
+            "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "62e945edf342a7068a5a1d7160c94b624eaa38d8",
+            2
+          ],
+          "generation_config.json": [
+            "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            242
+          ],
+          "merges.txt": [
+            "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            1671839
+          ],
+          "model.safetensors": [
+            "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            3087467144
+          ],
+          "tokenizer.json": [
+            "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            7031645
+          ],
+          "tokenizer_config.json": [
+            "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+            "bc68ae58812462d8bf5d9ba5131317ed7fb71665",
+            7305
+          ],
+          "vocab.json": [
+            "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "a3c2dc17129625b1e51caf21ab486d32d1f12982",
+            2776833
+          ]
+        }
+      },
+      "huggingface": {
+        "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "checked": {
+          "weight_lfs_oid": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+          "weight_bytes": 3087467144
+        }
+      },
+      "weight_byte_range_probes": [
+        {
+          "url": "https://www.modelscope.cn/models/Qwen/Qwen2.5-1.5B-Instruct/resolve/a3c2dc17129625b1e51caf21ab486d32d1f12982/model.safetensors",
+          "status": 206,
+          "content_range": "bytes 0-7/3087467144",
+          "first_8_hex": "8096000000000000"
+        },
+        {
+          "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/model.safetensors",
+          "status": 206,
+          "content_range": "bytes 0-7/3087467144",
+          "first_8_hex": "8096000000000000"
+        }
+      ]
+    },
+    "deepseek": {
+      "modelscope": {
+        "url": "https://www.modelscope.cn/api/v1/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/repo/files",
+        "checked": {
+          "config.json": [
+            "37bd455e9679d2959536270fed49d25cc7c290a64f6e52abb97c71345a9cee41",
+            "eff58c50929e7b264b5769004dda2164cd4ed3b5",
+            679
+          ],
+          "generation_config.json": [
+            "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126",
+            "e3c059a7c487ab11707abcfbf48142b91d4c21c1",
+            181
+          ],
+          "model.safetensors": [
+            "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945",
+            "24b8c5eceaed8fa7164bd0081e80e53f19c1a34e",
+            3554214621
+          ],
+          "tokenizer.json": [
+            "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773",
+            "24b8c5eceaed8fa7164bd0081e80e53f19c1a34e",
+            7031660
+          ],
+          "tokenizer_config.json": [
+            "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5",
+            "e971ac7de68747019190c70bbb552677c4187f84",
+            3071
+          ]
+        }
+      },
+      "huggingface": {
+        "url": "https://huggingface.co/api/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/tree/ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+        "checked": {
+          "weight_lfs_oid": "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945",
+          "weight_bytes": 3554214621
+        }
+      },
+      "weight_byte_range_probes": [
+        {
+          "url": "https://www.modelscope.cn/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/resolve/24b8c5eceaed8fa7164bd0081e80e53f19c1a34e/model.safetensors",
+          "status": 206,
+          "content_range": "bytes 0-7/3554214621",
+          "first_8_hex": "d596000000000000"
+        },
+        {
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B/resolve/ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562/model.safetensors",
+          "status": 206,
+          "content_range": "bytes 0-7/3554214621",
+          "first_8_hex": "d596000000000000"
+        }
+      ]
+    }
+  }
+}

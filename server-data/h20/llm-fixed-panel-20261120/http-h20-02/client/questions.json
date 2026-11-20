@@ -1,0 +1,38 @@
+[
+  {
+    "qid": 2,
+    "question": "A shop sells 23 notebooks at 7 coins each and 15 folders at 5 coins each. It pays a fee of 12 coins. What is the net revenue?",
+    "truth": "224",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nA shop sells 23 notebooks at 7 coins each and 15 folders at 5 coins each. It pays a fee of 12 coins. What is the net revenue?"
+  },
+  {
+    "qid": 0,
+    "question": "A depot has 17 boxes of 5 pens. It ships 11 pens and receives 3 more. How many pens remain?",
+    "truth": "77",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nA depot has 17 boxes of 5 pens. It ships 11 pens and receives 3 more. How many pens remain?"
+  },
+  {
+    "qid": 1,
+    "question": "An order contains 20 red items and 6 blue items in each of 13 crates. After removing 4 damaged items in total, how many items are left?",
+    "truth": "334",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nAn order contains 20 red items and 6 blue items in each of 13 crates. After removing 4 damaged items in total, how many items are left?"
+  },
+  {
+    "qid": 5,
+    "question": "A cyclist covers 32 km per day for 10 days, then 21 km per day for 8 days. How many more km is that than 53 km?",
+    "truth": "435",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nA cyclist covers 32 km per day for 10 days, then 21 km per day for 8 days. How many more km is that than 53 km?"
+  },
+  {
+    "qid": 4,
+    "question": "There are 29 rows with 9 seats per row and 19 rows with 7 seats per row. If 48 seats are empty, how many seats are occupied?",
+    "truth": "346",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nThere are 29 rows with 9 seats per row and 19 rows with 7 seats per row. If 48 seats are empty, how many seats are occupied?"
+  },
+  {
+    "qid": 3,
+    "question": "A rectangle is 26 units long and 25 units wide. A square of side 6 is removed. What area remains?",
+    "truth": "614",
+    "prompt": "Solve the arithmetic question. Give a brief calculation, then end with a separate line in the form 'Final answer: <integer>'.\n\nA rectangle is 26 units long and 25 units wide. A square of side 6 is removed. What area remains?"
+  }
+]

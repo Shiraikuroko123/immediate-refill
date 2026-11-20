@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "a01fa19a146623991592a72fcf47770730ec9a4bef52da4d93b05fd7d80e6d12",
+  "hashed_files": 753,
+  "matched_prior_files": 679,
+  "rebuilt": {
+    "contracts": "All eight policies on 200 questions including 1,600 panel rows from the eight local shards",
+    "corrections": "The scope counterexamples, the information ablation and its bootstrap intervals",
+    "device": {
+      "joint_pass": true,
+      "panels": {
+        "witness": 2.460861716517609,
+        "control": -102.627130621806
+      },
+      "measured_tokens": 18432
+    },
+    "examples": "Both separation examples, including every fixed predecessor set on the panel",
+    "opportunity": "200 paired time estimates and the two-action oracle using the sealed three-width clock",
+    "tex": {
+      "pages_with_identical_text": 18,
+      "body_ends_no_later_than_page": 8
+    },
+    "verified_candidates": "Exact oracle for the contract that requests a prescribed number of accepted candidates"
+  }
+}

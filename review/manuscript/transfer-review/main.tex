@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{microtype,graphicx,booktabs,hyperref}
+\usepackage{icml2027}
+\usepackage{amsmath,amssymb,amsthm,placeins}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\gap}{\operatorname{gap}}
+\newcommand{\opt}{\operatorname{OPT}}
+\icmltitlerunning{When Is Immediate Refill Optimal for Parallel Voting?}
+\begin{document}
+\twocolumn[
+\icmltitle{When Is Immediate Refill Optimal for Parallel Voting?}
+\begin{icmlauthorlist}
+\icmlauthor{Anonymous Authors}{anon}
+\end{icmlauthorlist}
+\icmlaffiliation{anon}{Anonymous Institution}
+\icmlcorrespondingauthor{Anonymous Author}{anonymous@example.org}
+\icmlkeywords{test-time computation, adaptive inference, scheduling, parallel voting}
+\vskip 0.3in
+]
+\printAffiliationsAndNotice{}
+\begin{abstract}
+A reasoning service with a free generation slot must decide whether to start the next sample. We study ordered, irrevocable starts and a per-question allowance beyond the serial vote. Fix the slot count and a common width-dependent decode clock. At zero allowance, immediate refill is optimal across all panel sizes, launch quotas, positive path lengths and votes if and only if step cost is discretely concave. Its least concave majorant gives the exact worst-case time ratio over that class. On an A800, calibration predicted that deferring one of three prescribed Qwen2.5-1.5B requests would save 3.13\%. Twelve paired measurements gave a median whole-panel saving of 2.46\%. On three-path prefixes of 200 archived GSM8K questions, foreknowledge of the lengths could save at most 0.364\% on average by choosing between the same two actions under this clock. Allowing one extra launch raises a different question about out-of-order votes. On the 200 questions, fully indexed admission saved 8.71\% of modeled time over a gate using only contiguous-prefix votes. Against a gate retaining completed positions and all vote counts, it saved 0.67\%. Retaining the vote-to-position pairs in the contiguous prefix as well narrowed the gain to 0.30\%.
+\end{abstract}
+
+\section{Introduction}
+Suppose a reasoning service may commission sixteen solutions to a math question and return their plurality vote. It has four generation slots. Long solutions and short solutions run together, so the fourth path to start can finish before the first. When a slot opens, should the service use this newly arrived vote to start another sample? Should it sometimes leave the slot empty so that the requests already in progress finish sooner?
+
+These questions require different comparisons. For admission, each scheduler fills every slot its information permits. We vary which returned votes it can count and which votes it can associate with their positions. For timing, both schedulers have all available information and differ only in whether to delay a legal start.
+
+A request quota makes the distinction consequential. Consider a service promising to launch at most one request more than the number its serial counterpart would have needed on the same ordered votes. If the first nine votes would settle a question, the tenth launch is permissible and the eleventh spends a request beyond the allowance. The service learns which votes suffice only after they return. An absolute cap of fourteen starts can apply simultaneously. This contract controls irreversible starts for each question. A provider concerned only with average token cost or with outstanding cancellations can legitimately choose a different policy.
+
+We first ask when a service can fill every admissible slot with a pathwise optimality guarantee. With zero extra starts and equal votes, every schedule completes the same paths. Greedy refill concentrates their work in intervals of high occupancy. We prove that this concentration is maximal at every occupancy threshold, for arbitrarily many slots. It gives an exact test on the width-dependent step costs for immediate refill to minimize decision time on all panels. The test also gives a quantitative approximation guarantee for a measured clock that departs from concavity.
+
+Allowing a single extra start can change which paths finish and how much work is lost at cancellation. We lower-bound the decision time attainable in this case by charging for the work that any putative final voting certificate already requires. We then measure how much time is available to recover by using out-of-order votes or by delaying a legal start. We compare two levels of admission information short of retaining every vote's index. A small change in the information available to the baseline accounts for most of the larger replay gain. Device experiments distinguish changes in dispatch from changes in wall time.
+
+\section{Voting and admission}\label{sec:front}
+Fix \(N\) indexed paths of positive work \(w_i\) and terminal votes \(v_i\). A vote is a discrete label or an abstention. For a set \(S\) of completed indexed observations, \(\gap(S)\) is the largest label count minus the second largest. Absent labels have count zero. A strict lock occurs when
+\[
+                       \gap(S)>N-|S|.
+\]
+Even if all unknown votes favored the runner-up, the leader would still win. The service returns immediately at a strict lock. Exhaustion returns the plurality under a common tie rule. The absolute quota is an integer \(1\le Q\le N\). When \(Q<N\), the service drains its \(Q\) starts if necessary and marks the result uncertified when it cannot establish a full-panel winner. Abstentions count as completed work. Agreement with the full vote and numerical answer accuracy are distinct outcomes.
+
+Let \(K(v)\) denote the first decisive serial prefix, with \(K=N\) on exhaustion. A service with \(P\) slots must ensure \(J\le K(v)+B\), where \(J\) counts all starts, including subsequent cancellations. The guarantee ranges over every joint assignment of the unseen votes compatible with the observed votes. Elapsed service time imposes no further restriction on those assignments. Starts occur in index order, and each path occupies a slot until completion or return.
+
+On a nonterminal history, let \(S_t\) be the observed votes among the first \(t\) indices. Define
+\begin{align}
+ M(S)&=\min\bigl(\{t<N:\gap(S_t)+t-|S_t|>N-t\}\nonumber\\[-2pt]
+     &\hspace{3.65cm}\cup\{N\}\bigr),\label{eq:m}\\
+ F(S)&=\min\{Q,\ |S|+P,\ M(S)+B\}.\label{eq:f}
+\end{align}
+At prefix \(t\), assigning all its missing votes to a current leader maximizes the margin and attains the left side of the inequality in \eqref{eq:m}. Thus \(M\) is the earliest serial stop among compatible assignments. Starting past \(M+B\) violates the promise on an attaining assignment. Hence \(F\) is the exact safe cumulative launch count. It can be computed by a scan maintaining the two largest label counts. More observations restrict the compatible assignments, so \(F\) cannot decrease.
+
+The \emph{indexed} policy \(G\) immediately fills to \(F\). The \emph{buffered} policy uses only the longest contiguous completed prefix to compute \(M\). Both use the actual number of completions for slot capacity, stop using all returned votes, and charge the same starts. To see the difference, take \(N=Q=5\), \(P=3\) and \(B=1\). Paths 2 and 3 have returned A and B while paths 1 and 4 run. The first three votes cannot lead by more than one, too little to cover the last two votes. Thus \(M=4\) and \(G\) may start path 5. The contiguous prefix is empty. Viewed through it, the first three votes could all be A, giving \(M=3\). The buffered gate leaves a slot free.
+
+\section{The cost of an admissible start}
+\paragraph{A common clock.}
+At width \(k\), all active paths process work at rate \(1/c_k\) with \(c_k>0\). One unit of \emph{virtual time} advances every active path by one unit of work, and costs \(c_k\) units of elapsed time. Let \(V_A\) and \(T_A\) denote the virtual and physical decision times of a policy \(A\). Let \(d_k\) be its virtual time at width \(k\). Then \(V_A=\sum_k d_k\), generated work is \(\sum_k k d_k\), and \(T_A=\sum_k c_kd_k\). Empty-system delays can be removed. Initial work, terminal votes and admissible actions are shared between policies.
+
+By the virtual time a safe comparator \(A\) starts path \(i\), \(G\) has either started \(i\) or already returned. To see this, induct on launches while \(G\) is running. Each earlier path takes \(w_j\) after launch, so every observation used by \(A\) has also reached \(G\). Its frontier therefore permits at least the same cumulative starts. At \(A\)'s decision, an unreturned \(G\) would likewise have observed its lock or completed its quota. Hence \(V_G\le V_A\) and \(T_A\ge V_G\min_k c_k\). We sharpen this time bound using occupancy at zero allowance and certificate work at positive allowance.
+
+\subsection{Universal optimality at zero allowance}
+The zero-overrun contract forces every policy to complete the same prefix of length $\min(K,Q)$ and consume the same work $W_*$ (Appendix~\ref{app:zero}). Let $h_A(t)$ count the active paths in virtual time, with zero after the decision. Greedy's occupancy decreases as votes return. The stronger fact is that even the busiest intervals of a comparator cannot collectively process more work than an equally long initial interval of greedy.
+
+\begin{theorem}[Immediate refill at any slot count]\label{th:occupancy}
+Fix $P\ge1$ and positive width costs $c_1,\ldots,c_P$, with $c_0=0$. Let $\mathcal I$ be the class of zero-allowance instances with arbitrary panel size $N\ge1$, quota $1\le Q\le N$, positive path lengths and equal-weight terminal votes. Greedy minimizes wall time on every $I\in\mathcal I$ if and only if
+\[
+      2c_j\ge c_{j-1}+c_{j+1},\qquad 1\le j<P .
+\]
+Let $\widehat c$ be the least concave majorant on $0,\ldots,P$. Writing $T_{\rm opt}$ for the infimum over legal schedules on the given instance, we have
+\[
+  \sup_{I\in\mathcal I}\frac{T_G(I)}{T_{\rm opt}(I)}
+            = \max_{1\le k\le P}\frac{\widehat c_k}{c_k} .
+\]
+For any admissible schedule $A$ and union $E$ of intervals of its virtual timeline,
+\begin{equation}\label{eq:major}
+       \int_E h_A(t)\,dt\ \le\ \int_0^{|E|} h_G(t)\,dt .
+\end{equation}
+\end{theorem}
+The proof shortens a competitor's timeline outside $E$, preserving the order of all observations and starts. Each job now requires weakly less work. On this shortened input greedy finishes earlier, but its width at any given time can only fall because earlier completions tighten the remaining allowance for active paths. This comparison gives \eqref{eq:major}. Applying it to $E=\{h_A>j\}$ shows that greedy maximizes the integrated excess above every width $j$. Discrete concavity makes each such excess reduce the total price for a fixed amount of work. For necessity, a panel of long and short paths realizes the comparison $c_{j-1}+c_{j+1}$ against $2c_j$. Appendix~\ref{app:major} proves these steps, including arbitrary continuous launch delays. Earliest completion of each job alone does not imply \eqref{eq:major}. On a four-job precedence graph greedy finishes every job by the corresponding competitor's finish time in virtual time, yet costs $4$ against $3.75$ on a concave clock (Appendix~\ref{app:precedence}).
+
+For $P=3$ and prices $(10,11,13)$ the universal ratio is $23/22$. Four paths with works $(2,1,1,2)$, votes AAAB and $Q=3$ attain it. Greedy costs $13+10=23$, while starting two paths and replacing the first short finisher costs $2\times11=22$. Fixing $N=Q=3$ instead gives worst-case ratio one. Two initial votes could lock, so at most two paths may start before the first return. At most two then remain. The reachable prices $(0,10,11)$ are concave.
+
+\paragraph{Imperfect concavity.} Put $\gamma=\max_{1\le k\le P}\widehat c_k/c_k$. Fix an execution of $A$ at prices $c$, with virtual occupancy durations $d_k$. Replaying its virtual launch times preserves the votes observed at each launch and hence its legality under $\widehat c$. Greedy also has the same virtual trajectory at both prices. Applying concave optimality to the replay gives
+\[
+ T_G(c)\le T_G(\widehat c)\le \sum_k\widehat c_k d_k
+ \le \gamma \sum_k c_k d_k=\gamma T_A(c).
+\]
+For sharpness, take a chord of $\widehat c$ spanning a maximizing width $j$. A prefix of short agreeing votes sets the admissible width to the chord's upper endpoint. An ensuing set of opposite votes holds that limit fixed while greedy moves between the two endpoint widths and a competitor stays at $j$. As the prefix work vanishes the resulting time ratio converges to $\gamma$ (Appendix~\ref{app:sharp}).
+
+\subsection{A lower bound from terminal certificates}\label{sec:lb}
+For any possible set \(S\) of paths that have finished by the decision, path \(i\) has received at least
+\begin{equation}
+ a_i(S)=\min\{w_i,\ \max_{j\in S,\;j\ge i} w_j\},
+ \label{eq:work}
+\end{equation}
+with an empty maximum equal to zero. Indeed, to finish \(j\) the service must advance it by \(w_j\) after launch. Every earlier indexed path has already started, and either receives this much work or has finished. For example, a certificate that requires the fourth path to return after 100 work units also obliges the service to spend up to 100 units on each of the first three. This charge can exceed the sum of the finished paths' lengths.
+
+Let \(W_m(S)\) sum the \(m\) largest lower bounds \(a_i(S)\), and let \(W(S)=\sum_i a_i(S)\). Extend \(G\)'s virtual run past its first lock by retaining active paths and filling all available slots up to \(Q\). Write \(e_i\) for its completion times. Each provides an optimistic finish time for the corresponding path in a compliant schedule.
+
+\begin{theorem}[Certificate work bound]\label{th:floor}
+For each candidate \(S\), minimize \(\sum_{k=1}^P c_k d_k\) over \(d_k\ge0\) subject to
+\begin{align}
+ \sum_k d_k &\ge \max\{V_G,\max_{i\in S}e_i\}, \nonumber\\
+ \sum_k\min(k,m)d_k &\ge W_m(S) \quad (1\le m<P), \label{eq:lp}\\
+ \sum_k k d_k &\ge W(S). \nonumber
+\end{align}
+If the enumerated family contains every attainable terminal completed set, the minimum of these optima lower-bounds the physical decision time of every comparator that satisfies the public-history launch guarantees. The comparator may use foreknowledge of works and votes to select among its legal actions.
+\end{theorem}
+\begin{proof}
+Before its lock the extended run inherits the virtual launch-time dominance of \(G\). Subsequently it faces only slot and quota limits. Whenever a comparator launches, the extended run has at least its observed completions and can accommodate the same cumulative launch count. Hence no job finished by the comparator can finish before \(e_i\). At width \(k\), any designated \(m\) paths can receive at most \(\min(k,m)\) combined work per virtual unit, and all paths receive \(k\) in total. Applying \eqref{eq:work} to the actual completed set proves feasibility of its occupancy vector. Minimizing over a superset preserves the lower bound.
+\end{proof}
+
+A feasible relaxation may combine service intervals that no single scheduler can realize. Its value supplies a ceiling \(1-\mathrm{LB}/T_G\) on potential fractional improvement over \(G\). Subsets are cheap to enumerate for \(Q=14\). They need either a strict certificate or full quota completion. If \(j\) finished, every earlier \(i\) with \(w_i\le w_j\) must also have finished. We discard masks failing this condition and masks whose most advanced completed path could not have been admitted. Dominated requirement vectors can also be dropped. At most four vectors remained on any of the 124 previously studied panels.
+
+\paragraph{The cost of waiting.} One extra start permits a policy to postpone a short decisive vote behind an arbitrarily long running path, incurring unbounded relative delay. If postponements have total virtual duration $H$, the extra virtual delay is at most $H$. Appendix~\ref{app:timer} gives the sharp example and proof.
+
+\input{experiments}
+\input{discussion}
+\FloatBarrier
+\section*{Impact Statement}
+Budget guarantees can help operators bound speculative model calls. Waiting may increase user latency or alter the work spent on other requests. Changes to answer quality, tenant fairness and actual fees depend on deployment and on the generation and cancellation interfaces.
+\section*{AI Disclosure Statement}
+OpenAI Codex helped formulate the problem and derive the proofs, wrote the main simulator and engine driver, ran the experiments, analyzed the data and prepared the initial manuscript. Separate verification programs enumerated small panels and reconstructed the timing comparisons from archived engine events. The literature audit records the editions, theorems and pages inspected and the limits of the search. The supporting material includes proofs, code and input fingerprints.
+\bibliographystyle{icml2027}
+\bibliography{refs}
+\clearpage\appendix\onecolumn
+\input{appendix}
+\end{document}

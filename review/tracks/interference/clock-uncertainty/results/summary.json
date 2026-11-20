@@ -1,0 +1,254 @@
+{
+  "post_hoc": true,
+  "panels": 324,
+  "quantities": "fraction of indexed greedy time",
+  "summary": {
+    "A": {
+      "questions": 30,
+      "panels": 60,
+      "median": 0.0021629891817467593,
+      "worst_observed_block": 0.002575035219563292,
+      "fixed_box": 0.0029552640642423267,
+      "varying_box": 0.005092170610743668
+    },
+    "G": {
+      "questions": 200,
+      "panels": 200,
+      "median": 0.007381325465663746,
+      "worst_observed_block": 0.007935216540789554,
+      "fixed_box": 0.00844735123893316,
+      "varying_box": 0.010335937176388883
+    },
+    "M": {
+      "questions": 40,
+      "panels": 40,
+      "median": 0.004244994205452492,
+      "worst_observed_block": 0.00463600377160264,
+      "fixed_box": 0.004999594644290823,
+      "varying_box": 0.007131973006953113
+    },
+    "O": {
+      "questions": 24,
+      "panels": 24,
+      "median": 0.0021476086003522354,
+      "worst_observed_block": 0.0022506944101475077,
+      "fixed_box": 0.002350504797212268,
+      "varying_box": 0.004823865362449709
+    }
+  },
+  "envelope_seconds": {
+    "min": [
+      0.005312589875,
+      0.0054519276875,
+      0.005713217302083334,
+      0.0058521008125
+    ],
+    "median": [
+      0.005320511614583333,
+      0.005462581197916667,
+      0.005716678677083333,
+      0.005862215
+    ],
+    "max": [
+      0.00532755784375,
+      0.005470444625,
+      0.005734512385416666,
+      0.005866376166666667
+    ]
+  },
+  "scenarios_seconds": [
+    [
+      0.005320511614583333,
+      0.005462581197916667,
+      0.005716678677083333,
+      0.005862215
+    ],
+    [
+      0.005319943520833334,
+      0.0054519276875,
+      0.00572100215625,
+      0.005856801
+    ],
+    [
+      0.005312589875,
+      0.005462520302083333,
+      0.005713217302083334,
+      0.005862602427083334
+    ],
+    [
+      0.005326101520833334,
+      0.005458249114583333,
+      0.0057169225,
+      0.0058521008125
+    ],
+    [
+      0.00531583378125,
+      0.005470444625,
+      0.00571683328125,
+      0.005862900677083334
+    ],
+    [
+      0.005321391083333333,
+      0.005462607020833334,
+      0.00571371646875,
+      0.005866376166666667
+    ],
+    [
+      0.00532755784375,
+      0.005463888833333333,
+      0.005716524072916666,
+      0.005861496125
+    ],
+    [
+      0.005318118,
+      0.005462555375,
+      0.005734512385416666,
+      0.005864583802083333
+    ],
+    [
+      0.005321079708333333,
+      0.005464991354166666,
+      0.005715677572916667,
+      0.005861827572916666
+    ],
+    [
+      0.005312589875,
+      0.0054519276875,
+      0.005713217302083334,
+      0.0058521008125
+    ],
+    [
+      0.005312589875,
+      0.0054519276875,
+      0.005713217302083334,
+      0.005866376166666667
+    ],
+    [
+      0.005312589875,
+      0.0054519276875,
+      0.005734512385416666,
+      0.0058521008125
+    ],
+    [
+      0.005312589875,
+      0.0054519276875,
+      0.005734512385416666,
+      0.005866376166666667
+    ],
+    [
+      0.005312589875,
+      0.005470444625,
+      0.005713217302083334,
+      0.0058521008125
+    ],
+    [
+      0.005312589875,
+      0.005470444625,
+      0.005713217302083334,
+      0.005866376166666667
+    ],
+    [
+      0.005312589875,
+      0.005470444625,
+      0.005734512385416666,
+      0.0058521008125
+    ],
+    [
+      0.005312589875,
+      0.005470444625,
+      0.005734512385416666,
+      0.005866376166666667
+    ],
+    [
+      0.00532755784375,
+      0.0054519276875,
+      0.005713217302083334,
+      0.0058521008125
+    ],
+    [
+      0.00532755784375,
+      0.0054519276875,
+      0.005713217302083334,
+      0.005866376166666667
+    ],
+    [
+      0.00532755784375,
+      0.0054519276875,
+      0.005734512385416666,
+      0.0058521008125
+    ],
+    [
+      0.00532755784375,
+      0.0054519276875,
+      0.005734512385416666,
+      0.005866376166666667
+    ],
+    [
+      0.00532755784375,
+      0.005470444625,
+      0.005713217302083334,
+      0.0058521008125
+    ],
+    [
+      0.00532755784375,
+      0.005470444625,
+      0.005713217302083334,
+      0.005866376166666667
+    ],
+    [
+      0.00532755784375,
+      0.005470444625,
+      0.005734512385416666,
+      0.0058521008125
+    ],
+    [
+      0.00532755784375,
+      0.005470444625,
+      0.005734512385416666,
+      0.005866376166666667
+    ]
+  ],
+  "sources_sha256": {
+    "original": {
+      "AIME25/traces.csv": "d346b05ef9a6c426fdd9fb0d9324f7ff9e491922df7a839b63c7d79436c9de0b",
+      "OlympiadBench/q00-natural-full.json": "f6627cde559dbece4a710b7e6d273d4292c18338a3687973f170a96459b9a623",
+      "OlympiadBench/q01-natural-full.json": "2ba480db787e4b4717eae23264a08a05f664f6dd47d37d0b85a11d1dd9ceba61",
+      "OlympiadBench/q02-natural-full.json": "8156635dfbffd85e11f1af4dd19cbc36c6ff91d64e91fb6f1740234b8d43cf6b",
+      "OlympiadBench/q03-natural-full.json": "ce92d69bdd09b743a4a2bcd905b68c71c414307f64f60803a601bb411a7de076",
+      "OlympiadBench/q04-natural-full.json": "1be5b1ce137f04e4e754a288f452f8b87452cf3a5552d179626567396f15041f",
+      "OlympiadBench/q05-natural-full.json": "02621003f3cb078bb45a13a69d581fab0c979d6272087205de7a34fea83473cf",
+      "OlympiadBench/q06-natural-full.json": "ccc07853e09afb5fdffae0d79002e7ee2fb70b4bf15ca8105e4cf777294c756e",
+      "OlympiadBench/q07-natural-full.json": "ddfddc57cc084e3a1c4215110887509fc1fb2a266928356868b481d79991f573",
+      "OlympiadBench/q08-natural-full.json": "d55fae99b6caa6ff2f73c0eeb84e9b09ceff5587f5d1881cd842f48ef592d63b",
+      "OlympiadBench/q09-natural-full.json": "04d83f8de63294f7f14079797f23807130fb491d863e83060ad719c5bb8cd41d",
+      "OlympiadBench/q10-natural-full.json": "9c56cf8e4d2d312ea0a9216c91364c80935860333b19f449ae8120e3883511ed",
+      "OlympiadBench/q11-natural-full.json": "a6929bbeac233c3feb9ed60420da7b301e2144d527f082395158824867834d9d",
+      "OlympiadBench/q12-natural-full.json": "895e9367efef24a3582a6a08ffc9edc798a1b47071e0b0a3dfd6a3a589f3df8a",
+      "OlympiadBench/q13-natural-full.json": "6219d2c6cf0163cd246b7b35a8a758cb89b2a66ac393602ec1b39263a03256ec",
+      "OlympiadBench/q14-natural-full.json": "3f272a65af189916ab4531a44e7b734b3fdba774e8f7eb8ac0977e65a1c4873c",
+      "OlympiadBench/q15-natural-full.json": "a3ebc27ea05d9357ef8c95f57732ee7c7731601cc4196c58d659748ca86c3747",
+      "OlympiadBench/q16-natural-full.json": "65875f018e993eb4fb330d1a928e73ff103d88fee838e0d6f0a1019c651482a3",
+      "OlympiadBench/q17-natural-full.json": "4eb7a228f0c533e2e66f86550204a5cff29b229254e38246d317f1e734bc931f",
+      "OlympiadBench/q18-natural-full.json": "eb27e53fc71d18de29806ef9565d3965878569090b7fe54c15240178259e1a6e",
+      "OlympiadBench/q19-natural-full.json": "78f9d971c2141c282e51b0f5869d8fd7e94b1dcead3d765ee127dff9a194646a",
+      "OlympiadBench/q20-natural-full.json": "e73d5572d85fa6fc61ff405d84a20bb0957ecdad1ed8f68dec6e606bf646420c",
+      "OlympiadBench/q21-natural-full.json": "670120e3d52abcd47fbe8121a2683fe89217b636ddadd05bb1462febd617b639",
+      "OlympiadBench/q22-natural-full.json": "5ca070e0548f415bc4855364c6432fd1aaf18ea2754e5036b76bb5a1be7a6952",
+      "OlympiadBench/q23-natural-full.json": "38c71a046fdc9a78577fc845cc0cb3efa4a92d6f923fb9146765b4d742bf00e9",
+      "AMC23/rollouts_base_none_p00000_b2.jsonl": "b34cd8c3a0c0acf9f7db0a32c04e3d49bdddaaf61e4f51bb7345c5535a029487",
+      "AMC23/rollouts_base_none_p00025_b2.jsonl": "815ff9dbe4dd8be55361a62f2a503ac199dccd7c199dccdcea09a4bd0ef1c6df"
+    },
+    "GSM8K": {
+      "rollouts_base_none_p00500.jsonl": "f2c7193a4f008a87de514110f4b6577e15449a642ec0965fa62fa8e0dece78b0",
+      "rollouts_base_none_p01125.jsonl": "7238305dfbd952f624da88a377ed89cb55dc265328f3ce537e241c289a8d8db0",
+      "rollouts_base_none_p00800.jsonl": "3293e055416ae74408e0edb6393ae1b0941d889a18c8ecf89433d5a5cddc694e",
+      "rollouts_base_none_p00900.jsonl": "ef9f072e62b51d8d12d09f6c115f12803b4cdad2a6b32096871a0b10143c0970",
+      "rollouts_base_none_p00350.jsonl": "48636a1cbd1516eb13ec42849deec5f5d98b7e1f65cd4c83ba50a04f45253c41",
+      "rollouts_base_none_p01225.jsonl": "24803e1cf702cde5eba8d5013fd1f62aa399f935c64991d24c490f42a0fe302d",
+      "rollouts_base_none_p00475.jsonl": "7d84b44858a42def15b6e38e54102bcae6256ea89a67db48c6be76159d4294ee",
+      "rollouts_base_none_p00675.jsonl": "f8095903f438386a095f361326e33f8541fbe5f341541d88baf0982312346c91"
+    }
+  },
+  "clock_sha256": "465d7fb64a044dfcb18244fffe446afdb34f1aecc734617cb426f284af0d7f6b",
+  "checked_panel_medians": 324
+}

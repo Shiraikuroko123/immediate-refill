@@ -1,0 +1,130 @@
+{
+  "voting": {
+    "votes": [
+      "A",
+      "A",
+      "A",
+      "B",
+      "B",
+      "B",
+      "A",
+      "B",
+      "B"
+    ],
+    "slots": 5,
+    "quota": 9,
+    "witness_time_in_quarters": 20,
+    "work_of_first_five_in_quarters": [
+      40,
+      16,
+      12,
+      8,
+      4
+    ],
+    "histories": [
+      {
+        "done": [
+          2,
+          4
+        ],
+        "starts_in_quarters": [
+          0,
+          3,
+          9,
+          11,
+          17
+        ],
+        "active": 3,
+        "next_allowed": true,
+        "min_compatible_binary_serial": 6
+      },
+      {
+        "done": [
+          3,
+          5
+        ],
+        "starts_in_quarters": [
+          0,
+          5,
+          7,
+          13,
+          15
+        ],
+        "active": 3,
+        "next_allowed": true,
+        "min_compatible_binary_serial": 6
+      },
+      {
+        "done": [
+          2,
+          3
+        ],
+        "starts_in_quarters": [
+          0,
+          3,
+          7,
+          13,
+          17
+        ],
+        "active": 3,
+        "next_allowed": false,
+        "min_compatible_binary_serial": 5
+      }
+    ],
+    "matching_fixed_predecessor_sets": 0
+  },
+  "ordinary_dag": {
+    "clock": [
+      0,
+      1,
+      2,
+      2.5
+    ],
+    "schedules": {
+      "immediate": {
+        "starts_in_quarters": [
+          0,
+          0,
+          4,
+          4
+        ],
+        "makespan": 2.0,
+        "width_per_quarter": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "excess_over_two": 0.0,
+        "wall": 4.0
+      },
+      "delayed": {
+        "starts_in_quarters": [
+          0,
+          4,
+          4,
+          6
+        ],
+        "makespan": 2.5,
+        "width_per_quarter": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          1,
+          1
+        ],
+        "excess_over_two": 0.5,
+        "wall": 3.75
+      }
+    }
+  }
+}

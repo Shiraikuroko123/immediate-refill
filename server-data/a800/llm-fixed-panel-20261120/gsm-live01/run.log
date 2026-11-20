@@ -1,0 +1,183 @@
+INFO 11-20 19:04:30 [__init__.py:239] Automatically detected platform cuda.
+Starting NVIDIA A800-SXM4-80GB [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] ['fixed-buffer', 'fixed-exact', 'natural-buffer', 'natural-exact'] protocol 2dee8dc8ed2fbab060c04f416820055655e8eb448647206565755ddfabbe227d
+INFO 11-20 19:04:39 [config.py:717] This model supports multiple tasks: {'reward', 'classify', 'generate', 'embed', 'score'}. Defaulting to 'generate'.
+INFO 11-20 19:04:39 [llm_engine.py:240] Initializing a V0 LLM engine (v0.8.5) with config: model='../model', speculative_config=None, tokenizer='../model', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=../model, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=False, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[4,2,1],"max_capture_size":4}, use_cached_outputs=False, 
+INFO 11-20 19:04:41 [cuda.py:292] Using Flash Attention backend.
+INFO 11-20 19:04:45 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 11-20 19:04:45 [model_runner.py:1108] Starting to load model ../model...
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.03it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  2.03it/s]
+
+INFO 11-20 19:04:46 [loader.py:458] Loading weights took 0.63 seconds
+INFO 11-20 19:04:46 [model_runner.py:1140] Model loading took 2.8876 GiB and 0.800860 seconds
+INFO 11-20 19:04:47 [worker.py:287] Memory profiling takes 0.73 seconds
+INFO 11-20 19:04:47 [worker.py:287] the current vLLM instance can use total_gpu_memory (79.32GiB) x gpu_memory_utilization (0.75) = 59.49GiB
+INFO 11-20 19:04:47 [worker.py:287] model weights take 2.89GiB; non_torch_memory takes 0.09GiB; PyTorch activation peak memory takes 0.13GiB; the rest of the memory reserved for KV Cache is 56.37GiB.
+INFO 11-20 19:04:47 [executor_base.py:112] # cuda blocks: 131948, # CPU blocks: 9362
+INFO 11-20 19:04:47 [executor_base.py:117] Maximum concurrency for 2048 tokens per request: 1030.84x
+INFO 11-20 19:04:50 [model_runner.py:1450] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+Capturing CUDA graph shapes:   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graph shapes:  33%|███▎      | 1/3 [00:00<00:00,  2.21it/s]Capturing CUDA graph shapes:  67%|██████▋   | 2/3 [00:00<00:00,  2.09it/s]Capturing CUDA graph shapes: 100%|██████████| 3/3 [00:01<00:00,  1.97it/s]Capturing CUDA graph shapes: 100%|██████████| 3/3 [00:01<00:00,  2.01it/s]
+INFO 11-20 19:04:51 [model_runner.py:1592] Graph capturing finished in 1 secs, took 0.05 GiB
+INFO 11-20 19:04:51 [llm_engine.py:437] init engine (profile, create kv cache, warmup model) took 5.26 seconds
+begin 0 natural-full
+end 0 natural-full panel_complete 6.573694955000008 4251
+begin 0 fixed-exact
+end 0 fixed-exact strict_lock 6.144887773999997 3655
+begin 0 fixed-buffer
+end 0 fixed-buffer strict_lock 6.135327936999985 3655
+begin 0 natural-exact
+end 0 natural-exact quota_exhausted 6.3813731999999845 4116
+begin 0 natural-buffer
+end 0 natural-buffer quota_exhausted 6.367841862000006 4116
+begin 1 natural-full
+end 1 natural-full panel_complete 6.554129236999984 4460
+begin 1 natural-exact
+end 1 natural-exact strict_lock 4.978475156999991 3288
+begin 1 natural-buffer
+end 1 natural-buffer strict_lock 4.974682246000015 3288
+begin 1 fixed-buffer
+end 1 fixed-buffer strict_lock 6.0768915179999965 3826
+begin 1 fixed-exact
+end 1 fixed-exact strict_lock 5.888709839000001 3818
+begin 2 natural-full
+end 2 natural-full panel_complete 6.705713986999996 4736
+begin 2 fixed-buffer
+end 2 fixed-buffer strict_lock 4.5582352410000055 3127
+begin 2 fixed-exact
+end 2 fixed-exact strict_lock 4.556749443000001 3127
+begin 2 natural-buffer
+end 2 natural-buffer strict_lock 4.247419274000009 2763
+begin 2 natural-exact
+end 2 natural-exact strict_lock 4.240617125 2763
+begin 3 natural-full
+end 3 natural-full panel_complete 8.04136282899998 5349
+begin 3 natural-buffer
+end 3 natural-buffer quota_exhausted 6.751602800000001 4677
+begin 3 natural-exact
+end 3 natural-exact quota_exhausted 6.73840148299999 4677
+begin 3 fixed-exact
+end 3 fixed-exact strict_lock 6.086635313000016 4217
+begin 3 fixed-buffer
+end 3 fixed-buffer strict_lock 6.0753362190000075 4217
+begin 4 natural-full
+end 4 natural-full panel_complete 8.17319778700002 5694
+begin 4 fixed-exact
+end 4 fixed-exact strict_lock 7.653069124000012 4927
+begin 4 fixed-buffer
+end 4 fixed-buffer strict_lock 7.673421128000001 4927
+begin 4 natural-exact
+end 4 natural-exact quota_exhausted 7.1499572250000085 4635
+begin 4 natural-buffer
+end 4 natural-buffer quota_exhausted 7.1459662789999925 4635
+begin 5 natural-full
+end 5 natural-full panel_complete 7.046798776999992 4662
+begin 5 natural-exact
+end 5 natural-exact quota_exhausted 6.029860831000008 3974
+begin 5 natural-buffer
+end 5 natural-buffer quota_exhausted 6.039890062999973 3974
+begin 5 fixed-buffer
+end 5 fixed-buffer quota_exhausted 6.655804079999996 4071
+begin 5 fixed-exact
+end 5 fixed-exact quota_exhausted 6.653804807000029 4071
+begin 6 natural-full
+end 6 natural-full panel_complete 3.5544074640000076 2440
+begin 6 fixed-buffer
+end 6 fixed-buffer strict_lock 2.6891666839999857 1663
+begin 6 fixed-exact
+end 6 fixed-exact strict_lock 2.71310769400003 1663
+begin 6 natural-buffer
+end 6 natural-buffer strict_lock 3.1183346729999926 2063
+begin 6 natural-exact
+end 6 natural-exact strict_lock 3.1027457089999757 2063
+begin 7 natural-full
+end 7 natural-full panel_complete 4.979835797000021 3221
+begin 7 natural-buffer
+end 7 natural-buffer strict_lock 3.3515569379999874 2171
+begin 7 natural-exact
+end 7 natural-exact strict_lock 3.345571779000011 2171
+begin 7 fixed-exact
+end 7 fixed-exact strict_lock 2.938974110999993 2064
+begin 7 fixed-buffer
+end 7 fixed-buffer strict_lock 2.949731342000007 2064
+begin 8 natural-full
+end 8 natural-full panel_complete 5.230079475000025 3579
+begin 8 fixed-exact
+end 8 fixed-exact strict_lock 3.21023328199999 2156
+begin 8 fixed-buffer
+end 8 fixed-buffer strict_lock 3.21314980599999 2156
+begin 8 natural-exact
+end 8 natural-exact strict_lock 4.070801985000003 2867
+begin 8 natural-buffer
+end 8 natural-buffer strict_lock 4.072361164000029 2709
+begin 9 natural-full
+end 9 natural-full panel_complete 5.995561613999996 4107
+begin 9 natural-exact
+end 9 natural-exact strict_lock 5.499191293000024 3706
+begin 9 natural-buffer
+end 9 natural-buffer strict_lock 5.454927587000043 3615
+begin 9 fixed-buffer
+end 9 fixed-buffer strict_lock 6.016796591000002 3669
+begin 9 fixed-exact
+end 9 fixed-exact strict_lock 5.918098597999972 3669
+begin 10 natural-full
+end 10 natural-full panel_complete 7.256690484999979 5058
+begin 10 fixed-buffer
+end 10 fixed-buffer quota_exhausted 7.25444117699999 4522
+begin 10 fixed-exact
+end 10 fixed-exact quota_exhausted 7.2530147740000075 4522
+begin 10 natural-buffer
+end 10 natural-buffer quota_exhausted 6.853754945999981 4537
+begin 10 natural-exact
+end 10 natural-exact quota_exhausted 6.8508719530000235 4537
+begin 11 natural-full
+end 11 natural-full panel_complete 5.968877933000044 4083
+begin 11 natural-buffer
+end 11 natural-buffer strict_lock 5.06850310599998 3272
+begin 11 natural-exact
+end 11 natural-exact strict_lock 4.999373556000023 3261
+begin 11 fixed-exact
+end 11 fixed-exact strict_lock 5.264954782000018 3460
+begin 11 fixed-buffer
+end 11 fixed-buffer strict_lock 5.51697297100003 3513
+begin 12 natural-full
+end 12 natural-full panel_complete 6.247159054000008 4244
+begin 12 fixed-exact
+end 12 fixed-exact strict_lock 4.736251580999976 3229
+begin 12 fixed-buffer
+end 12 fixed-buffer strict_lock 4.750687644999971 3229
+begin 12 natural-exact
+end 12 natural-exact strict_lock 4.167271664999987 2813
+begin 12 natural-buffer
+end 12 natural-buffer strict_lock 4.1695025149999765 2813
+begin 13 natural-full
+end 13 natural-full panel_complete 7.817626331999975 5509
+begin 13 natural-exact
+end 13 natural-exact strict_lock 5.3299459459999525 3410
+begin 13 natural-buffer
+end 13 natural-buffer strict_lock 5.333055715 3410
+begin 13 fixed-buffer
+end 13 fixed-buffer strict_lock 6.034307701999978 4178
+begin 13 fixed-exact
+end 13 fixed-exact strict_lock 6.072635807999973 4178
+begin 14 natural-full
+end 14 natural-full panel_complete 7.258393377999994 5060
+begin 14 fixed-buffer
+end 14 fixed-buffer strict_lock 5.407410209000034 3550
+begin 14 fixed-exact
+end 14 fixed-exact strict_lock 5.402100350999945 3550
+begin 14 natural-buffer
+end 14 natural-buffer strict_lock 5.415281634000053 3349
+begin 14 natural-exact
+end 14 natural-exact strict_lock 5.0918720050000275 3287
+begin 15 natural-full
+end 15 natural-full panel_complete 6.942103559999964 4539
+begin 15 natural-buffer
+end 15 natural-buffer strict_lock 3.5321511219999593 2503
+begin 15 natural-exact
+end 15 natural-exact strict_lock 3.531084387999954 2503
+begin 15 fixed-exact
+end 15 fixed-exact strict_lock 5.153144536000013 3123
+begin 15 fixed-buffer
+end 15 fixed-buffer strict_lock 5.163582910999935 3123
+[rank0]:[W1120 19:12:16.356508848 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

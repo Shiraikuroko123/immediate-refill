@@ -1,0 +1,282 @@
+{
+  "panels": {
+    "witness": {
+      "median_pct": 2.460861716517609,
+      "interval_pct": [
+        2.377039013694519,
+        2.614316599770099
+      ],
+      "pairs": [
+        {
+          "block": 0,
+          "effect_pct": 2.738643998632722,
+          "host_cached_step_effect_pct": 3.4669579012628255,
+          "host_first_token_step_ns": [
+            24233373,
+            32121186
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 1,
+          "effect_pct": 2.569790638181267,
+          "host_cached_step_effect_pct": 3.255734306384317,
+          "host_first_token_step_ns": [
+            24369992,
+            31950068
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 2,
+          "effect_pct": 2.377039013694519,
+          "host_cached_step_effect_pct": 3.0935982116854284,
+          "host_first_token_step_ns": [
+            24328305,
+            32134423
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 3,
+          "effect_pct": 2.2345414297379596,
+          "host_cached_step_effect_pct": 3.055830542393577,
+          "host_first_token_step_ns": [
+            24277526,
+            33448297
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 4,
+          "effect_pct": 2.4665395133803143,
+          "host_cached_step_effect_pct": 3.158192841547526,
+          "host_first_token_step_ns": [
+            24309498,
+            31954667
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 5,
+          "effect_pct": 2.546059837447636,
+          "host_cached_step_effect_pct": 3.254227265504932,
+          "host_first_token_step_ns": [
+            24470202,
+            32141817
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 6,
+          "effect_pct": 2.9267719191222086,
+          "host_cached_step_effect_pct": 3.7044008748340844,
+          "host_first_token_step_ns": [
+            24281154,
+            32786336
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 7,
+          "effect_pct": 2.614316599770099,
+          "host_cached_step_effect_pct": 3.3274636443168655,
+          "host_first_token_step_ns": [
+            24310451,
+            32078589
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 8,
+          "effect_pct": 2.423876265839931,
+          "host_cached_step_effect_pct": 3.1186414991335667,
+          "host_first_token_step_ns": [
+            24265836,
+            31874594
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 9,
+          "effect_pct": 2.455183919654904,
+          "host_cached_step_effect_pct": 3.1404970210639065,
+          "host_first_token_step_ns": [
+            24418327,
+            31988048
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 10,
+          "effect_pct": 2.3156514699771837,
+          "host_cached_step_effect_pct": 3.0417774313041552,
+          "host_first_token_step_ns": [
+            24249715,
+            32141283
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 11,
+          "effect_pct": 2.430080774257314,
+          "host_cached_step_effect_pct": 3.1836974047459945,
+          "host_first_token_step_ns": [
+            24282916,
+            32613122
+          ],
+          "paired_token_hash_disagreements": 0
+        }
+      ],
+      "passed": true,
+      "prediction": {
+        "immediate_ms": 1218.6952206666667,
+        "staged_ms": 1180.512144,
+        "effect_pct": 3.1331112175675297,
+        "decision": "staged"
+      }
+    },
+    "control": {
+      "median_pct": -102.62713062180599,
+      "interval_pct": [
+        -102.89188010146644,
+        -102.55157055826525
+      ],
+      "pairs": [
+        {
+          "block": 0,
+          "effect_pct": -102.88154888120775,
+          "host_cached_step_effect_pct": -104.89528148079513,
+          "host_first_token_step_ns": [
+            18921051,
+            27195880
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 1,
+          "effect_pct": -103.0855237863522,
+          "host_cached_step_effect_pct": -104.84082370051193,
+          "host_first_token_step_ns": [
+            18397081,
+            27448979
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 2,
+          "effect_pct": -102.60432805993288,
+          "host_cached_step_effect_pct": -104.44092247567224,
+          "host_first_token_step_ns": [
+            18473403,
+            27186588
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 3,
+          "effect_pct": -102.56443276923093,
+          "host_cached_step_effect_pct": -104.46231751083788,
+          "host_first_token_step_ns": [
+            18528415,
+            26982297
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 4,
+          "effect_pct": -102.34129064789953,
+          "host_cached_step_effect_pct": -104.1722786924345,
+          "host_first_token_step_ns": [
+            18450725,
+            27290463
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 5,
+          "effect_pct": -102.76460352625509,
+          "host_cached_step_effect_pct": -104.54412739625853,
+          "host_first_token_step_ns": [
+            18460017,
+            27513437
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 6,
+          "effect_pct": -102.44705441490396,
+          "host_cached_step_effect_pct": -104.24355427274558,
+          "host_first_token_step_ns": [
+            18441653,
+            27325843
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 7,
+          "effect_pct": -103.09131794929121,
+          "host_cached_step_effect_pct": -104.91160807159288,
+          "host_first_token_step_ns": [
+            18693855,
+            27932646
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 8,
+          "effect_pct": -102.6003967289287,
+          "host_cached_step_effect_pct": -104.5446454789617,
+          "host_first_token_step_ns": [
+            18503171,
+            26864815
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 9,
+          "effect_pct": -102.6499331836791,
+          "host_cached_step_effect_pct": -104.4441929560918,
+          "host_first_token_step_ns": [
+            18437706,
+            27308677
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 10,
+          "effect_pct": -102.89188010146644,
+          "host_cached_step_effect_pct": -104.69343687782012,
+          "host_first_token_step_ns": [
+            18429174,
+            27326592
+          ],
+          "paired_token_hash_disagreements": 0
+        },
+        {
+          "block": 11,
+          "effect_pct": -102.55157055826525,
+          "host_cached_step_effect_pct": -104.44543696906447,
+          "host_first_token_step_ns": [
+            18543117,
+            27088123
+          ],
+          "paired_token_hash_disagreements": 0
+        }
+      ],
+      "passed": true,
+      "prediction": {
+        "immediate_ms": 590.256072,
+        "staged_ms": 1205.9124080000001,
+        "effect_pct": -104.30326178838531,
+        "decision": "immediate"
+      }
+    }
+  },
+  "joint_transfer_passed": true,
+  "inputs": {
+    "prediction.json": "2d73b027a22ef83f413cd709480f6dc298f12f412ca4180f41aeca00c407dcc8",
+    "calibrate.jsonl": "25403f5950d3b85a43f06cf110534f4775186f135722a734363b35a8c1ac7094",
+    "validate.jsonl": "c27bee10dead2426f6fd889911511bbf4131c27bfd14b314f628888a7121e0ae"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "frozen_sha256": "5cd1bd49cf10012049f639e885417a03e15e6cdeb1f1513f83ede945c222d25a",
+  "csv_sha256": "fd20b057a3a3cad4ffa8111e4fb560aee821752b8b63c707c9f559233e0cbdce",
+  "clock_ms": [
+    4.7105953437500006,
+    4.6113755625,
+    4.810461067708333
+  ],
+  "raw_sha256": {
+    "rollouts_base_none_p00500.jsonl": "f2c7193a4f008a87de514110f4b6577e15449a642ec0965fa62fa8e0dece78b0",
+    "rollouts_base_none_p01125.jsonl": "7238305dfbd952f624da88a377ed89cb55dc265328f3ce537e241c289a8d8db0",
+    "rollouts_base_none_p00800.jsonl": "3293e055416ae74408e0edb6393ae1b0941d889a18c8ecf89433d5a5cddc694e",
+    "rollouts_base_none_p00900.jsonl": "ef9f072e62b51d8d12d09f6c115f12803b4cdad2a6b32096871a0b10143c0970",
+    "rollouts_base_none_p00350.jsonl": "48636a1cbd1516eb13ec42849deec5f5d98b7e1f65cd4c83ba50a04f45253c41",
+    "rollouts_base_none_p01225.jsonl": "24803e1cf702cde5eba8d5013fd1f62aa399f935c64991d24c490f42a0fe302d",
+    "rollouts_base_none_p00475.jsonl": "7d84b44858a42def15b6e38e54102bcae6256ea89a67db48c6be76159d4294ee",
+    "rollouts_base_none_p00675.jsonl": "f8095903f438386a095f361326e33f8541fbe5f341541d88baf0982312346c91"
+  },
+  "retrospective": true,
+  "machine_timings_on_these_questions": false,
+  "questions": 200,
+  "paths": 600,
+  "min_length": 38,
+  "max_length": 31744,
+  "capped_paths": 3,
+  "questions_with_capped_paths": 3,
+  "mean_gain_pct": -26.72571139415482,
+  "median_gain_pct": -18.195455723310932,
+  "mean_gain_pct_descriptive_interval": [
+    -30.664697015112303,
+    -22.818995494987135
+  ],
+  "modeled_total_ms": {
+    "immediate": 944161.6695293748,
+    "staged": 996394.7783002189,
+    "oracle": 942223.5800832553
+  },
+  "modeled_time_difference_ms": -52233.10877084406,
+  "pooled_gain_pct": -5.532220853329079,
+  "positive": 66,
+  "negative": 134,
+  "equal": 0,
+  "at_least_one_pct": 25,
+  "at_least_two_pct": 14,
+  "oracle_mean_gain_pct": 0.36391834564902686,
+  "oracle_pooled_gain_pct": 0.20527093067499289,
+  "oracle_mean_gain_pct_descriptive_interval": [
+    0.26937972249559067,
+    0.46382313881374304
+  ]
+}

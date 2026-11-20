@@ -1,0 +1,31 @@
+{
+  "args": {
+    "self_check": false,
+    "model": "/study/model",
+    "out": "/study/panels-h20",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "attn": "sdpa",
+    "n": 8,
+    "slots": 4,
+    "questions": 6,
+    "repeats": 1,
+    "max_tokens": 160,
+    "temperature": 0.7
+  },
+  "python": "3.11.9",
+  "torch": "2.2.0+cu121",
+  "transformers": "4.40.1",
+  "cuda": "12.1",
+  "device": "NVIDIA H20",
+  "eos_ids": [
+    151643,
+    151645
+  ],
+  "attention": "sdpa",
+  "hashes": {
+    "config.json": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+    "generation_config.json": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  }
+}

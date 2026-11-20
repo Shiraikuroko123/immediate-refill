@@ -1,0 +1,36 @@
+{
+  "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "hf_revision": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+  "files": [
+    {
+      "Name": "config.json",
+      "Revision": "eff58c50929e7b264b5769004dda2164cd4ed3b5",
+      "Sha256": "37bd455e9679d2959536270fed49d25cc7c290a64f6e52abb97c71345a9cee41",
+      "Size": 679
+    },
+    {
+      "Name": "generation_config.json",
+      "Revision": "e3c059a7c487ab11707abcfbf48142b91d4c21c1",
+      "Sha256": "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126",
+      "Size": 181
+    },
+    {
+      "Name": "model.safetensors",
+      "Revision": "24b8c5eceaed8fa7164bd0081e80e53f19c1a34e",
+      "Sha256": "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945",
+      "Size": 3554214621
+    },
+    {
+      "Name": "tokenizer.json",
+      "Revision": "24b8c5eceaed8fa7164bd0081e80e53f19c1a34e",
+      "Sha256": "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773",
+      "Size": 7031660
+    },
+    {
+      "Name": "tokenizer_config.json",
+      "Revision": "e971ac7de68747019190c70bbb552677c4187f84",
+      "Sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5",
+      "Size": 3071
+    }
+  ]
+}
