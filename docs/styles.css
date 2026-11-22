@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Refill Math";
+  src: url(assets/type/stix-two-math.woff) format("woff");
+  font-display: swap;
+}
+@font-face {
   font-family: STIX;
   src: url(assets/type/text.woff2) format("woff2");
   font-style: normal;
@@ -168,8 +173,7 @@ input:focus-visible {
 }
 h1,
 h2,
-.result-number,
-.equation {
+.result-number {
   font-family: var(--serif);
   font-weight: 500;
 }
@@ -276,22 +280,44 @@ p:last-child {
   gap: clamp(38px, 8vw, 152px);
   align-items: center;
 }
-.theory-grid > div > p:not(.kicker, .equation) {
+.theory-grid > div > p:not(.kicker) {
   color: var(--muted);
   max-width: 59ch;
 }
-.math-block {
-  border-block: 1px solid #8195a5;
-  padding: 27px 0;
+.theory-grid { align-items: start; }
+.theory-grid > *, .theorem-results > * { min-width: 0; }
+.theorem-results > div {
+  padding-block: 1rem;
+  border-top: 1px solid #8195a5;
 }
-.equation {
-  font-size: clamp(27px, 3.6vw, 54px);
-  line-height: 1.1;
-  white-space: nowrap;
-  margin: 0.55em 0;
+.theorem-results h3 {
+  font-size: 1.08rem;
+  font-weight: 650;
+  margin: 0;
 }
-.equation sub {
-  font-size: 0.55em;
+.theorem-results p { margin: .55rem 0; color: var(--muted); }
+.theorem-results details { margin-block: .75rem 0; }
+.eq-display {
+  font-size: clamp(1.2rem, 1.1rem + .42vw, 1.55rem);
+  padding: .42em .12em;
+  margin: .3rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.eq-display math {
+  display: block math;
+  font-family: "Refill Math", "Cambria Math", math;
+  font-weight: normal;
+  font-size: 1em;
+  math-style: normal;
+  width: max-content;
+  margin-inline: auto;
+}
+.method-block > .eq-display, .study-block > .eq-display {
+  background: var(--soft);
+}
+@media (max-width: 400px) {
+  .eq-display:has(mtable) { font-size: 1.1rem; }
 }
 .evidence {
   background: #fffefa;
@@ -590,9 +616,6 @@ dialog::backdrop {
   .evidence,
   .artifacts {
     padding-block: 46px;
-  }
-  .math-block {
-    padding: 15px 0;
   }
   .tab-list {
     gap: 0;
