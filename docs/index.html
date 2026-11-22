@@ -46,10 +46,10 @@
           <span class="resource-label">Open research artifact</span>
           <div class="resource-links">
             <a href="downloads/immediate-refill-paper.pdf" download>
-              <span>Paper</span><small>PDF · 16 pages</small><span aria-hidden="true">↗</span>
+              <span>Paper</span><small>English PDF</small><span aria-hidden="true">↗</span>
             </a>
             <a href="downloads/immediate-refill-source.zip" download>
-              <span>Code</span><small>LaTeX · scripts · figures</small><span aria-hidden="true">↓</span>
+              <span>Source</span><small>LaTeX · scripts · figures</small><span aria-hidden="true">↓</span>
             </a>
             <a href="downloads/immediate-refill-supplement.zip" download>
               <span>Evidence</span><small>reproduction bundle</small><span aria-hidden="true">↓</span>
@@ -70,8 +70,8 @@
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#evidence">Inspect the evidence <span>↓</span></a>
-              <a class="button button-quiet" href="downloads/immediate-refill-source.zip" download>
-                Get the artifact <span>↗</span>
+              <a class="button button-quiet" href="downloads/immediate-refill-supplement.zip" download>
+                Download the evidence <span>↓</span>
               </a>
             </div>
             <p class="hero-meta">Independent research project · ICML-style submission package · November 2026</p>
@@ -97,7 +97,7 @@
             </button>
             <div class="visual-caption">
               <span>Figure 01</span>
-              <span>Four candidates · three slots · one extra launch decision</span>
+              <span>Four candidates · three slots · zero extra launch budget</span>
             </div>
           </div>
         </section>
@@ -105,7 +105,7 @@
         <section class="metric-rail section-frame reveal" aria-label="Key results">
           <div class="metric">
             <span class="metric-value" data-count="iff">iff</span>
-            <span class="metric-label">discrete concavity is the exact condition for universal optimality</span>
+            <span class="metric-label">discrete concavity on reachable widths characterizes universal optimality with zero extra launches</span>
           </div>
           <div class="metric">
             <span class="metric-value" data-count="3.13">3.13%</span>
@@ -290,14 +290,14 @@
                 <span class="panel-label">200 GSM8K problems · 3,968-token fixed clock</span>
                 <h3>Most replayed savings come from seeing votes outside the prefix.</h3>
                 <p>
-                  Index-based admission changed 138 of 200 schedules. The total simulated
-                  saving was 8.71% relative to a buffered policy. When the comparator
-                  already knows the unordered returned votes, the remaining gap is 0.67%.
+                  Index-based admission changed 138 of 200 schedules. Compared with waiting for a contiguous prefix,
+                  it saved 8.71% per problem on average (median 0.14%). Summed latency fell by 18.72%,
+                  with two long problems contributing 67% of the total time saved.
                 </p>
                 <div class="mini-stat-row">
-                  <div><strong>8.71%</strong><span>full indexing</span></div>
-                  <div><strong>0.67%</strong><span>unordered votes</span></div>
-                  <div><strong>0.30%</strong><span>prefix + multiset</span></div>
+                  <div><strong>8.71%</strong><span>vs. buffered prefix</span></div>
+                  <div><strong>0.67%</strong><span>vs. unordered votes</span></div>
+                  <div><strong>0.30%</strong><span>vs. prefix + multiset</span></div>
                 </div>
               </div>
               <button
@@ -330,11 +330,11 @@
               <button
                 class="figure-frame figure-button light-figure panel-figure"
                 type="button"
-                data-lightbox="assets/figures/evidence.png"
-                data-caption="Device and archive evidence. The paper keeps the controlled A800 result separate from the larger replay study."
+                data-lightbox="assets/figures/transfer-blocks.png"
+                data-caption="Predicted and measured timing for two prespecified configurations in one A800 session."
                 aria-label="Enlarge the device evidence figure"
               >
-                <img src="assets/figures/evidence.png" alt="Evidence plots for archive replay and A800 timing validation." />
+                <img src="assets/figures/transfer-blocks.png" alt="Predicted and measured timing across paired A800 blocks." />
                 <span class="image-expand" aria-hidden="true">＋</span>
               </button>
             </div>
@@ -346,7 +346,7 @@
                 <p>
                   The certificate-work lower bound includes work already accrued on earlier
                   paths and earliest possible completion times. Across all three benchmark
-                  groups, the full bound stays below 0.5% under the fixed 3,968-token clock.
+                  groups, the mean upper bound on savings stays below 0.5% under the fixed 3,968-token clock.
                 </p>
                 <div class="mini-stat-row">
                   <div><strong>0.216%</strong><span>AIME25 bound</span></div>
@@ -357,11 +357,11 @@
               <button
                 class="figure-frame figure-button light-figure panel-figure"
                 type="button"
-                data-lightbox="assets/figures/transfer-blocks.png"
-                data-caption="The certificate-work argument tracks demand across terminal completion sets and width durations."
+                data-lightbox="assets/figures/evidence.png"
+                data-caption="Upper bounds on savings from launch timing, computed on fixed archived panels."
                 aria-label="Enlarge the certificate-work figure"
               >
-                <img src="assets/figures/transfer-blocks.png" alt="Certificate-work and transfer-blocks evidence." />
+                <img src="assets/figures/evidence.png" alt="Upper bounds on launch-timing savings under the calibrated clock." />
                 <span class="image-expand" aria-hidden="true">＋</span>
               </button>
             </div>
@@ -432,18 +432,16 @@
           <div class="reproduce-grid">
             <div class="command-card reveal">
               <div class="command-head">
-                <span>rebuild the figures</span>
+                <span>reproduce the numerical results</span>
                 <button class="copy-button" type="button" data-copy-target="repro-command">Copy</button>
               </div>
-              <pre id="repro-command"><code>cd manuscript/refill-polished
-python -B plots/workflow.py
-python -B plots/price_hull.py
-python -B plots/admission_gains.py</code></pre>
-              <p class="command-note">The release archive includes the raw inputs and verification records used by the manuscript.</p>
+              <pre id="repro-command"><code>python -m pip install -r requirements.txt
+python -B reproduce.py --out results.json</code></pre>
+              <p class="command-note">Extract the Evidence ZIP, open its top-level directory and run these commands in a fresh Python 3.10 environment. Replay uses the recorded measurements and requires only a CPU.</p>
             </div>
             <div class="artifact-list reveal delay-1">
               <a class="artifact-link" href="downloads/immediate-refill-paper.pdf" download>
-                <span class="artifact-icon">P</span><span><strong>Paper</strong><small>English PDF · 16 pages</small></span><span>↗</span>
+                <span class="artifact-icon">P</span><span><strong>Paper</strong><small>English PDF with proofs and supplementary analyses</small></span><span>↗</span>
               </a>
               <a class="artifact-link" href="downloads/immediate-refill-source.zip" download>
                 <span class="artifact-icon">C</span><span><strong>Source package</strong><small>LaTeX, figures, data, scripts</small></span><span>↗</span>
@@ -453,6 +451,9 @@ python -B plots/admission_gains.py</code></pre>
               </a>
               <a class="artifact-link" href="downloads/中文研究说明.md" download>
                 <span class="artifact-icon">中</span><span><strong>中文研究说明</strong><small>Study notes and limitations</small></span><span>↗</span>
+              </a>
+              <a class="artifact-link" href="downloads/immediate-refill-zh.pdf" download>
+                <span class="artifact-icon">中</span><span><strong>中文论文</strong><small>Full Chinese study edition</small></span><span>↗</span>
               </a>
             </div>
           </div>
@@ -486,7 +487,7 @@ python -B plots/admission_gains.py</code></pre>
 
     <dialog id="lightbox" class="lightbox">
       <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
-      <img id="lightbox-image" src="" alt="" />
+      <img id="lightbox-image" src="assets/figures/refill-timeline.png" alt="" />
       <p id="lightbox-caption"></p>
     </dialog>
     <script src="app.js"></script>

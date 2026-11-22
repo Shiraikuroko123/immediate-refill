@@ -1,30 +1,22 @@
 # When Is Immediate Refill Optimal for Parallel Voting?
 
-This repository preserves the manuscript, the code and inputs used to reproduce its numerical results, and the research files inventoried on the A800 and H20 hosts on 21 November 2026 (Beijing time).
+[Project page](https://shiraikuroko123.github.io/immediate-refill/) · [English paper](docs/downloads/immediate-refill-paper.pdf) · [中文论文](docs/downloads/immediate-refill-zh.pdf) · [中文研究说明](docs/downloads/中文研究说明.md)
 
-**Project page:** [open the live research showcase](https://shiraikuroko123.github.io/immediate-refill/) · [browse the static site source](docs/)
+Under an ordered voting protocol with zero extra launches, immediate refill is universally optimal exactly when decoding-step costs are discretely concave over reachable widths. The paper gives a tight worst-case latency ratio over variable panel sizes and quotas. On one A800, the calibrated clock predicted a 3.13% saving from delaying the third of three fixed-length requests. The median measured saving across 12 paired blocks was 2.46%.
 
-| To do this | Start here |
+| Resource | Contents |
 | --- | --- |
-| Read the paper or edit its LaTeX | [PDF](review/manuscript/transfer-review/main.pdf) · [TeX and bibliography](review/manuscript/transfer-review/) |
-| Recompute the paper's results from recorded experiments | [Reviewer instructions](review/README.md) · [Extended CPU analysis](review/cpu/README.md) |
-| Obtain the exact portable supplement | [Download scheduling-review.zip](dist/scheduling-review.zip) |
-| Restore the original server project directories | [Server backup](server-data/README.md) · [A800 inventory](server-data/a800/inventory.json) · [H20 inventory](server-data/h20/inventory.json) |
-| Collect fresh GPU measurements | [Restore the pinned model files](review/models/README.md) · [GPU runtime and commands](review/runtime/README.md) |
+| [English LaTeX source](docs/downloads/immediate-refill-source.zip) | Source, bibliography, figures and plotting inputs for the current manuscript |
+| [Evidence ZIP](docs/downloads/immediate-refill-supplement.zip) | Raw measurement records, fixed workloads, scheduling code, theorem checks and scripts for CPU replay |
+| [File checksums](docs/downloads/SHA256SUMS.txt) | SHA-256 digests of the current paper, source, evidence and Chinese edition |
 
-From the root of a clone, run these checks with Python 3.10. The first verifies the 732 archived server files. The second checks the portable artifact and recomputes the primary device results from raw events. Both work offline.
+Extract the evidence ZIP into an empty directory. In that directory, using a fresh Python 3.10 environment, run
 
 ```sh
-python -B server-data/verify.py
-python -B review/check.py
+python -m pip install -r requirements.txt
+python -B reproduce.py --out results.json
 ```
 
-For all 14 groups of numerical results, install the pinned CPU dependencies and run the replay from `review/`.
+The report reconstructs the recorded device results, the archived panel comparisons and the sensitivity analyses. The included README gives the figure commands and describes each input and output.
 
-```sh
-cd review
-python -m pip install -r cpu/requirements.txt
-python -B cpu/replay.py --root . --report ../cpu-results.json
-```
-
-The manuscript PDF has SHA-256 `0d70afff5ebfc7eab790c42f9ca572a6c0f1439db787c391574a5f9322a0eeaa`. The supplement ZIP has SHA-256 `fc3ccc26d2f205febc4d87bf4609b97013e36ebd8fc207e7bbfa1b7d8f1f0853`. Data sources, model revisions and applicable notices are documented in [SOURCES.md](review/SOURCES.md).
+The [server archive](server-data/README.md) preserves the A800 and H20 research files inventoried on 21 November 2026. To check all 732 files from the root of a clone, run `python -B server-data/verify.py`. The earlier [reviewer snapshot](review/README.md) and [original ZIP](dist/scheduling-review.zip) remain available for historical comparisons.
