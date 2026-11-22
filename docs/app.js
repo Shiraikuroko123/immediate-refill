@@ -1,4 +1,22 @@
 const chinese = document.documentElement.lang.startsWith("zh");
+const archiveQuestion = document.getElementById("archive-question");
+const archiveBaseline = document.getElementById("archive-baseline");
+if (archiveQuestion && archiveBaseline) {
+  const measurements = JSON.parse(document.getElementById("archive-values").textContent);
+  const refreshQuestion = () => {
+    const [baselineTime, indexedTime] = measurements[archiveQuestion.value][archiveBaseline.value];
+    const percent = 100 * (baselineTime - indexedTime) / baselineTime;
+    document.getElementById("case-id").textContent = `gsm8k_${archiveQuestion.value}`;
+    document.getElementById("case-baseline").textContent = archiveBaseline.selectedOptions[0].textContent;
+    document.getElementById("case-base").textContent = `${baselineTime.toFixed(3)} s`;
+    document.getElementById("case-index").textContent = `${indexedTime.toFixed(3)} s`;
+    document.getElementById("case-saving").textContent = `${percent > 0 ? "+" : ""}${percent.toFixed(2)}%`;
+  };
+  archiveQuestion.addEventListener("change", refreshQuestion);
+  archiveBaseline.addEventListener("change", refreshQuestion);
+  archiveQuestion.form.hidden = false;
+  refreshQuestion();
+}
 const tr = (en, zh) => (chinese ? zh : en);
 const tabs = [...document.querySelectorAll(".tab-button")];
 const panels = [...document.querySelectorAll(".result-panel")];
