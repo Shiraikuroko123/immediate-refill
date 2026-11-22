@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="When Is Immediate Refill Optimal for Parallel Voting? An evidence-first research project page on LLM inference scheduling."
+    />
+    <meta name="theme-color" content="#0a0b0d" />
+    <meta property="og:title" content="When Is Immediate Refill Optimal for Parallel Voting?" />
+    <meta
+      property="og:description"
+      content="A theory and systems study of admission timing in parallel self-consistency inference."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/figures/refill-timeline.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Immediate Refill · Parallel Voting</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Immediate Refill home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>REFILL / 01</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span>
+          <span class="sr-only">Open navigation</span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#problem">Problem</a>
+          <a href="#mechanism">Mechanism</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#reproduce">Reproduce</a>
+        </nav>
+        <a class="header-link" href="downloads/immediate-refill-paper.pdf" download>
+          <span>Paper PDF</span><span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <main id="top">
+        <section class="resource-strip section-frame" aria-label="Project resources">
+          <span class="resource-label">Open research artifact</span>
+          <div class="resource-links">
+            <a href="downloads/immediate-refill-paper.pdf" download>
+              <span>Paper</span><small>PDF · 16 pages</small><span aria-hidden="true">↗</span>
+            </a>
+            <a href="downloads/immediate-refill-source.zip" download>
+              <span>Code</span><small>LaTeX · scripts · figures</small><span aria-hidden="true">↓</span>
+            </a>
+            <a href="downloads/immediate-refill-supplement.zip" download>
+              <span>Evidence</span><small>reproduction bundle</small><span aria-hidden="true">↓</span>
+            </a>
+            <a href="downloads/中文研究说明.md" download>
+              <span>Notes</span><small>中文研究说明</small><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="hero section-frame">
+          <div class="hero-copy reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> LLM inference systems · scheduling theory</p>
+            <h1>When Is <em>Immediate Refill</em> Optimal for Parallel Voting?</h1>
+            <p class="hero-lede">
+              A compact study of when filling a free decoding slot helps, when it hurts,
+              and how much latency any alternative policy can actually recover.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#evidence">Inspect the evidence <span>↓</span></a>
+              <a class="button button-quiet" href="downloads/immediate-refill-source.zip" download>
+                Get the artifact <span>↗</span>
+              </a>
+            </div>
+            <p class="hero-meta">Independent research project · ICML-style submission package · November 2026</p>
+          </div>
+
+          <div class="hero-visual reveal delay-1">
+            <div class="visual-kicker">
+              <span>01 / core contrast</span>
+              <span>shared decoding clock</span>
+            </div>
+            <button
+              class="figure-frame figure-button"
+              type="button"
+              data-lightbox="assets/figures/refill-timeline.png"
+              data-caption="The motivating schedule: delaying path 3 holds the active width at two and reduces wall time from 23 to 22."
+              aria-label="Enlarge the immediate refill and delayed path timeline"
+            >
+              <img
+                src="assets/figures/refill-timeline.png"
+                alt="Timeline comparing immediate refill with delaying the third path. Wall time is 23 versus 22."
+              />
+              <span class="image-expand" aria-hidden="true">＋</span>
+            </button>
+            <div class="visual-caption">
+              <span>Figure 01</span>
+              <span>Four candidates · three slots · one extra launch decision</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-rail section-frame reveal" aria-label="Key results">
+          <div class="metric">
+            <span class="metric-value" data-count="iff">iff</span>
+            <span class="metric-label">discrete concavity is the exact condition for universal optimality</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" data-count="3.13">3.13%</span>
+            <span class="metric-label">predicted A800 gain from delaying the third launch</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" data-count="2.46">2.46%</span>
+            <span class="metric-label">median gain measured across 12 paired blocks</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" data-count="200">200</span>
+            <span class="metric-label">archived GSM8K problems replayed under fixed policies</span>
+          </div>
+        </section>
+
+        <section id="problem" class="section-frame section-block problem-section">
+          <div class="section-intro reveal">
+            <p class="section-index">02 / the problem</p>
+            <h2>A free slot changes the clock.</h2>
+          </div>
+          <div class="problem-grid">
+            <p class="lead-paragraph reveal">
+              In parallel self-consistency, a finished reasoning path releases a slot.
+              The usual instinct is to refill it immediately. That decision also changes
+              the number of active paths in the batch, so it can change the next decoding
+              step for every path still running.
+            </p>
+            <div class="explain-copy reveal delay-1">
+              <p>
+                The paper treats admission as a control problem with a hard launch quota.
+                Every request consumes budget from the moment it starts, including paths
+                canceled after an early vote certificate.
+              </p>
+              <p>
+                The question is therefore narrower than “does batching help?” It is
+                whether an admissible scheduler should spend a newly available slot now,
+                given the current vote information and the measured width-dependent cost.
+              </p>
+            </div>
+          </div>
+          <div class="quote-band reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              The fastest schedule is determined by the geometry of the decoding cost curve,
+              not by the number of paths alone.
+            </p>
+          </div>
+        </section>
+
+        <section id="mechanism" class="section-frame section-block">
+          <div class="section-intro split-intro reveal">
+            <div>
+              <p class="section-index">03 / mechanism</p>
+              <h2>Admission is an information problem.</h2>
+            </div>
+            <p class="intro-aside">
+              Index-based admission uses all returned votes, including votes from paths
+              outside the completed prefix, while preserving the launch order.
+            </p>
+          </div>
+          <div class="mechanism-grid">
+            <div class="figure-stack reveal">
+              <button
+                class="figure-frame figure-button light-figure"
+                type="button"
+                data-lightbox="assets/figures/indexed-workflow.png"
+                data-caption="The online admission loop computes the safe launch bound F(S) before every refill."
+                aria-label="Enlarge the indexed admission workflow"
+              >
+                <img
+                  src="assets/figures/indexed-workflow.png"
+                  alt="Flowchart of the indexed admission workflow."
+                />
+                <span class="image-expand" aria-hidden="true">＋</span>
+              </button>
+              <p class="figure-note">The admission loop. Returned indices are part of the state.</p>
+            </div>
+            <div class="mechanism-copy reveal delay-1">
+              <div class="step-list">
+                <div class="step-item">
+                  <span class="step-number">01</span>
+                  <div>
+                    <h3>Observe</h3>
+                    <p>Record every completed index and its vote, including out-of-order returns.</p>
+                  </div>
+                </div>
+                <div class="step-item">
+                  <span class="step-number">02</span>
+                  <div>
+                    <h3>Bound</h3>
+                    <p>Compute <code>F(S) = min(Q, |S| + P, M(S) + B)</code> from the strongest consistent prefix.</p>
+                  </div>
+                </div>
+                <div class="step-item">
+                  <span class="step-number">03</span>
+                  <div>
+                    <h3>Refill</h3>
+                    <p>Launch only the next admissible indices. Stop immediately once a strict certificate exists.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="micro-note">
+                <span class="micro-dot"></span>
+                No future votes are used at decision time.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-frame section-block theory-section">
+          <div class="theory-header reveal">
+            <p class="section-index">04 / theory</p>
+            <h2>One curve decides the universal case.</h2>
+            <p>
+              In the zero-extra-budget regime, every valid schedule completes the same
+              serial prefix. Only the occupancy profile changes.
+            </p>
+          </div>
+          <div class="theory-grid">
+            <div class="theorem-card reveal">
+              <span class="theorem-label">THEOREM 1 · B = 0</span>
+              <p class="theorem-text">
+                Immediate refill is universally optimal over arbitrary panel sizes and
+                quotas <strong>if and only if</strong> the width cost is discretely concave.
+              </p>
+              <div class="equation">2c<sub>j</sub> ≥ c<sub>j−1</sub> + c<sub>j+1</sub></div>
+              <div class="theorem-foot">
+                <span>Every reachable width</span>
+                <span class="theorem-arrow">→</span>
+                <span>no admissible schedule is faster</span>
+              </div>
+            </div>
+            <div class="figure-stack reveal delay-1">
+              <button
+                class="figure-frame figure-button light-figure"
+                type="button"
+                data-lightbox="assets/figures/price-hull.png"
+                data-caption="The least concave majorant gives the exact worst-case ratio when the measured step-cost curve is not concave."
+                aria-label="Enlarge the least concave majorant figure"
+              >
+                <img
+                  src="assets/figures/price-hull.png"
+                  alt="Step cost curve and its least concave majorant."
+                />
+                <span class="image-expand" aria-hidden="true">＋</span>
+              </button>
+              <p class="figure-note">
+                When concavity fails, the least concave majorant
+                <span class="mono">ĉ</span> gives
+                <span class="mono">max<sub>k</sub> ĉ<sub>k</sub>/c<sub>k</sub></span>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" class="section-frame section-block evidence-section">
+          <div class="section-intro split-intro reveal">
+            <div>
+              <p class="section-index">05 / evidence</p>
+              <h2>Separate the mechanism from the headline.</h2>
+            </div>
+            <p class="intro-aside">
+              The archive reveals where information helps. The device session tests whether
+              the same claim survives real engine overhead.
+            </p>
+          </div>
+          <div class="evidence-tabs reveal">
+            <div class="tab-list" role="tablist" aria-label="Evidence views">
+              <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-archive" data-panel="panel-archive">
+                Archive replay
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-device" data-panel="panel-device">
+                A800 validation
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-bounds" data-panel="panel-bounds">
+                Upper bounds
+              </button>
+            </div>
+
+            <div id="panel-archive" class="tab-panel is-active" role="tabpanel">
+              <div class="panel-copy">
+                <span class="panel-label">200 GSM8K problems · 3,968-token fixed clock</span>
+                <h3>Most replayed savings come from seeing votes outside the prefix.</h3>
+                <p>
+                  Index-based admission changed 138 of 200 schedules. The total simulated
+                  saving was 8.71% relative to a buffered policy. When the comparator
+                  already knows the unordered returned votes, the remaining gap is 0.67%.
+                </p>
+                <div class="mini-stat-row">
+                  <div><strong>8.71%</strong><span>full indexing</span></div>
+                  <div><strong>0.67%</strong><span>unordered votes</span></div>
+                  <div><strong>0.30%</strong><span>prefix + multiset</span></div>
+                </div>
+              </div>
+              <button
+                class="figure-frame figure-button light-figure panel-figure"
+                type="button"
+                data-lightbox="assets/figures/admission-gains.png"
+                data-caption="Decomposition of simulated gains from out-of-prefix votes and exact returned indices."
+                aria-label="Enlarge the archive replay results"
+              >
+                <img src="assets/figures/admission-gains.png" alt="Archive replay savings decomposition." />
+                <span class="image-expand" aria-hidden="true">＋</span>
+              </button>
+            </div>
+
+            <div id="panel-device" class="tab-panel" role="tabpanel" hidden>
+              <div class="panel-copy">
+                <span class="panel-label">A800 · Qwen2.5-1.5B-Instruct · 12 paired blocks</span>
+                <h3>The width-cost prediction survives the controlled timing test.</h3>
+                <p>
+                  For fixed lengths (256, 128, 128), the measured cost curve predicted a
+                  3.13% gain from delaying the third launch. The paired device median was
+                  2.46%, with all blocks on the predicted side of zero.
+                </p>
+                <div class="mini-stat-row">
+                  <div><strong>4.711</strong><span>c₁ ms</span></div>
+                  <div><strong>4.611</strong><span>c₂ ms</span></div>
+                  <div><strong>4.810</strong><span>c₃ ms</span></div>
+                </div>
+              </div>
+              <button
+                class="figure-frame figure-button light-figure panel-figure"
+                type="button"
+                data-lightbox="assets/figures/evidence.png"
+                data-caption="Device and archive evidence. The paper keeps the controlled A800 result separate from the larger replay study."
+                aria-label="Enlarge the device evidence figure"
+              >
+                <img src="assets/figures/evidence.png" alt="Evidence plots for archive replay and A800 timing validation." />
+                <span class="image-expand" aria-hidden="true">＋</span>
+              </button>
+            </div>
+
+            <div id="panel-bounds" class="tab-panel" role="tabpanel" hidden>
+              <div class="panel-copy">
+                <span class="panel-label">AIME25 · AMC23 · OlympiadBench</span>
+                <h3>Certificate work leaves little room for an omniscient scheduler.</h3>
+                <p>
+                  The certificate-work lower bound includes work already accrued on earlier
+                  paths and earliest possible completion times. Across all three benchmark
+                  groups, the full bound stays below 0.5% under the fixed 3,968-token clock.
+                </p>
+                <div class="mini-stat-row">
+                  <div><strong>0.216%</strong><span>AIME25 bound</span></div>
+                  <div><strong>0.424%</strong><span>AMC23 bound</span></div>
+                  <div><strong>0.215%</strong><span>Olympiad bound</span></div>
+                </div>
+              </div>
+              <button
+                class="figure-frame figure-button light-figure panel-figure"
+                type="button"
+                data-lightbox="assets/figures/transfer-blocks.png"
+                data-caption="The certificate-work argument tracks demand across terminal completion sets and width durations."
+                aria-label="Enlarge the certificate-work figure"
+              >
+                <img src="assets/figures/transfer-blocks.png" alt="Certificate-work and transfer-blocks evidence." />
+                <span class="image-expand" aria-hidden="true">＋</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-frame section-block comparison-section">
+          <div class="comparison-intro reveal">
+            <p class="section-index">06 / interpretation</p>
+            <h2>What the result does and does not say.</h2>
+            <p>
+              The page keeps the strongest archive effect and the weaker end-to-end device
+              effect in the same view. That gap is part of the result.
+            </p>
+          </div>
+          <div class="comparison-table-wrap reveal delay-1">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Comparison</th>
+                  <th>Scope</th>
+                  <th>Mean saving</th>
+                  <th>Reading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Index-based vs. buffered</td>
+                  <td>200 archived GSM8K problems</td>
+                  <td class="accent-cell">8.71%</td>
+                  <td>Returned votes outside the prefix matter.</td>
+                </tr>
+                <tr>
+                  <td>Full indexing vs. unordered votes</td>
+                  <td>Same archive, same clock</td>
+                  <td>0.67%</td>
+                  <td>Exact indices add a smaller increment.</td>
+                </tr>
+                <tr>
+                  <td>Index-based vs. buffered</td>
+                  <td>16 GSM8K problems on one A800</td>
+                  <td>0.55%</td>
+                  <td>CI [−0.03%, 1.29%].</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="limitation-strip reveal">
+            <span class="limitation-label">Boundary</span>
+            <p>
+              The large archive estimate is a replay under a calibrated clock. The controlled
+              device comparison is smaller and leaves cross-session variance unmeasured.
+            </p>
+          </div>
+        </section>
+
+        <section id="reproduce" class="section-frame section-block reproduce-section">
+          <div class="section-intro split-intro reveal">
+            <div>
+              <p class="section-index">07 / reproduce</p>
+              <h2>Open the evidence, then rerun it.</h2>
+            </div>
+            <p class="intro-aside">
+              The release keeps the paper, source, supplement, figures, and the commands
+              needed to rebuild the analysis together.
+            </p>
+          </div>
+          <div class="reproduce-grid">
+            <div class="command-card reveal">
+              <div class="command-head">
+                <span>rebuild the figures</span>
+                <button class="copy-button" type="button" data-copy-target="repro-command">Copy</button>
+              </div>
+              <pre id="repro-command"><code>cd manuscript/refill-polished
+python -B plots/workflow.py
+python -B plots/price_hull.py
+python -B plots/admission_gains.py</code></pre>
+              <p class="command-note">The release archive includes the raw inputs and verification records used by the manuscript.</p>
+            </div>
+            <div class="artifact-list reveal delay-1">
+              <a class="artifact-link" href="downloads/immediate-refill-paper.pdf" download>
+                <span class="artifact-icon">P</span><span><strong>Paper</strong><small>English PDF · 16 pages</small></span><span>↗</span>
+              </a>
+              <a class="artifact-link" href="downloads/immediate-refill-source.zip" download>
+                <span class="artifact-icon">C</span><span><strong>Source package</strong><small>LaTeX, figures, data, scripts</small></span><span>↗</span>
+              </a>
+              <a class="artifact-link" href="downloads/immediate-refill-supplement.zip" download>
+                <span class="artifact-icon">S</span><span><strong>Supplement</strong><small>Reproduction and verification bundle</small></span><span>↗</span>
+              </a>
+              <a class="artifact-link" href="downloads/中文研究说明.md" download>
+                <span class="artifact-icon">中</span><span><strong>中文研究说明</strong><small>Study notes and limitations</small></span><span>↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-frame section-block citation-section">
+          <div class="citation-card reveal">
+            <div>
+              <p class="section-index">08 / cite</p>
+              <h2>Keep the question attached to the evidence.</h2>
+              <p class="citation-copy">
+                When Is Immediate Refill Optimal for Parallel Voting? Independent research project,
+                ICML-style submission package, 2026.
+              </p>
+            </div>
+            <button class="button button-dark copy-button" type="button" data-copy-target="citation-text">Copy citation</button>
+            <pre id="citation-text" class="citation-code"><code>@article{immediate_refill_parallel_voting,
+  title = {When Is Immediate Refill Optimal for Parallel Voting?},
+  year = {2026},
+  note = {ICML-style research artifact}
+}</code></pre>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer section-frame">
+        <span>REFILL / 01 · inference scheduling under a shared decoding clock</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </div>
+
+    <dialog id="lightbox" class="lightbox">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+      <img id="lightbox-image" src="" alt="" />
+      <p id="lightbox-caption"></p>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
