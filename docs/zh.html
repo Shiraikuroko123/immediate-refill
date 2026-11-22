@@ -4,7 +4,7 @@
 <meta name="page-type" content="tech"><meta name="site-kind" content="research"><title>并行投票时，立即补发何时最优？ | Refill</title>
 <meta name="description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:title" content="并行投票时，立即补发何时最优？"><meta property="og:description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:type" content="article"><meta property="og:url" content="https://shiraikuroko123.github.io/immediate-refill/zh.html"><meta property="og:image" content="https://shiraikuroko123.github.io/immediate-refill/assets/showcase-share.png">
 <link rel="canonical" href="https://shiraikuroko123.github.io/immediate-refill/zh.html"><link rel="alternate" hreflang="en" href="https://shiraikuroko123.github.io/immediate-refill/"><link rel="alternate" hreflang="zh-CN" href="https://shiraikuroko123.github.io/immediate-refill/zh.html">
-<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css?v=776400e0a4"><link rel="stylesheet" href="schedule.css">
+<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css?v=cd21b30301"><link rel="stylesheet" href="schedule.css">
 <script defer src="schedule.js"></script><script defer src="app.js?v=788955f218"></script></head><body id="top">
 <a href="#main" class="skip">跳到研究内容</a>
 <header class="mast"><div class="wrap navrow"><a class="brand" href="#top" aria-label="Refill，返回顶部"><img src="assets/refill.svg" width="33" height="33" alt="">Refill</a>
@@ -34,7 +34,7 @@
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>I</mi><mo>∈</mo><mi mathvariant="script">ℐ</mi></mrow></munder><mfrac><mrow><msub><mi>T</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>T</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>P</mi></mrow></munder><mfrac><msub><mover><mi>c</mi><mo accent="true">̂</mo></mover><mi>k</mi></msub><msub><mi>c</mi><mi>k</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\sup_{I\in\mathcal{I}}\frac{T_G(I)}{T_{\mathrm{opt}}(I)}=\max_{1\le k\le P}\frac{\hat c_k}{c_k}</annotation></semantics></math></div>
 <p>固定槽数和各宽度的单步成本，在所有零额外预算实例上取上确界，允许 N 与 Q 改变。G 表示立即补发，分母是合法调度的最优用时，ĉ 是成本曲线的最小凹上界。</p>
 <figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/price-hull.png" alt="并发宽度 1、2、3 的单步成本分别为 1、1、6。虚线标出最小凹上界，在宽度 2 处取值为 4。">
+      <img loading="lazy" width="2200" height="1084" src="assets/figures/price-hull.png" alt="并发宽度 1、2、3 的单步成本分别为 1、1、6。虚线标出最小凹上界，在宽度 2 处取值为 4。">
       <button type="button" class="figure-open" data-lightbox="assets/figures/price-hull.png" data-caption="在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。"
         aria-haspopup="dialog" aria-label="放大图表 · 在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。</figcaption></figure></div></div></div></section>
@@ -53,7 +53,7 @@
           <p>第 5 条可以启动。只读连续前缀的调度器还看不到任何票，无法排除前三票全都一致的可能，因此上限仍是 3 + 1 = 4。
           <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=2">§2.2，第 2–3 页</a></p>
           <figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/indexed-workflow.png" alt="调度器接收已完成选票及其编号，先检查胜者是否确定，再更新安全启动上限，并给满足条件的空槽补发路径。">
+      <img loading="lazy" width="2200" height="562" src="assets/figures/indexed-workflow.png" alt="调度器接收已完成选票及其编号，先检查胜者是否确定，再更新安全启动上限，并给满足条件的空槽补发路径。">
       <button type="button" class="figure-open" data-lightbox="assets/figures/indexed-workflow.png" data-caption="图 2　每张返回的选票都可能改变哪些路径可以启动。"
         aria-haspopup="dialog" aria-label="放大图表 · 图 2　每张返回的选票都可能改变哪些路径可以启动。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>图 2　每张返回的选票都可能改变哪些路径可以启动。</figcaption></figure>
@@ -85,17 +85,17 @@
 <section id="evidence" class="evidence"><div class="wrap"><p class="kicker">实验证据</p><h2>实测与模拟耗时</h2><div class="tab-list" aria-label="比较实验"><a class="tab-button" id="tab-device" href="#panel-device" data-panel="panel-device">A800 实测</a><a class="tab-button" id="tab-archive" href="#panel-archive" data-panel="panel-archive">选票回放</a><a class="tab-button" id="tab-bounds" href="#panel-bounds" data-panel="panel-bounds">择时上界</a></div>
 <article id="panel-device" class="result-panel" aria-labelledby="tab-device">
       <div class="result-copy"><p class="result-number">2.46%</p><p class="number-label">墙钟耗时减少的中位数</p><h3>延后启动第三条请求</h3><p>对长度为 256、128、128 的三条请求，校准后的时钟预测可节时 3.13%。在同一张 A800 上新启引擎进程实测，12 个配对区组均是延后启动更快。</p><p class="scope">一次 GPU 会话 · Qwen2.5-1.5B-Instruct</p></div><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
+      <img loading="lazy" width="2200" height="770" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
       <button type="button" class="figure-open" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测"
         aria-haspopup="dialog" aria-label="放大图表 · A800 配对计时实测" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div></figure></article><article id="panel-archive" class="result-panel" aria-labelledby="tab-archive">
       <div class="result-copy"><p class="result-number">8.71%</p><p class="number-label">逐题模拟节时的均值</p><h3>利用前缀以外已返回的选票</h3><p>对 200 道 GSM8K 题，相对等待连续前缀，使用所有已返回选票平均每题节时 8.71%，中位数为 0.14%。若基线已保留前缀且统计其他已返回选票，完整索引相对它只再省 0.30%。</p><p class="scope">200 道题 · 固定校准时钟 · 模拟耗时</p></div><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
+      <img loading="lazy" width="2200" height="894" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
       <button type="button" class="figure-open" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时"
         aria-haspopup="dialog" aria-label="放大图表 · 不同选票信息带来的节时" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div></figure></article><article id="panel-bounds" class="result-panel" aria-labelledby="tab-bounds">
       <div class="result-copy"><p class="result-number">0.7382%</p><p class="number-label">逐题最优择时节时均值的上界</p><h3>只改变启动时机还能省多少？</h3><p>在 200 个归档的 16 路面板上固定选票信息，证实胜者所需的工作量限制了还能节省的时间。预知轨迹后逐题选择一次等待可省 0.1145%，由此得到该时钟下离线逐题最优节时均值的区间。</p><p class="scope">200 道题 · 允许多启动一次 · 逐题离线最优</p></div><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
+      <img loading="lazy" width="2200" height="877" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
       <button type="button" class="figure-open" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界"
         aria-haspopup="dialog" aria-label="放大图表 · 证书工作量给出的上界" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div></figure></article>
@@ -142,7 +142,7 @@
 <p>部署时可先记录前缀外选票是否改变启动决定，再在目标负载下比较端到端延迟。排队、多用户并发和不同设备会话之间的波动仍有待测量。</p></details>
 <details><summary>查看两种输出上限的逐题结果</summary>
 <figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/cap-comparison.png" alt="输出上限为 384 和 1,024 个 token 时的逐题配对结果。">
+      <img loading="lazy" width="980" height="726" src="assets/figures/cap-comparison.png" alt="输出上限为 384 和 1,024 个 token 时的逐题配对结果。">
       <button type="button" class="figure-open" data-lightbox="assets/figures/cap-comparison.png" data-caption="输出上限为 384 和 1,024 个 token 时的逐题配对结果。"
         aria-haspopup="dialog" aria-label="放大图表 · 输出上限为 384 和 1,024 个 token 时的逐题配对结果。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div></figure></details>
@@ -173,31 +173,31 @@ python -B reproduce.py --out results.json</code></pre><button type="button" clas
 <div><dt><code>finite_theory.fixed_spec</code></dt><dd>查看 1,764 组固定规格的构造检查。在另一项覆盖 512 个长度三元组的枚举中，最大耗时比为 7/2。</dd></div></dl>
 <a class="read-link" href="downloads/replay-results.json">打开可对照的 JSON 复算报告 <span class="arrow" aria-hidden="true">↗</span></a></div>
 <details id="figures"><summary>浏览论文图表</summary><ul class="plate-index"><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/price-hull.png" alt="凹性与最坏倍率">
+      <img loading="lazy" width="2200" height="1084" src="assets/figures/price-hull.png" alt="凹性与最坏倍率">
       <button type="button" class="figure-open" data-lightbox="assets/figures/price-hull.png" data-caption="凹性与最坏倍率"
         aria-haspopup="dialog" aria-label="放大图表 · 凹性与最坏倍率" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>凹性与最坏倍率</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/refill-timeline.png" alt="三请求算例">
+      <img loading="lazy" width="2200" height="903" src="assets/figures/refill-timeline.png" alt="三请求算例">
       <button type="button" class="figure-open" data-lightbox="assets/figures/refill-timeline.png" data-caption="三请求算例"
         aria-haspopup="dialog" aria-label="放大图表 · 三请求算例" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>三请求算例</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/indexed-workflow.png" alt="受投票预算约束的准入流程">
+      <img loading="lazy" width="2200" height="562" src="assets/figures/indexed-workflow.png" alt="受投票预算约束的准入流程">
       <button type="button" class="figure-open" data-lightbox="assets/figures/indexed-workflow.png" data-caption="受投票预算约束的准入流程"
         aria-haspopup="dialog" aria-label="放大图表 · 受投票预算约束的准入流程" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>受投票预算约束的准入流程</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
+      <img loading="lazy" width="2200" height="770" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
       <button type="button" class="figure-open" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测"
         aria-haspopup="dialog" aria-label="放大图表 · A800 配对计时实测" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>A800 配对计时实测</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
+      <img loading="lazy" width="2200" height="894" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
       <button type="button" class="figure-open" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时"
         aria-haspopup="dialog" aria-label="放大图表 · 不同选票信息带来的节时" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>不同选票信息带来的节时</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
+      <img loading="lazy" width="2200" height="877" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
       <button type="button" class="figure-open" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界"
         aria-haspopup="dialog" aria-label="放大图表 · 证书工作量给出的上界" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>证书工作量给出的上界</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
-      <img loading="lazy" src="assets/figures/cap-comparison.png" alt="输出长度与耗时的敏感性">
+      <img loading="lazy" width="980" height="726" src="assets/figures/cap-comparison.png" alt="输出长度与耗时的敏感性">
       <button type="button" class="figure-open" data-lightbox="assets/figures/cap-comparison.png" data-caption="输出长度与耗时的敏感性"
         aria-haspopup="dialog" aria-label="放大图表 · 输出长度与耗时的敏感性" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>输出长度与耗时的敏感性</figcaption></figure></li></ul></details>
