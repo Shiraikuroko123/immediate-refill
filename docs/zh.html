@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN" data-type="tech"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f7f3">
+<meta name="page-type" content="tech"><meta name="site-kind" content="research"><title>并行投票时，立即补发何时最优？ | Refill</title>
+<meta name="description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:title" content="并行投票时，立即补发何时最优？"><meta property="og:description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:type" content="article"><meta property="og:url" content="https://shiraikuroko123.github.io/immediate-refill/zh.html"><meta property="og:image" content="https://shiraikuroko123.github.io/immediate-refill/assets/showcase-share.png">
+<link rel="canonical" href="https://shiraikuroko123.github.io/immediate-refill/zh.html"><link rel="alternate" hreflang="en" href="https://shiraikuroko123.github.io/immediate-refill/"><link rel="alternate" hreflang="zh-CN" href="https://shiraikuroko123.github.io/immediate-refill/zh.html">
+<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="schedule.css">
+<script defer src="schedule.js"></script><script defer src="app.js"></script></head><body id="top">
+<a href="#main" class="skip">跳到研究内容</a>
+<header class="mast"><div class="wrap navrow"><a class="brand" href="#top" aria-label="Refill，返回顶部"><img src="assets/refill.svg" width="33" height="33" alt="">Refill</a>
+<nav aria-label="主导航"><a href="#theory">定理</a><a href="#evidence">结果</a><a href="#reproduce">复现</a></nav>
+<a class="language" href="index.html" hreflang="en">English</a></div></header>
+<main id="main">
+<section id="problem" class="hero"><div class="wrap hero-grid">
+<div class="hero-copy"><p class="kicker"><span class="rule"></span>大模型推理 / 调度理论</p><h1>并行投票时，<em>立即补发</em>何时最优？</h1>
+<p class="lead">多启动一条推理路径，可能让正在生成的每条路径都变慢。我们给出立即填满空槽何时最快的条件，并在一张 NVIDIA A800 上检验预测。</p>
+<div class="actions"><a class="primary" href="downloads/immediate-refill-zh.pdf">阅读论文 <span class="arrow" aria-hidden="true">↗</span></a><a class="text-action" href="https://github.com/Shiraikuroko123/immediate-refill">查看 GitHub <span class="arrow" aria-hidden="true">↗</span></a></div></div>
+<div class="hero-visual"><refill-schedule><div class="fallback"><p>共享时钟上的三条请求</p><a href="downloads/refill-timeline.pdf"><img src="assets/figures/refill-timeline.png" alt="立即补发需 23 个时间单位，延后第三条需 22 个。"></a></div></refill-schedule></div>
+</div></section>
+<section id="theory" class="theory"><div class="wrap theory-grid">
+<div id="mechanism"><p class="kicker">最优性条件</p><h2>解码成本曲线决定何时补发</h2>
+<p>假设按固定顺序启动请求，且启动数不能超过串行投票预算。固定面板规模、槽数和启动配额后，当且仅当可达并发宽度上的单步成本离散凹时，立即补发对所有输入都最快。</p>
+<a class="read-link" href="downloads/immediate-refill-zh.pdf#page=4">阅读定理 1 <span class="arrow" aria-hidden="true">↗</span></a>
+<details><summary>如果成本曲线不满足凹性呢？</summary><p>固定槽数和单步成本，允许面板规模与启动配额变化。成本曲线的最小凹上界与实际成本之比的最大值，就是立即补发的精确最坏耗时倍率。</p></details></div>
+<div class="math-block"><p class="kicker">离散凹性</p>
+<p class="equation" aria-label="两倍的第 k 个宽度的成本，大于或等于两个相邻宽度的成本之和">2<i>c</i><sub>k</sub> ≥ <i>c</i><sub>k−1</sub> + <i>c</i><sub>k+1</sub></p>
+<p>cₖ 是 k 条请求同时活跃时的单步耗时。成本依次为 10、11、13 时，第三条请求增加的单步耗时超过第二条。</p>
+<a class="read-link" href="downloads/price-hull.pdf">查看成本曲线图 <span class="arrow" aria-hidden="true">↗</span></a></div></div></section>
+<section id="evidence" class="evidence"><div class="wrap"><p class="kicker">实验证据</p><h2>实测与模拟耗时</h2><div class="tab-list" aria-label="比较实验"><a class="tab-button" id="tab-device" href="#panel-device" data-panel="panel-device">A800 实测</a><a class="tab-button" id="tab-archive" href="#panel-archive" data-panel="panel-archive">选票回放</a><a class="tab-button" id="tab-bounds" href="#panel-bounds" data-panel="panel-bounds">择时上界</a></div>
+<article id="panel-device" class="result-panel" aria-labelledby="tab-device">
+      <div class="result-copy"><p class="result-number">2.46%</p><p class="number-label">墙钟耗时减少的中位数</p><h3>延后启动第三条请求</h3><p>对长度为 256、128、128 的三条请求，校准后的时钟预测可节时 3.13%。在同一张 A800 上新启引擎进程实测，12 个配对区组均是延后启动更快。</p><p class="scope">一次 GPU 会话 · Qwen2.5-1.5B-Instruct</p></div><figure class="paper-figure"><a href="downloads/transfer-blocks.pdf" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测" aria-label="放大图表 · A800 配对计时实测">
+          <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article><article id="panel-archive" class="result-panel" aria-labelledby="tab-archive">
+      <div class="result-copy"><p class="result-number">8.71%</p><p class="number-label">逐题模拟节时的均值</p><h3>利用前缀以外已返回的选票</h3><p>对 200 道 GSM8K 题，相对等待连续前缀，使用所有已返回选票平均每题节时 8.71%，中位数为 0.14%。若基线已保留前缀且统计其他已返回选票，完整索引相对它只再省 0.30%。</p><p class="scope">200 道题 · 固定校准时钟 · 模拟耗时</p></div><figure class="paper-figure"><a href="downloads/admission-gains.pdf" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时" aria-label="放大图表 · 不同选票信息带来的节时">
+          <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article><article id="panel-bounds" class="result-panel" aria-labelledby="tab-bounds">
+      <div class="result-copy"><p class="result-number">0.7382%</p><p class="number-label">逐题最优择时节时均值的上界</p><h3>只改变启动时机还能省多少？</h3><p>在 200 个归档的 16 路面板上固定选票信息，证实胜者所需的工作量限制了还能节省的时间。预知轨迹后逐题选择一次等待可省 0.1145%，由此得到该时钟下离线逐题最优节时均值的区间。</p><p class="scope">200 道题 · 允许多启动一次 · 逐题离线最优</p></div><figure class="paper-figure"><a href="downloads/evidence.pdf" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界" aria-label="放大图表 · 证书工作量给出的上界">
+          <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article>
+<details class="limits"><summary>实测和模拟结果的适用范围</summary><p>另一次 16 题固定工作量的 A800 准入策略对照中，平均节时为 0.55%（95% 区间 −0.03% 至 1.29%）。在 200 个归档三请求面板上，预知长度后逐题选择立即启动或等最先一条完成，平均模拟节时为 0.364%。各项比较使用各自的基线。</p></details>
+</div></section>
+<section id="reproduce" class="artifacts"><div class="wrap"><p class="kicker">开放材料</p><h2>阅读与复现</h2><div class="resources"><ul class="files"><li><a href="downloads/immediate-refill-paper.pdf"><span>阅读英文论文</span><small>PDF · 17 页</small><span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/immediate-refill-zh.pdf"><span>阅读中文论文</span><small>PDF · 23 页</small><span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/immediate-refill-supplement.zip"><span>下载实验证据包</span><small>ZIP · CPU 复算</small><span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/immediate-refill-source.zip"><span>下载 LaTeX 源码</span><small>ZIP · 全文与图表</small><span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/中文研究说明.md"><span>阅读中文研究说明</span><small>Markdown</small><span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="https://github.com/Shiraikuroko123/immediate-refill"><span>浏览 GitHub 仓库</span><small>代码与数据</small><span class="arrow" aria-hidden="true">↗</span></a></li></ul>
+<div class="code-area"><h3>在 CPU 上重建实验结果</h3><p>解压证据包，在其顶层目录打开终端，用全新的 Python 3.10 环境运行以下命令。</p>
+<pre id="commands"><code>python -m pip install -r requirements.txt
+python -B reproduce.py --out results.json</code></pre><button type="button" class="copy" data-copy="commands" hidden>复制命令</button><span class="sr" role="status"></span><a class="read-link" href="downloads/SHA256SUMS.txt">核对下载校验值 <span class="arrow" aria-hidden="true">↗</span></a></div></div>
+<details id="figures"><summary>浏览论文图表</summary><ul class="plate-index"><li><a href="downloads/price-hull.pdf">凹性与最坏倍率<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/refill-timeline.pdf">三请求算例<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/indexed-workflow.pdf">受投票预算约束的准入流程<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/transfer-blocks.pdf">A800 配对计时实测<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/admission-gains.pdf">不同选票信息带来的节时<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/evidence.pdf">证书工作量给出的上界<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/cap-comparison.pdf">输出长度与耗时的敏感性<span class="arrow" aria-hidden="true">↗</span></a></li></ul></details>
+<details><summary>引用本研究</summary><pre id="bib"><code>@misc{immediate_refill_2026,
+  title = {When Is Immediate Refill Optimal for Parallel Voting?},
+  year = {2026},
+  howpublished = {Research manuscript}
+}</code></pre><button type="button" class="copy" data-copy="bib" hidden>复制 BibTeX</button><span class="sr" role="status"></span></details>
+</div></section></main>
+<footer><div class="wrap footer-inner"><span>Refill <span aria-hidden="true">/</span> 独立研究 · 2026 年 11 月</span><a href="#top">返回顶部 ↑</a></div></footer>
+<dialog id="lightbox" aria-label="图表预览"><div class="dialog-head"><strong id="figure-title"></strong><button type="button" class="figure-zoom"></button><button type="button" class="lightbox-close">关闭</button></div><div class="figure-view" tabindex="0" aria-label="可滚动图表"><img alt=""></div></dialog>
+</body></html>

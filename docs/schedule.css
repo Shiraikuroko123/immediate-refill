@@ -1,0 +1,278 @@
+refill-schedule {
+  display: block;
+  min-width: 0;
+  container-type: inline-size;
+  color-scheme: light;
+  --rs-ink: #142e50;
+  --rs-rule: #c5d5e2;
+  --rs-label: 28px;
+  --rs-pad: clamp(16px, 5cqw, 30px);
+  color: var(--rs-ink);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+refill-schedule .rs-frame,
+refill-schedule .rs-frame * {
+  box-sizing: border-box;
+}
+
+refill-schedule .rs-frame {
+  background: #fbfdff;
+  border: 1px solid var(--rs-rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+refill-schedule .rs-head,
+refill-schedule .rs-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px var(--rs-pad);
+}
+
+refill-schedule .rs-head {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #eaf2fa;
+  border-bottom: 1px solid var(--rs-rule);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+refill-schedule .rs-head > span:first-child {
+  font-size: 14px;
+  letter-spacing: -.015em;
+}
+
+refill-schedule .rs-head b,
+refill-schedule .rs-inputs b,
+refill-schedule .rs-arm-title span,
+refill-schedule .rs-path,
+refill-schedule .rs-axis,
+refill-schedule .rs-value {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+refill-schedule .rs-paper {
+  padding: 16px var(--rs-pad) 10px;
+  background-color: #fbfdff;
+  background-image: linear-gradient(#deebf377 1px, transparent 1px), linear-gradient(90deg, #deebf377 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+refill-schedule .rs-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+refill-schedule .rs-inputs span {
+  color: #455c72;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+refill-schedule .rs-inputs b {
+  color: var(--rs-ink);
+}
+
+refill-schedule .rs-arm {
+  margin: 16px 0 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  --rs-fill: #82cdc5;
+  --rs-pale: #cdece7;
+  --rs-stroke: #367b77;
+}
+
+refill-schedule .rs-delayed {
+  --rs-fill: #eda28a;
+  --rs-pale: #f8d9ca;
+  --rs-stroke: #a35540;
+}
+
+refill-schedule .rs-arm-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: var(--rs-ink);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+refill-schedule .rs-arm-title strong {
+  font-weight: 650;
+}
+
+refill-schedule .rs-arm-title span {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+refill-schedule .rs-lanes {
+  position: relative;
+}
+
+refill-schedule .rs-lane {
+  display: grid;
+  grid-template-columns: var(--rs-label) minmax(0, 1fr);
+  align-items: center;
+  min-height: 19px;
+}
+
+refill-schedule .rs-path,
+refill-schedule .rs-axis {
+  color: #4e6377;
+  font-size: 10px;
+  line-height: 1;
+}
+
+refill-schedule .rs-track {
+  position: relative;
+  height: 13px;
+  background: linear-gradient(transparent calc(50% - .5px), #d7e1e9 calc(50% - .5px), #d7e1e9 calc(50% + .5px), transparent calc(50% + .5px));
+}
+
+refill-schedule .rs-unit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: var(--rs-pale);
+  border: 1px solid var(--rs-stroke);
+  border-radius: 1px;
+}
+
+refill-schedule .rs-unit::before {
+  content: "";
+  display: block;
+  width: var(--rs-progress, 0%);
+  height: 100%;
+  background: var(--rs-fill);
+}
+
+refill-schedule .rs-guide {
+  position: absolute;
+  inset: 0 0 0 var(--rs-label);
+  pointer-events: none;
+}
+
+refill-schedule .rs-guide i,
+refill-schedule .rs-guide span {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+}
+
+refill-schedule .rs-guide i {
+  border-left: 1px dashed var(--rs-stroke);
+}
+
+refill-schedule .rs-guide span {
+  left: var(--rs-cursor, 0%);
+  border-left: 2px solid var(--rs-ink);
+}
+
+refill-schedule .rs-axis {
+  margin: 8px 0 0;
+  padding-left: var(--rs-label);
+}
+
+refill-schedule .rs-axis > div {
+  position: relative;
+  height: 19px;
+  border-top: 1px solid var(--rs-rule);
+}
+
+refill-schedule .rs-axis span {
+  position: absolute;
+  top: 6px;
+  transform: translateX(-50%);
+}
+
+refill-schedule .rs-controls {
+  border-top: 1px solid var(--rs-rule);
+  background: #f5f9fd;
+  padding-block: 4px;
+}
+
+refill-schedule .rs-controls button {
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: transparent;
+  font: 600 13px/1.2 "Inter", Arial, sans-serif;
+  color: var(--rs-ink);
+  cursor: pointer;
+}
+
+refill-schedule button.rs-play {
+  min-width: 47px;
+  text-align: left;
+}
+
+refill-schedule .rs-controls button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+refill-schedule .rs-slider {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 20px;
+  min-height: 44px;
+  margin: 0;
+}
+
+refill-schedule .rs-slider input {
+  width: 100%;
+  height: 34px;
+  margin: 0;
+  accent-color: var(--rs-ink);
+  cursor: pointer;
+}
+
+refill-schedule .rs-controls :focus-visible {
+  outline: 2px solid #145788;
+  outline-offset: 2px;
+}
+
+refill-schedule .rs-value {
+  min-width: 7ch;
+  font-size: 11px;
+  color: var(--rs-ink);
+  text-align: right;
+}
+
+refill-schedule .rs-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@container (max-width: 370px) {
+  refill-schedule .rs-head {
+    gap: 3px 10px;
+  }
+  refill-schedule .rs-arm-title {
+    font-size: 14px;
+  }
+  refill-schedule .rs-controls {
+    gap: 6px;
+  }
+}

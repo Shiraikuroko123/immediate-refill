@@ -1,6 +1,6 @@
 # When Is Immediate Refill Optimal for Parallel Voting?
 
-[Project page](https://shiraikuroko123.github.io/immediate-refill/) · [English paper](docs/downloads/immediate-refill-paper.pdf) · [中文论文](docs/downloads/immediate-refill-zh.pdf) · [中文研究说明](docs/downloads/中文研究说明.md)
+[Interactive project page](https://shiraikuroko123.github.io/immediate-refill/) · [中文项目页](https://shiraikuroko123.github.io/immediate-refill/zh.html) · [English paper](docs/downloads/immediate-refill-paper.pdf) · [中文论文](docs/downloads/immediate-refill-zh.pdf) · [中文研究说明](docs/downloads/中文研究说明.md)
 
 Under an ordered voting protocol with zero extra launches, immediate refill is universally optimal exactly when decoding-step costs are discretely concave over reachable widths. The paper gives a tight worst-case latency ratio over variable panel sizes and quotas. On one A800, the calibrated clock predicted a 3.13% saving from delaying the third of three fixed-length requests. The median measured saving across 12 paired blocks was 2.46%.
 
