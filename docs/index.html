@@ -274,18 +274,18 @@
           </div>
           <div class="evidence-tabs reveal">
             <div class="tab-list" role="tablist" aria-label="Evidence views">
-              <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-archive" data-panel="panel-archive">
+              <button id="tab-archive" class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-archive" data-panel="panel-archive">
                 Archive replay
               </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-device" data-panel="panel-device">
+              <button id="tab-device" class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-device" data-panel="panel-device" tabindex="-1">
                 A800 validation
               </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-bounds" data-panel="panel-bounds">
+              <button id="tab-bounds" class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-bounds" data-panel="panel-bounds" tabindex="-1">
                 Upper bounds
               </button>
             </div>
 
-            <div id="panel-archive" class="tab-panel is-active" role="tabpanel">
+            <div id="panel-archive" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-archive" tabindex="0">
               <div class="panel-copy">
                 <span class="panel-label">200 GSM8K problems · 3,968-token fixed clock</span>
                 <h3>Most replayed savings come from seeing votes outside the prefix.</h3>
@@ -312,7 +312,7 @@
               </button>
             </div>
 
-            <div id="panel-device" class="tab-panel" role="tabpanel" hidden>
+            <div id="panel-device" class="tab-panel" role="tabpanel" aria-labelledby="tab-device" tabindex="0" hidden>
               <div class="panel-copy">
                 <span class="panel-label">A800 · Qwen2.5-1.5B-Instruct · 12 paired blocks</span>
                 <h3>The width-cost prediction survives the controlled timing test.</h3>
@@ -339,7 +339,7 @@
               </button>
             </div>
 
-            <div id="panel-bounds" class="tab-panel" role="tabpanel" hidden>
+            <div id="panel-bounds" class="tab-panel" role="tabpanel" aria-labelledby="tab-bounds" tabindex="0" hidden>
               <div class="panel-copy">
                 <span class="panel-label">AIME25 · AMC23 · OlympiadBench</span>
                 <h3>Certificate work leaves little room for an omniscient scheduler.</h3>
@@ -378,32 +378,32 @@
             </p>
           </div>
           <div class="comparison-table-wrap reveal delay-1">
-            <table class="comparison-table">
+            <table class="comparison-table" role="table" aria-label="Admission policies and mean savings">
               <thead>
                 <tr>
-                  <th>Comparison</th>
-                  <th>Scope</th>
-                  <th>Mean saving</th>
-                  <th>Reading</th>
+                  <th scope="col">Comparison</th>
+                  <th scope="col">Scope</th>
+                  <th scope="col">Mean saving</th>
+                  <th scope="col">Reading</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Index-based vs. buffered</td>
                   <td>200 archived GSM8K problems</td>
-                  <td class="accent-cell">8.71%</td>
+                  <td class="accent-cell"><span class="mobile-stat-label" aria-hidden="true">Mean saving </span>8.71%</td>
                   <td>Returned votes outside the prefix matter.</td>
                 </tr>
                 <tr>
                   <td>Full indexing vs. unordered votes</td>
                   <td>Same archive, same clock</td>
-                  <td>0.67%</td>
+                  <td><span class="mobile-stat-label" aria-hidden="true">Mean saving </span>0.67%</td>
                   <td>Exact indices add a smaller increment.</td>
                 </tr>
                 <tr>
                   <td>Index-based vs. buffered</td>
                   <td>16 GSM8K problems on one A800</td>
-                  <td>0.55%</td>
+                  <td><span class="mobile-stat-label" aria-hidden="true">Mean saving </span>0.55%</td>
                   <td>CI [−0.03%, 1.29%].</td>
                 </tr>
               </tbody>
@@ -485,9 +485,14 @@ python -B reproduce.py --out results.json</code></pre>
       </footer>
     </div>
 
-    <dialog id="lightbox" class="lightbox">
-      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
-      <img id="lightbox-image" src="assets/figures/refill-timeline.png" alt="" />
+    <dialog id="lightbox" class="lightbox" aria-label="Figure preview" aria-describedby="lightbox-caption">
+      <div class="figure-toolbar">
+        <button class="figure-zoom" type="button" aria-controls="figure-viewport">Enlarge</button>
+        <button class="lightbox-close" type="button" aria-label="Close figure preview" autofocus>Close ×</button>
+      </div>
+      <div id="figure-viewport" class="figure-viewport" tabindex="0" role="region" aria-label="Scrollable figure">
+        <img id="lightbox-image" alt="" />
+      </div>
       <p id="lightbox-caption"></p>
     </dialog>
     <script src="app.js"></script>

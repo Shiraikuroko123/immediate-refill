@@ -18,21 +18,34 @@ if (menuToggle && siteNav) {
 const tabButtons = [...document.querySelectorAll(".tab-button")];
 const tabPanels = [...document.querySelectorAll(".tab-panel")];
 
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const targetId = button.dataset.panel;
+function selectTab(button) {
+  tabButtons.forEach((item) => {
+    const active = item === button;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-selected", String(active));
+    item.tabIndex = active ? 0 : -1;
+  });
+  tabPanels.forEach((panel) => {
+    const active = panel.id === button.dataset.panel;
+    panel.classList.toggle("is-active", active);
+    panel.hidden = !active;
+  });
+}
 
-    tabButtons.forEach((item) => {
-      const active = item === button;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-selected", String(active));
-    });
-
-    tabPanels.forEach((panel) => {
-      const active = panel.id === targetId;
-      panel.classList.toggle("is-active", active);
-      panel.hidden = !active;
-    });
+tabButtons.forEach((button, index) => {
+  button.addEventListener("click", () => selectTab(button));
+  button.addEventListener("keydown", (event) => {
+    const count = tabButtons.length;
+    const target = {
+      ArrowLeft: (index + count - 1) % count,
+      ArrowRight: (index + 1) % count,
+      Home: 0,
+      End: count - 1
+    }[event.key];
+    if (target === undefined) return;
+    event.preventDefault();
+    selectTab(tabButtons[target]);
+    tabButtons[target].focus();
   });
 });
 
@@ -119,26 +132,37 @@ const lightbox = document.querySelector("#lightbox");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
+const figureViewport = document.querySelector("#figure-viewport");
+const figureZoom = document.querySelector(".figure-zoom");
+let openedFrom = null;
 
-const closeLightbox = () => {
-  if (lightbox?.open) lightbox.close();
-};
+function setZoom(zoomed) {
+  figureViewport.classList.toggle("is-zoomed", zoomed);
+  figureZoom.textContent = zoomed ? "Fit figure" : "Enlarge";
+  figureViewport.scrollTo(0, 0);
+}
 
 document.querySelectorAll("[data-lightbox]").forEach((button) => {
   button.addEventListener("click", () => {
-    if (!lightbox || !lightboxImage) return;
+    openedFrom = button;
     lightboxImage.src = button.dataset.lightbox;
     lightboxImage.alt = button.querySelector("img")?.alt || "";
-    if (lightboxCaption) lightboxCaption.textContent = button.dataset.caption || "";
+    lightboxCaption.textContent = button.dataset.caption || "";
     lightbox.showModal();
+    // A narrow screen opens a readable detail view. "Fit figure" shows all of it.
+    setZoom(matchMedia("(max-width: 680px)").matches);
   });
 });
 
-lightboxClose?.addEventListener("click", closeLightbox);
-lightbox?.addEventListener("click", (event) => {
-  if (event.target === lightbox) closeLightbox();
+figureZoom.addEventListener("click", () => setZoom(!figureViewport.classList.contains("is-zoomed")));
+lightboxClose.addEventListener("click", () => lightbox.close());
+lightbox.addEventListener("click", (event) => {
+  if (event.target !== lightbox) return;
+  const bounds = lightbox.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom) lightbox.close();
 });
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeLightbox();
+lightbox.addEventListener("close", () => {
+  openedFrom?.focus({preventScroll: true});
+  openedFrom = null;
 });
