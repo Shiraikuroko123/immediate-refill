@@ -2,6 +2,8 @@
 
 This repository preserves the manuscript, the code and inputs used to reproduce its numerical results, and the research files inventoried on the A800 and H20 hosts on 21 November 2026 (Beijing time).
 
+**Project page:** [open the research showcase](docs/index.html) · [browse the static site source](docs/)
+
 | To do this | Start here |
 | --- | --- |
 | Read the paper or edit its LaTeX | [PDF](review/manuscript/transfer-review/main.pdf) · [TeX and bibliography](review/manuscript/transfer-review/) |
