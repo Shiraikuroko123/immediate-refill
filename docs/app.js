@@ -70,21 +70,15 @@ function setZoom(active) {
     : tr("Enlarge", "放大");
   frame.scrollTo(0, 0);
 }
-for (const link of document.querySelectorAll("[data-lightbox]")) {
-  link.addEventListener("click", (event) => {
-    if (
-      !dialog.showModal ||
-      event.ctrlKey ||
-      event.metaKey ||
-      event.shiftKey ||
-      event.altKey
-    )
-      return;
-    event.preventDefault();
-    opener = link;
-    frame.querySelector("img").src = link.dataset.lightbox;
-    frame.querySelector("img").alt = link.querySelector("img").alt;
-    dialog.querySelector("strong").textContent = link.dataset.caption;
+for (const button of document.querySelectorAll(".figure-open")) {
+  if (typeof dialog.showModal !== "function") continue;
+  button.hidden = false;
+  button.addEventListener("click", () => {
+    opener = button;
+    const preview = frame.querySelector("img");
+    preview.src = button.dataset.lightbox;
+    preview.alt = button.parentElement.querySelector("img").alt;
+    dialog.querySelector("strong").textContent = button.dataset.caption;
     setZoom(matchMedia("(max-width:720px)").matches);
     dialog.showModal();
   });

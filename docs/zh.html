@@ -4,8 +4,8 @@
 <meta name="page-type" content="tech"><meta name="site-kind" content="research"><title>并行投票时，立即补发何时最优？ | Refill</title>
 <meta name="description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:title" content="并行投票时，立即补发何时最优？"><meta property="og:description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:type" content="article"><meta property="og:url" content="https://shiraikuroko123.github.io/immediate-refill/zh.html"><meta property="og:image" content="https://shiraikuroko123.github.io/immediate-refill/assets/showcase-share.png">
 <link rel="canonical" href="https://shiraikuroko123.github.io/immediate-refill/zh.html"><link rel="alternate" hreflang="en" href="https://shiraikuroko123.github.io/immediate-refill/"><link rel="alternate" hreflang="zh-CN" href="https://shiraikuroko123.github.io/immediate-refill/zh.html">
-<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="schedule.css">
-<script defer src="schedule.js"></script><script defer src="app.js"></script></head><body id="top">
+<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css?v=776400e0a4"><link rel="stylesheet" href="schedule.css">
+<script defer src="schedule.js"></script><script defer src="app.js?v=788955f218"></script></head><body id="top">
 <a href="#main" class="skip">跳到研究内容</a>
 <header class="mast"><div class="wrap navrow"><a class="brand" href="#top" aria-label="Refill，返回顶部"><img src="assets/refill.svg" width="33" height="33" alt="">Refill</a>
 <nav aria-label="主导航"><a href="#theory">定理</a><a href="#evidence">结果</a><a href="#reproduce">复现</a></nav>
@@ -15,7 +15,7 @@
 <div class="hero-copy"><p class="kicker"><span class="rule"></span>大模型推理 / 调度理论</p><h1>并行投票时，<em>立即补发</em>何时最优？</h1>
 <p class="lead">多启动一条推理路径，可能让正在生成的每条路径都变慢。我们给出立即填满空槽何时最快的条件，并在一张 NVIDIA A800 上检验预测。</p>
 <div class="actions"><a class="primary" href="downloads/immediate-refill-zh.pdf">阅读论文 <span class="arrow" aria-hidden="true">↗</span></a><a class="text-action" href="https://github.com/Shiraikuroko123/immediate-refill">查看 GitHub <span class="arrow" aria-hidden="true">↗</span></a></div></div>
-<div class="hero-visual"><refill-schedule><div class="fallback"><p>共享时钟上的三条请求</p><a href="downloads/refill-timeline.pdf"><img src="assets/figures/refill-timeline.png" alt="立即补发需 23 个时间单位，延后第三条需 22 个。"></a></div></refill-schedule></div>
+<div class="hero-visual"><refill-schedule><div class="fallback"><p>共享时钟上的三条请求</p><img src="assets/figures/refill-timeline.png" alt="立即补发需 23 个时间单位，延后第三条需 22 个。"></div></refill-schedule></div>
 </div></section>
 <nav class="reading-guide" aria-label="本页导览"><div class="wrap"><strong>阅读导览</strong>
 <a href="#theory">最优性定理</a><a href="#method">准入与证明</a><a href="#experiments">实验对照</a><a href="#explore">逐题数据</a><a href="#reproduce">动手复现</a></div></nav>
@@ -33,7 +33,11 @@
 <div id="worst-ratio"><h3>精确的最坏耗时倍率</h3>
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>I</mi><mo>∈</mo><mi mathvariant="script">ℐ</mi></mrow></munder><mfrac><mrow><msub><mi>T</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>T</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>P</mi></mrow></munder><mfrac><msub><mover><mi>c</mi><mo accent="true">̂</mo></mover><mi>k</mi></msub><msub><mi>c</mi><mi>k</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\sup_{I\in\mathcal{I}}\frac{T_G(I)}{T_{\mathrm{opt}}(I)}=\max_{1\le k\le P}\frac{\hat c_k}{c_k}</annotation></semantics></math></div>
 <p>固定槽数和各宽度的单步成本，在所有零额外预算实例上取上确界，允许 N 与 Q 改变。G 表示立即补发，分母是合法调度的最优用时，ĉ 是成本曲线的最小凹上界。</p>
-<a class="read-link" href="downloads/price-hull.pdf">查看成本曲线图 <span class="arrow" aria-hidden="true">↗</span></a></div></div></div></section>
+<figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/price-hull.png" alt="并发宽度 1、2、3 的单步成本分别为 1、1、6。虚线标出最小凹上界，在宽度 2 处取值为 4。">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/price-hull.png" data-caption="在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。"
+        aria-haspopup="dialog" aria-label="放大图表 · 在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>在宽度 2 处，最小凹上界与实际成本之比为 4/1 = 4，是整条曲线上的最大值。</figcaption></figure></div></div></div></section>
 <section id="method" class="study-section" aria-labelledby="method-title"><div class="wrap">
         <header class="section-head"><h2 id="method-title">下一条路径能启动吗？</h2></header>
         <article class="method-block"><h3>返回一张票，何时停止、何时补发？</h3>
@@ -48,10 +52,11 @@
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>g</mi><mn>3</mn></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>0</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn><mo>≤</mo><mn>5</mn><mo>−</mo><mn>3</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>g</mi><mn>4</mn></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>0</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>2</mn><mo>&gt;</mo><mn>5</mn><mo>−</mo><mn>4</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>4</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mn>5</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>2</mn><mo>+</mo><mn>3</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>4</mn><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mn>5</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}g_3&amp;=0+1=1\le 5-3,\\g_4&amp;=0+2=2&gt;5-4,\\M(S)&amp;=4,\\F(S)&amp;=\min\{5,\,2+3,\,4+1\}=5.\end{aligned}</annotation></semantics></math></div>
           <p>第 5 条可以启动。只读连续前缀的调度器还看不到任何票，无法排除前三票全都一致的可能，因此上限仍是 3 + 1 = 4。
           <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=2">§2.2，第 2–3 页</a></p>
-          <figure class="paper-figure">
-          <a href="downloads/indexed-workflow.pdf" data-lightbox="assets/figures/indexed-workflow.png" data-caption="图 2　每张返回的选票都可能改变哪些路径可以启动。" aria-label="放大图表 · 图 2　每张返回的选票都可能改变哪些路径可以启动。">
-            <img src="assets/figures/indexed-workflow.png" loading="lazy" alt="调度器接收已完成选票及其编号，先检查胜者是否确定，再更新安全启动上限，并给满足条件的空槽补发路径。"><span class="enlarge" aria-hidden="true">⤢</span>
-          </a><figcaption>图 2　每张返回的选票都可能改变哪些路径可以启动。</figcaption></figure>
+          <figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/indexed-workflow.png" alt="调度器接收已完成选票及其编号，先检查胜者是否确定，再更新安全启动上限，并给满足条件的空槽补发路径。">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/indexed-workflow.png" data-caption="图 2　每张返回的选票都可能改变哪些路径可以启动。"
+        aria-haspopup="dialog" aria-label="放大图表 · 图 2　每张返回的选票都可能改变哪些路径可以启动。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>图 2　每张返回的选票都可能改变哪些路径可以启动。</figcaption></figure>
         </article>
         <article class="method-block" id="occupancy"><h3>零额外启动时，总工作量固定</h3>
           <p>所有合法调度都完成前 min(<i>K</i>, <i>Q</i>) 条路径。在任一竞争策略 <i>A</i> 的虚拟解码时间轴上任选一组时段 <i>E</i>，这些时段可以互不相连。立即补发 <i>G</i> 在开头同样长的虚拟时间里，完成的工作至少一样多。高度 <i>h</i> 表示活跃路径数。</p>
@@ -62,10 +67,6 @@
             <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>U</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><msub><mi>V</mi><mi>A</mi></msub></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>h</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>j</mi><msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>U</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≤</mo><msub><mi>U</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>θ</mi><mi>j</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>2</mn><msub><mi>c</mi><mi>j</mi></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}U_A(j)&amp;=\int_0^{V_A}(h_A(t)-j)_+\,dt,\\U_A(j)&amp;\le U_G(j),\\\theta_j&amp;=2c_j-c_{j-1}-c_{j+1}.\end{aligned}</annotation></semantics></math></div><div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>A</mi></msub><mo>=</mo><msub><mi>c</mi><mn>1</mn></msub><msup><mi>W</mi><mo>*</mo></msup><mo>−</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>P</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>θ</mi><mi>j</mi></msub><msub><mi>U</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T_A=c_1W^*-\sum_{j=1}^{P-1}\theta_jU_A(j)</annotation></semantics></math></div>
             <p>离散凹性使每个曲率系数都非负。立即补发使上式的每一个减项最大，因此耗时最小。
             <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=4">定理 1，第 4 页</a> · <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=22">附录 J，第 22 页</a></p>
-            <figure class="paper-figure">
-          <a href="downloads/price-hull.pdf" data-lightbox="assets/figures/price-hull.png" data-caption="图 3　在这个数学算例中，宽度二处的上凹包高度是原成本的四倍。" aria-label="放大图表 · 图 3　在这个数学算例中，宽度二处的上凹包高度是原成本的四倍。">
-            <img src="assets/figures/price-hull.png" loading="lazy" alt="宽度为一、二、三时的单步成本分别为 1、1、6。在宽度二处，虚线所示的上凹包达到 4。"><span class="enlarge" aria-hidden="true">⤢</span>
-          </a><figcaption>图 3　在这个数学算例中，宽度二处的上凹包高度是原成本的四倍。</figcaption></figure>
           </details>
         </article>
         <article class="method-block" id="certificate"><h3>有额外预算时，哪些路径的工作不可省？</h3>
@@ -83,12 +84,21 @@
       </div></section>
 <section id="evidence" class="evidence"><div class="wrap"><p class="kicker">实验证据</p><h2>实测与模拟耗时</h2><div class="tab-list" aria-label="比较实验"><a class="tab-button" id="tab-device" href="#panel-device" data-panel="panel-device">A800 实测</a><a class="tab-button" id="tab-archive" href="#panel-archive" data-panel="panel-archive">选票回放</a><a class="tab-button" id="tab-bounds" href="#panel-bounds" data-panel="panel-bounds">择时上界</a></div>
 <article id="panel-device" class="result-panel" aria-labelledby="tab-device">
-      <div class="result-copy"><p class="result-number">2.46%</p><p class="number-label">墙钟耗时减少的中位数</p><h3>延后启动第三条请求</h3><p>对长度为 256、128、128 的三条请求，校准后的时钟预测可节时 3.13%。在同一张 A800 上新启引擎进程实测，12 个配对区组均是延后启动更快。</p><p class="scope">一次 GPU 会话 · Qwen2.5-1.5B-Instruct</p></div><figure class="paper-figure"><a href="downloads/transfer-blocks.pdf" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测" aria-label="放大图表 · A800 配对计时实测">
-          <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article><article id="panel-archive" class="result-panel" aria-labelledby="tab-archive">
-      <div class="result-copy"><p class="result-number">8.71%</p><p class="number-label">逐题模拟节时的均值</p><h3>利用前缀以外已返回的选票</h3><p>对 200 道 GSM8K 题，相对等待连续前缀，使用所有已返回选票平均每题节时 8.71%，中位数为 0.14%。若基线已保留前缀且统计其他已返回选票，完整索引相对它只再省 0.30%。</p><p class="scope">200 道题 · 固定校准时钟 · 模拟耗时</p></div><figure class="paper-figure"><a href="downloads/admission-gains.pdf" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时" aria-label="放大图表 · 不同选票信息带来的节时">
-          <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article><article id="panel-bounds" class="result-panel" aria-labelledby="tab-bounds">
-      <div class="result-copy"><p class="result-number">0.7382%</p><p class="number-label">逐题最优择时节时均值的上界</p><h3>只改变启动时机还能省多少？</h3><p>在 200 个归档的 16 路面板上固定选票信息，证实胜者所需的工作量限制了还能节省的时间。预知轨迹后逐题选择一次等待可省 0.1145%，由此得到该时钟下离线逐题最优节时均值的区间。</p><p class="scope">200 道题 · 允许多启动一次 · 逐题离线最优</p></div><figure class="paper-figure"><a href="downloads/evidence.pdf" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界" aria-label="放大图表 · 证书工作量给出的上界">
-          <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界"><span class="enlarge" aria-hidden="true">⤢</span></a></figure></article>
+      <div class="result-copy"><p class="result-number">2.46%</p><p class="number-label">墙钟耗时减少的中位数</p><h3>延后启动第三条请求</h3><p>对长度为 256、128、128 的三条请求，校准后的时钟预测可节时 3.13%。在同一张 A800 上新启引擎进程实测，12 个配对区组均是延后启动更快。</p><p class="scope">一次 GPU 会话 · Qwen2.5-1.5B-Instruct</p></div><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测"
+        aria-haspopup="dialog" aria-label="放大图表 · A800 配对计时实测" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div></figure></article><article id="panel-archive" class="result-panel" aria-labelledby="tab-archive">
+      <div class="result-copy"><p class="result-number">8.71%</p><p class="number-label">逐题模拟节时的均值</p><h3>利用前缀以外已返回的选票</h3><p>对 200 道 GSM8K 题，相对等待连续前缀，使用所有已返回选票平均每题节时 8.71%，中位数为 0.14%。若基线已保留前缀且统计其他已返回选票，完整索引相对它只再省 0.30%。</p><p class="scope">200 道题 · 固定校准时钟 · 模拟耗时</p></div><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时"
+        aria-haspopup="dialog" aria-label="放大图表 · 不同选票信息带来的节时" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div></figure></article><article id="panel-bounds" class="result-panel" aria-labelledby="tab-bounds">
+      <div class="result-copy"><p class="result-number">0.7382%</p><p class="number-label">逐题最优择时节时均值的上界</p><h3>只改变启动时机还能省多少？</h3><p>在 200 个归档的 16 路面板上固定选票信息，证实胜者所需的工作量限制了还能节省的时间。预知轨迹后逐题选择一次等待可省 0.1145%，由此得到该时钟下离线逐题最优节时均值的区间。</p><p class="scope">200 道题 · 允许多启动一次 · 逐题离线最优</p></div><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界"
+        aria-haspopup="dialog" aria-label="放大图表 · 证书工作量给出的上界" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div></figure></article>
 <details class="limits"><summary>实测和模拟结果的适用范围</summary><p>另一次 16 题固定工作量的 A800 准入策略对照中，平均节时为 0.55%（95% 区间 −0.03% 至 1.29%）。在 200 个归档三请求面板上，预知长度后逐题选择立即启动或等最先一条完成，平均模拟节时为 0.364%。各项比较使用各自的基线。</p></details>
 </div></section>
 <section id="experiments" class="study-section" aria-labelledby="experiments-title"><div class="wrap">
@@ -130,7 +140,13 @@
 <details><summary>设备条件与部署局限</summary>
 <p>16 道题按哈希选取，固定工作量时有 4 题的启动安排发生变化（题均节时 0.55%，95% 区间 −0.03% 至 1.29%）。自然采样下，题均节时 0.48%（−0.04% 至 1.30%）。每种条件均在一次会话内对每题做一组配对计时。32 题实验中，短、长输出上限下的实测题均节时分别为 0.86% 和 1.30%。</p>
 <p>部署时可先记录前缀外选票是否改变启动决定，再在目标负载下比较端到端延迟。排队、多用户并发和不同设备会话之间的波动仍有待测量。</p></details>
-<p class="study-links"><a href="downloads/immediate-refill-zh.pdf#page=11">配对实测结果</a> · <a href="downloads/cap-comparison.pdf">两种输出上限的逐题结果</a></p>
+<details><summary>查看两种输出上限的逐题结果</summary>
+<figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/cap-comparison.png" alt="输出上限为 384 和 1,024 个 token 时的逐题配对结果。">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/cap-comparison.png" data-caption="输出上限为 384 和 1,024 个 token 时的逐题配对结果。"
+        aria-haspopup="dialog" aria-label="放大图表 · 输出上限为 384 和 1,024 个 token 时的逐题配对结果。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div></figure></details>
+<p class="study-links"><a href="downloads/immediate-refill-zh.pdf#page=11">配对实测结果</a></p>
 </article></div></section>
 <section id="explore" class="archive-explorer"><div class="wrap archive-grid">
 <div><p class="kicker">逐题回放</p><h2>选一道题看原始对照</h2>
@@ -156,7 +172,35 @@ python -B reproduce.py --out results.json</code></pre><button type="button" clas
 <div><dt><code>sixteen_question_pilot.fixed</code></dt><dd>查看 16 题固定工作量对照的均值和区间。表示是否达到预设实用门槛的字段为 false。</dd></div>
 <div><dt><code>finite_theory.fixed_spec</code></dt><dd>查看 1,764 组固定规格的构造检查。在另一项覆盖 512 个长度三元组的枚举中，最大耗时比为 7/2。</dd></div></dl>
 <a class="read-link" href="downloads/replay-results.json">打开可对照的 JSON 复算报告 <span class="arrow" aria-hidden="true">↗</span></a></div>
-<details id="figures"><summary>浏览论文图表</summary><ul class="plate-index"><li><a href="downloads/price-hull.pdf">凹性与最坏倍率<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/refill-timeline.pdf">三请求算例<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/indexed-workflow.pdf">受投票预算约束的准入流程<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/transfer-blocks.pdf">A800 配对计时实测<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/admission-gains.pdf">不同选票信息带来的节时<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/evidence.pdf">证书工作量给出的上界<span class="arrow" aria-hidden="true">↗</span></a></li><li><a href="downloads/cap-comparison.pdf">输出长度与耗时的敏感性<span class="arrow" aria-hidden="true">↗</span></a></li></ul></details>
+<details id="figures"><summary>浏览论文图表</summary><ul class="plate-index"><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/price-hull.png" alt="凹性与最坏倍率">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/price-hull.png" data-caption="凹性与最坏倍率"
+        aria-haspopup="dialog" aria-label="放大图表 · 凹性与最坏倍率" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>凹性与最坏倍率</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/refill-timeline.png" alt="三请求算例">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/refill-timeline.png" data-caption="三请求算例"
+        aria-haspopup="dialog" aria-label="放大图表 · 三请求算例" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>三请求算例</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/indexed-workflow.png" alt="受投票预算约束的准入流程">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/indexed-workflow.png" data-caption="受投票预算约束的准入流程"
+        aria-haspopup="dialog" aria-label="放大图表 · 受投票预算约束的准入流程" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>受投票预算约束的准入流程</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/transfer-blocks.png" alt="A800 配对计时实测">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/transfer-blocks.png" data-caption="A800 配对计时实测"
+        aria-haspopup="dialog" aria-label="放大图表 · A800 配对计时实测" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>A800 配对计时实测</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/admission-gains.png" alt="不同选票信息带来的节时">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/admission-gains.png" data-caption="不同选票信息带来的节时"
+        aria-haspopup="dialog" aria-label="放大图表 · 不同选票信息带来的节时" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>不同选票信息带来的节时</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/evidence.png" alt="证书工作量给出的上界">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/evidence.png" data-caption="证书工作量给出的上界"
+        aria-haspopup="dialog" aria-label="放大图表 · 证书工作量给出的上界" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>证书工作量给出的上界</figcaption></figure></li><li><figure class="paper-figure"><div class="figure-surface">
+      <img loading="lazy" src="assets/figures/cap-comparison.png" alt="输出长度与耗时的敏感性">
+      <button type="button" class="figure-open" data-lightbox="assets/figures/cap-comparison.png" data-caption="输出长度与耗时的敏感性"
+        aria-haspopup="dialog" aria-label="放大图表 · 输出长度与耗时的敏感性" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
+      </div><figcaption>输出长度与耗时的敏感性</figcaption></figure></li></ul></details>
 <details><summary>引用本研究</summary><pre id="bib"><code>@misc{immediate_refill_2026,
   title = {When Is Immediate Refill Optimal for Parallel Voting?},
   year = {2026},
