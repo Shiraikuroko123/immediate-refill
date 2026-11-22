@@ -1,0 +1,115 @@
+#experiments .study-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 1rem;
+}
+
+#experiments .study-block > * {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+#experiments .experiment-question,
+#experiments .experiment-prediction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: .75rem;
+}
+
+#experiments .experiment-question h3 {
+  margin: 0;
+  font: 500 clamp(1.45rem, 1.05rem + 1vw, 2.05rem)/1.18 var(--serif);
+  text-wrap: balance;
+}
+
+#experiments .experiment-question p,
+#experiments .experiment-prediction p {
+  min-width: 0;
+  margin: 0;
+}
+
+#experiments .experiment-prediction {
+  background: var(--soft);
+  align-items: center;
+  padding: 1rem;
+}
+
+#experiments .experiment-prediction .eq-display {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.05rem + 1vw, 1.9rem);
+}
+
+#experiments .study-block details {
+  padding-inline: .125rem;
+}
+
+#experiments .study-block details[open] > p {
+  margin-block: .25rem .85rem;
+  max-inline-size: 76ch;
+}
+
+#experiments .study-block details[open] > .eq-display {
+  max-inline-size: 36rem;
+}
+
+#experiments .study-table-wrap caption {
+  margin-block: 0 .7rem;
+}
+
+#experiments .study-table-wrap td,
+#experiments .study-table-wrap th {
+  line-height: 1.45;
+}
+
+#experiments .study-links,
+#experiments .study-note {
+  margin-block: -.2rem 0;
+}
+
+#experiments .study-note {
+  max-inline-size: 80ch;
+}
+
+#experiments .study-links a {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 42em) {
+  #experiments .study-table-wrap th:nth-child(1) { width: 22%; }
+  #experiments .study-table-wrap th:nth-child(2) { width: 40%; }
+  #experiments .study-table-wrap th:nth-child(3) { width: 17%; }
+  #experiments .study-table-wrap th:nth-child(4) { width: 21%; }
+
+  #experiments .study-table-wrap td:nth-child(n + 3),
+  #experiments .study-table-wrap th:nth-child(n + 3) {
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (min-width: 54em) {
+  #experiments .experiment-question,
+  #experiments .experiment-prediction {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  #experiments .experiment-question {
+    padding-block-end: .35rem;
+  }
+
+  #experiments .experiment-prediction {
+    padding: 1.2rem clamp(1.15rem, 2vw, 1.75rem);
+  }
+
+  #experiments .experiment-prediction p {
+    padding-inline-start: clamp(1.15rem, 2vw, 1.75rem);
+    border-inline-start: 1px solid var(--line);
+  }
+
+  #experiments .study-table-wrap td,
+  #experiments .study-table-wrap th {
+    padding: .75rem 1rem;
+  }
+}

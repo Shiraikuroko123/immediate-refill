@@ -4,7 +4,7 @@
 <meta name="page-type" content="tech"><meta name="site-kind" content="research"><title>并行投票时，立即补发何时最优？ | Refill</title>
 <meta name="description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:title" content="并行投票时，立即补发何时最优？"><meta property="og:description" content="交互演示并行投票中立即补发何时最优，附调度定理、A800 实测、论文和可复现实验。"><meta property="og:type" content="article"><meta property="og:url" content="https://shiraikuroko123.github.io/immediate-refill/zh.html"><meta property="og:image" content="https://shiraikuroko123.github.io/immediate-refill/assets/showcase-share.png">
 <link rel="canonical" href="https://shiraikuroko123.github.io/immediate-refill/zh.html"><link rel="alternate" hreflang="en" href="https://shiraikuroko123.github.io/immediate-refill/"><link rel="alternate" hreflang="zh-CN" href="https://shiraikuroko123.github.io/immediate-refill/zh.html">
-<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css?v=61570d7206"><link rel="stylesheet" href="schedule.css">
+<link rel="icon" href="assets/refill.svg" type="image/svg+xml"><link rel="preload" href="assets/type/sans.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css?v=c39ad72b07"><link rel="stylesheet" href="experiment-layout.css?v=2215ea9718"><link rel="stylesheet" href="schedule.css">
 <script defer src="schedule.js"></script><script defer src="app.js?v=788955f218"></script></head><body id="top">
 <a href="#main" class="skip">跳到研究内容</a>
 <header class="mast"><div class="wrap navrow"><a class="brand" href="#top" aria-label="Refill，返回顶部"><img src="assets/refill.svg" width="33" height="33" alt="">Refill</a>
@@ -19,17 +19,18 @@
 </div></section>
 <nav class="reading-guide" aria-label="本页导览"><div class="wrap"><strong>阅读导览</strong>
 <a href="#theory">最优性定理</a><a href="#method">准入与证明</a><a href="#experiments">实验对照</a><a href="#explore">逐题数据</a><a href="#reproduce">动手复现</a></div></nav>
-<section id="theory" class="theory"><div class="wrap theory-grid">
-<div id="mechanism"><p class="kicker">定理 1 · 零额外启动预算</p><h2>何时立即补发最快？</h2>
+<section id="theory" class="theory"><div class="wrap">
+<header id="mechanism"><p class="kicker">定理 1 · 零额外启动预算</p><h2>何时立即补发最快？</h2></header>
+<div class="theory-grid"><div class="clock-and-condition"><h3>共享解码时钟下的用时</h3>
 <p>多条路径对同一道题投票。按序启动且不超过串行投票的启动数时，所有合法调度都要完成同一段前缀。它们用时不同，是因为运行时的并发宽度不同。</p>
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>A</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>P</mi></munderover><msub><mi>c</mi><mi>k</mi></msub><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">T_A=\sum_{k=1}^{P} c_k d_k</annotation></semantics></math></div>
 <p>策略 A 在宽度 k 上运行 dₖ 个解码步，每步用时 cₖ。上方算例的两种策略都完成四个单位的工作。立即补发用时 13 + 10 = 23，延后第三条则用时 11 + 11 = 22。</p>
-<a class="read-link" href="downloads/immediate-refill-zh.pdf#page=4">阅读定理 1 <span class="arrow" aria-hidden="true">↗</span></a></div>
-<div class="theorem-results"><div><h3>固定候选数与启动配额</h3>
+<div class="fixed-condition"><h3>固定候选数与启动配额</h3>
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>c</mi><mi>j</mi></msub><mo>≥</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>c</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">2c_j\geq c_{j-1}+c_{j+1}</annotation></semantics></math></div>
 <p>取 c₀ = 0。立即补发对每个输入都最快，当且仅当上式在每个可达内点 1 ≤ j < b 都成立。</p>
 <details><summary>哪些宽度可达？</summary><div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>,</mo><mi>Q</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">⌊</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">⌋</mo></mrow><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">b=\min\!\left(P,Q,\left\lfloor N/2\right\rfloor+1\right)</annotation></semantics></math></div>
 <p>N 为候选路径数，Q 为启动配额，P 为槽数。三者均为 3 时，最多只能同时运行两条；候选数增至 4、槽数和配额仍为 3 时，宽度 3 才可达。</p></details></div>
+<a class="read-link" href="downloads/immediate-refill-zh.pdf#page=4">阅读定理 1 <span class="arrow" aria-hidden="true">↗</span></a></div>
 <div id="worst-ratio"><h3>精确的最坏耗时倍率</h3>
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mi mathvariant="normal">sup</mi><mrow><mi>I</mi><mo>∈</mo><mi mathvariant="script">ℐ</mi></mrow></munder><mfrac><mrow><msub><mi>T</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><msub><mi>T</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><munder><mi mathvariant="normal">max</mi><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>P</mi></mrow></munder><mfrac><msub><mover><mi>c</mi><mo accent="true">̂</mo></mover><mi>k</mi></msub><msub><mi>c</mi><mi>k</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\sup_{I\in\mathcal{I}}\frac{T_G(I)}{T_{\mathrm{opt}}(I)}=\max_{1\le k\le P}\frac{\hat c_k}{c_k}</annotation></semantics></math></div>
 <p>固定槽数和各宽度的单步成本，在所有零额外预算实例上取上确界，允许 N 与 Q 改变。G 表示立即补发，分母是合法调度的最优用时，ĉ 是成本曲线的最小凹上界。</p>
@@ -41,26 +42,46 @@
 <section id="method" class="study-section" aria-labelledby="method-title"><div class="wrap">
         <header class="section-head"><h2 id="method-title">下一条路径能启动吗？</h2></header>
         <article class="method-block"><h3>返回一张票，何时停止、何时补发？</h3>
+          <div class="method-spread">
+            <div class="derivation">
+              <div class="equation-step">
           <p>共有 <i>N</i> 条路径，<i>S</i> 是已返回路径的编号集合。第一名领先第二名的票数一旦超过未返回的票数，就能确定胜者。弃权也算返回。如果还没有任何标签得票，票差为零。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">gap</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>&gt;</mo><mi>N</mi><mo>−</mo><mo stretchy="false" form="prefix">|</mo><mi>S</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">\operatorname{gap}(S)&gt;N-|S|</annotation></semantics></math></div>
+              </div>
+              <div class="equation-step">
           <p>否则，从前往后扫描各个前缀。前 <i>t</i> 个位置里，若所有尚未知晓的票都投给当前领先者之一，前缀票差就达到最大值 <i>g</i><sub>t</sub>。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>S</mi><mi>t</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>S</mi><mo>∩</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>u</mi><mi>t</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mi>t</mi><mo>−</mo><mo stretchy="false" form="prefix">|</mo><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>g</mi><mi>t</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">gap</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mi>u</mi><mi>t</mi></msub><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}S_t&amp;=S\cap\{1,\ldots,t\},\\u_t&amp;=t-|S_t|,\\g_t&amp;=\operatorname{gap}(S_t)+u_t.\end{aligned}</annotation></semantics></math></div>
+              </div>
+              <div class="equation-step">
           <p><i>M</i> 是根据已返回选票及其位置推算的最早可能串行停止位置。<i>F</i> 限制累计启动数，后来取消的也要计入。三项限制分别来自启动配额 <i>Q</i>、槽数 <i>P</i>，以及相对串行停止位置 <i>K</i> 允许多开的 <i>B</i> 条。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi mathvariant="script">𝒥</mi></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mi>N</mi><mo>:</mo><msub><mi>g</mi><mi>t</mi></msub><mo>&gt;</mo><mi>N</mi><mo>−</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi mathvariant="script">𝒥</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>N</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>Q</mi><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">|</mo><mi>S</mi><mo stretchy="false" form="prefix">|</mo><mi>+</mi><mi>P</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>B</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}\mathcal{J}&amp;=\{1\le t&lt;N:g_t&gt;N-t\},\\M(S)&amp;=\min(\mathcal{J}\cup\{N\}),\\F(S)&amp;=\min\{Q,\ |S|+P,\ M(S)+B\}.\end{aligned}</annotation></semantics></math></div>
+              </div>
+            </div>
+            <aside class="method-aside">
           <h4>五条路径、两张已返回的票</h4>
+              <div class="equation-step">
           <p>取 <i>N</i> = <i>Q</i> = 5、<i>P</i> = 3、<i>B</i> = 1。第 1、4 条还在运行，第 2、3 条投给了不同标签。一共已启动四条，空出一个槽。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>g</mi><mn>3</mn></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>0</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn><mo>≤</mo><mn>5</mn><mo>−</mo><mn>3</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>g</mi><mn>4</mn></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>0</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>2</mn><mo>&gt;</mo><mn>5</mn><mo>−</mo><mn>4</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mn>4</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mn>5</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>2</mn><mo>+</mo><mn>3</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>4</mn><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo>=</mo><mn>5</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}g_3&amp;=0+1=1\le 5-3,\\g_4&amp;=0+2=2&gt;5-4,\\M(S)&amp;=4,\\F(S)&amp;=\min\{5,\,2+3,\,4+1\}=5.\end{aligned}</annotation></semantics></math></div>
           <p>第 5 条可以启动。只读连续前缀的调度器还看不到任何票，无法排除前三票全都一致的可能，因此上限仍是 3 + 1 = 4。
           <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=2">§2.2，第 2–3 页</a></p>
+              </div>
           <figure class="paper-figure"><div class="figure-surface">
       <img loading="lazy" width="2200" height="562" src="assets/figures/indexed-workflow.png" alt="调度器接收已完成选票及其编号，先检查胜者是否确定，再更新安全启动上限，并给满足条件的空槽补发路径。">
       <button type="button" class="figure-open" data-lightbox="assets/figures/indexed-workflow.png" data-caption="图 2　每张返回的选票都可能改变哪些路径可以启动。"
         aria-haspopup="dialog" aria-label="放大图表 · 图 2　每张返回的选票都可能改变哪些路径可以启动。" hidden><span class="enlarge" aria-hidden="true">⤢</span></button>
       </div><figcaption>图 2　每张返回的选票都可能改变哪些路径可以启动。</figcaption></figure>
+            </aside>
+          </div>
         </article>
         <article class="method-block" id="occupancy"><h3>零额外启动时，总工作量固定</h3>
+          <div class="method-spread">
+            <div class="derivation">
+              <div class="equation-step">
           <p>所有合法调度都完成前 min(<i>K</i>, <i>Q</i>) 条路径。在任一竞争策略 <i>A</i> 的虚拟解码时间轴上任选一组时段 <i>E</i>，这些时段可以互不相连。立即补发 <i>G</i> 在开头同样长的虚拟时间里，完成的工作至少一样多。高度 <i>h</i> 表示活跃路径数。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>E</mi></msub><msub><mi>h</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mspace width="0.222em"></mspace><mo>≤</mo><mspace width="0.222em"></mspace><msubsup><mo>∫</mo><mn>0</mn><mrow><mo stretchy="false" form="prefix">|</mo><mi>E</mi><mo stretchy="false" form="prefix">|</mo></mrow></msubsup><msub><mi>h</mi><mi>G</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\int_E h_A(t)\,dt\ \le\ \int_0^{|E|} h_G(t)\,dt</annotation></semantics></math></div>
+              </div>
+            </div>
+            <aside class="method-aside">
           <details><summary>占用主序怎样导出定理？</summary>
             <p>零额外预算下，每完成一条至多多放行一条，允许的并发宽度只会持平或减小。附录 B 压缩所选时段之间的空隙，保留每次启动时所依据的观察，由此为依赖选票的准入策略证明式 (3)。经典主序理论随后给出凹成本下的时间排序。附录 J 的反例说明，单凭各任务更早完成还推不出这个排序。
             </p><p>取并发宽度超过 <i>j</i> 的时段。每单位虚拟时间扣除 <i>j</i> 单位工作量，就得到超出阈值的占用量 <i>U</i>。所有调度的总工作量 <i>W</i><sup>*</sup> 相同。</p>
@@ -68,18 +89,30 @@
             <p>离散凹性使每个曲率系数都非负。立即补发使上式的每一个减项最大，因此耗时最小。
             <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=4">定理 1，第 4 页</a> · <a class="method-source" href="downloads/immediate-refill-zh.pdf#page=22">附录 J，第 22 页</a></p>
           </details>
+            </aside>
+          </div>
         </article>
         <article class="method-block" id="certificate"><h3>有额外预算时，哪些路径的工作不可省？</h3>
+          <div class="method-spread">
+            <div class="derivation">
+              <div class="equation-step">
           <p>设 <i>S</i> 是返回结果时可能已经完成的路径集合。要等长度为 <i>w</i><sub>j</sub> 的路径 <i>j</i> 完成，更早启动的每条路径此时都已跑完，或至少已运行 <i>w</i><sub>j</sub> 个单位。把各条路径必需的工作量相加得到 <i>W</i>(<i>S</i>)。空集上的最大值取零。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">{</mo><msub><mi>w</mi><mi>i</mi></msub><mo>,</mo><mspace width="0.222em"></mspace><munder><mi mathvariant="normal">max</mi><mrow><mi>j</mi><mo>∈</mo><mi>S</mi><mo>,</mo><mspace width="0.167em"></mspace><mi>j</mi><mo>≥</mo><mi>i</mi></mrow></munder><msub><mi>w</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">}</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mi>W</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>Q</mi></munderover><msub><mi>a</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}a_i(S)&amp;=\min\!\left\{w_i,\ \max_{j\in S,\,j\ge i}w_j\right\},\\W(S)&amp;=\sum_{i=1}^Q a_i(S).\end{aligned}</annotation></semantics></math></div>
+              </div>
+              <div class="equation-step">
           <p>对每个可能的 <i>S</i>，求各宽度完成这些工作所需的最低成本。取所有集合下界中的最小值 <i>L</i>，就能限制相对立即补发最多能省多少。即使调度器预知长度与选票，只要遵守同一准入规则，也受这个界约束。</p>
           <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>A</mi></msub><mo>≥</mo><mi>L</mi><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mn>1</mn><mo>−</mo><mfrac><msub><mi>T</mi><mi>A</mi></msub><msub><mi>T</mi><mi>G</mi></msub></mfrac><mo>≤</mo><mn>1</mn><mo>−</mo><mfrac><mi>L</mi><msub><mi>T</mi><mi>G</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">T_A\ge L\quad\Longrightarrow\quad 1-\frac{T_A}{T_G}\le 1-\frac{L}{T_G}</annotation></semantics></math></div>
+              </div>
+            </div>
+            <aside class="method-aside">
           <details><summary>一个终止集合对应的线性规划</summary>
             <p><i>d</i><sub>k</sub> 表示在宽度 <i>k</i> 上花费的虚拟时间。<i>W</i><sub>m</sub> 是最大的 <i>m</i> 项工作量之和，不足时补零。<i>V</i><sub>G</sub> 是立即补发的虚拟耗时。确定胜者后继续补发直到达到配额，可以得到各路径的最早完成时刻 <i>e</i><sub>i</sub>。</p>
             <p>各求和式遍历宽度 1 ≤ k ≤ P。含 m 的约束对每个整数 1 ≤ m < P 都成立。</p><div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="center" style="text-align: center"><munder><mi mathvariant="normal">min</mi><mrow><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>d</mi><mi>P</mi></msub><mo>≥</mo><mn>0</mn></mrow></munder><mspace width="0.222em"></mspace><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>c</mi><mi>k</mi></msub><msub><mi>d</mi><mi>k</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>d</mi><mi>k</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≥</mo><msub><mi>V</mi><mi>G</mi></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>d</mi><mi>k</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≥</mo><msub><mi>e</mi><mi>i</mi></msub><mspace width="1.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>∈</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mo>∑</mo><mi>k</mi></munder><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>,</mo><mi>m</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>d</mi><mi>k</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≥</mo><msub><mi>W</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mo>∑</mo><mi>k</mi></munder><mi>k</mi><mspace width="0.167em"></mspace><msub><mi>d</mi><mi>k</mi></msub></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mo>≥</mo><mi>W</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{gathered}\min_{d_1,\ldots,d_P\ge0}\ \sum_{k}c_kd_k\\\begin{aligned}\sum_{k}d_k&amp;\ge V_G,\\\sum_{k}d_k&amp;\ge e_i\quad(i\in S),\\\sum_{k}\min(k,m)d_k&amp;\ge W_m(S),\\\sum_{k}k\,d_k&amp;\ge W(S).\end{aligned}\end{gathered}</annotation></semantics></math></div>
             <p>所考察的集合必须覆盖所有实际可能的终止集合。线性规划允许的某些宽度时长未必能排成实际调度，因此节时上界可能达不到。</p>
           </details>
           <p><a class="method-source" href="downloads/immediate-refill-zh.pdf#page=7">定理 2，第 7 页</a></p>
+            </aside>
+          </div>
         </article>
       </div></section>
 <section id="evidence" class="evidence"><div class="wrap"><p class="kicker">实验证据</p><h2>实测与模拟耗时</h2><div class="tab-list" aria-label="比较实验"><a class="tab-button" id="tab-device" href="#panel-device" data-panel="panel-device">A800 实测</a><a class="tab-button" id="tab-archive" href="#panel-archive" data-panel="panel-archive">选票回放</a><a class="tab-button" id="tab-bounds" href="#panel-bounds" data-panel="panel-bounds">择时上界</a></div>
@@ -107,18 +140,24 @@
 <h2 id="experiments-title">从单步解码耗时到整题实测延迟</h2>
 </header>
 <article class="study-block">
+<div class="experiment-question">
 <h3>用短时校准能判断何时值得等待吗？</h3>
 <p>三条请求分别长 256、128、128 个 token。延后第三条能维持两路并发。将 A800 上测得的单步耗时代入公式，可预测相对三条同时启动的延迟降幅。</p>
+</div>
+<div class="experiment-prediction">
 <div class="eq-display" lang="zh-CN"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><msub><mi>c</mi><mn>2</mn></msub></mrow><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>+</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac><mo>≈</mo><mn>3.13</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">1-\frac{2c_2}{c_3+c_1}\approx 3.13\%</annotation></semantics></math></div>
 <p>12 个配对区组的实测中位降幅为 2.46%。换成两条等长的 128-token 请求，延后第二条会迫使两条请求串行执行。实测延迟的中位增幅为 102.63%，预测为 104.30%。</p>
+</div>
 <details><summary>怎样判断预测是否通过验证？</summary>
 <p>在一张 A800 上运行 Qwen2.5-1.5B-Instruct，提示均长 512 个 token。排除一个预热区组后，八个区组各以随机顺序测量并发宽度 1、2、3 各一次。每次先运行 64 个不计时的解码步，再计时 96 个使用缓存的解码步。各宽度的成本取八个窗口平均单步耗时的中位数。封存两项预测后，新进程对各负载和策略从提交第一条请求计时至最后一条完成并同步 GPU。</p>
 <p>若预测节时的绝对值至少为 1%，须通过方向性检验。将 12 个区组的实测节时排序，第 3 至第 10 个值须严格位于零的预测一侧。若绝对值小于 1%，这个区间须落在 ±2% 内。两种检验都要求实测中位数与预测相差不超过两个百分点。两种负载均通过方向性检验。</p></details>
 <p class="study-links"><a href="downloads/immediate-refill-zh.pdf#page=8">论文中的设备实验</a> · <a href="https://raw.githubusercontent.com/Shiraikuroko123/immediate-refill/10e9cf840f24d146f44f04800322aef1e0659a67/review/tracks/interference/prospective-device/PROTOCOL.md">预设协议</a> · <a href="https://raw.githubusercontent.com/Shiraikuroko123/immediate-refill/10e9cf840f24d146f44f04800322aef1e0659a67/review/tracks/interference/prospective-device/session01/prediction.json">封存的预测</a> · <a href="https://raw.githubusercontent.com/Shiraikuroko123/immediate-refill/10e9cf840f24d146f44f04800322aef1e0659a67/review/tracks/interference/prospective-device/session01/validate.jsonl">逐次设备记录</a></p>
 </article>
 <article class="study-block">
+<div class="experiment-question">
 <h3>哪些已返回选票能帮助调度器？</h3>
 <p>所有策略都能用全部已返回选票决定是否停止。下表只改变批准下一次启动时可用的信息。两种使用无序票数的基线是事后补做的对照。</p>
+</div>
 <div class="study-table-wrap"><table>
 <caption>相同 200 道题上，完整索引与三种基线的比较</caption>
 <thead><tr><th scope="col">基线</th><th scope="col">决定启动时可见的信息</th>
@@ -135,8 +174,10 @@
 <p class="study-links"><a href="downloads/immediate-refill-zh.pdf#page=21">各基线的区间</a> · <a href="downloads/immediate-refill-zh.pdf#page=21">长路径敏感性分析</a> · <a href="https://raw.githubusercontent.com/Shiraikuroko123/immediate-refill/10e9cf840f24d146f44f04800322aef1e0659a67/review/tracks/interference/information-baseline/results/questions.csv">逐题对照数据（CSV）</a></p>
 </article>
 <article class="study-block">
+<div class="experiment-question">
 <h3>在设备上实际生成答案，还能省多少？</h3>
 <p>16 道 GSM8K 题在 A800 上固定工作量实测，题均节时 0.55%，低于预设的 2% 门槛。另在 32 道题上将输出上限从 384 增至 1,024 个 token，题均节时相差 +0.44 个百分点（95% 区间 −0.79 至 +1.84），增减方向仍无定论。</p>
+</div>
 <details><summary>设备条件与部署局限</summary>
 <p>16 道题按哈希选取，固定工作量时有 4 题的启动安排发生变化（题均节时 0.55%，95% 区间 −0.03% 至 1.29%）。自然采样下，题均节时 0.48%（−0.04% 至 1.30%）。每种条件均在一次会话内对每题做一组配对计时。32 题实验中，短、长输出上限下的实测题均节时分别为 0.86% 和 1.30%。</p>
 <p>部署时可先记录前缀外选票是否改变启动决定，再在目标负载下比较端到端延迟。排队、多用户并发和不同设备会话之间的波动仍有待测量。</p></details>
