@@ -302,7 +302,6 @@ p:last-child {
   padding: .42em .12em;
   margin: .3rem 0;
   max-width: 100%;
-  overflow-x: auto;
 }
 .eq-display math {
   display: block math;
